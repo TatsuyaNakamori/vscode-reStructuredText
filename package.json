@@ -2,13 +2,36 @@
 	"name": "resttext",
 	"displayName": "reStructuredText",
 	"description": "Language Support for reStructuredText",
+	"icon": "./resources/icon/extension_main.png",
 	"version": "0.0.1",
+	"publisher": "TatsuyaNakamori",
 	"engines": {
 		"vscode": "^1.53.0"
 	},
 	"categories": [
+		"Programming Languages",
+		"Snippets",
+		"Themes",
+		"Keymaps",
 		"Other"
 	],
+	"license": "SEE LICENSE IN LICENSE FILE",
+	"preview": true,
+	"keywords": [
+		"reStructuredText",
+		"markdown",
+		"themes",
+		"python",
+		"text"
+	],
+	"homepage": "https://github.com/TatsuyaNakamori/vscode-reStructuredText",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/TatsuyaNakamori/vscode-reStructuredText.git"
+	},
+	"bugs": {
+		"url": "https://github.com/TatsuyaNakamori/vscode-reStructuredText/issues"
+	},
 	"activationEvents": [
 		"onCommand:resttext.helloWorld"
 	],
