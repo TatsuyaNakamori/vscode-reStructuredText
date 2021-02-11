@@ -2,7 +2,7 @@
 	"name": "resttext",
 	"displayName": "reStructuredText",
 	"description": "Language Support for reStructuredText",
-	"icon": "./resources/icon/extension_main.png",
+	"icon": "resources/icon/extension_main.png",
 	"version": "0.0.1",
 	"publisher": "TatsuyaNakamori",
 	"engines": {
