@@ -2,6 +2,11 @@
 .vscode-test/**
 out/test/**
 src/**
+sphinx/python/**
+
+_test/
+_idea/
+
 .gitignore
 .yarnrc
 vsc-extension-quickstart.md
