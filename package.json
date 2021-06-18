@@ -1,68 +1,484 @@
 {
-	"name": "resttext",
-	"displayName": "reStructuredText",
-	"description": "Language Support for reStructuredText",
-	"icon": "resources/icon/extension_main.png",
-	"version": "0.0.1",
-	"publisher": "TatsuyaNakamori",
-	"engines": {
-		"vscode": "^1.53.0"
-	},
-	"categories": [
-		"Programming Languages",
-		"Snippets",
-		"Themes",
-		"Keymaps",
-		"Other"
-	],
-	"license": "SEE LICENSE IN LICENSE FILE",
-	"preview": true,
-	"keywords": [
-		"reStructuredText",
-		"markdown",
-		"themes",
-		"python",
-		"text"
-	],
-	"homepage": "https://github.com/TatsuyaNakamori/vscode-reStructuredText",
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/TatsuyaNakamori/vscode-reStructuredText.git"
-	},
-	"bugs": {
-		"url": "https://github.com/TatsuyaNakamori/vscode-reStructuredText/issues"
-	},
-	"activationEvents": [
-		"onCommand:resttext.helloWorld"
-	],
-	"main": "./out/extension.js",
-	"contributes": {
-		"commands": [
-			{
-				"command": "resttext.helloWorld",
-				"title": "Hello World"
-			}
-		]
-	},
-	"scripts": {
-		"vscode:prepublish": "npm run compile",
-		"compile": "tsc -p ./",
-		"watch": "tsc -watch -p ./",
-		"pretest": "npm run compile && npm run lint",
-		"lint": "eslint src --ext ts",
-		"test": "node ./out/test/runTest.js"
-	},
-	"devDependencies": {
-		"@types/vscode": "^1.53.0",
-		"@types/glob": "^7.1.3",
-		"@types/mocha": "^8.0.4",
-		"@types/node": "^12.11.7",
-		"eslint": "^7.15.0",
-		"@typescript-eslint/eslint-plugin": "^4.9.0",
-		"@typescript-eslint/parser": "^4.9.0",
-		"glob": "^7.1.6",
-		"mocha": "^8.1.3",
-		"typescript": "^4.1.2",
-		"vscode-test": "^1.4.1"
-	}
+    "name": "resttext",
+    "displayName": "reStructuredText",
+    "description": "%ext.description%",
+    "version": "0.0.1",
+    "publisher": "TatsuyaNakamori",
+    "engines": {
+        "vscode": "^1.54.1"
+    },
+    "galleryBanner": {
+        "color": "#C0C0C8",
+        "theme": "dark"
+    },
+    "icon": "resources/icon/extension_main.png",
+    "categories": [
+        "Programming Languages",
+        "Snippets",
+        "Themes",
+        "Keymaps",
+        "Other"
+    ],
+    "license": "MIT",
+    "preview": true,
+    "keywords": [
+        "reStructuredText",
+        "markdown",
+        "themes",
+        "sphinx",
+        "python"
+    ],
+    "homepage": "https://github.com/TatsuyaNakamori/vscode-reStructuredText",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/TatsuyaNakamori/vscode-reStructuredText.git"
+    },
+    "bugs": {
+        "url": "https://github.com/TatsuyaNakamori/vscode-reStructuredText/issues"
+    },
+    "activationEvents": [
+        "onLanguage:restructuredtext",
+        "onCommand:resttext.previewHTMLUserBuild",
+        "onCommand:resttext.previewHTMLHelperBuild",
+        "onCommand:resttext.test",
+        "onCommand:resttext.bold",
+        "onCommand:resttext.italic",
+        "onCommand:resttext.inlineRaw",
+        "onCommand:resttext.list",
+        "onCommand:resttext.table.createGrid",
+        "onCommand:resttext.table.dataToTable",
+        "onCommand:resttext.heading",
+        "onCommand:resttext.key.enter",
+        "onCommand:resttext.key.shift.enter",
+        "onCommand:resttext.key.alt.enter",
+        "onCommand:resttext.key.tab",
+        "onCommand:resttext.key.shift.tab",
+        "onCommand:workbench.action.tasks.runTask"
+    ],
+    "main": "./out/extension.js",
+    "contributes": {
+        "iconThemes": [
+            {
+                "id": "reST.icon",
+                "label": "add-reST",
+                "path": "./resources/icon/reST.file-icon-theme.json",
+                "extends": {
+                    "all": true
+                }
+            }
+        ],
+        "languages": [
+            {
+                "id": "restructuredtext",
+                "extensions": [
+                    ".rst"
+                ],
+                "aliases": [
+                    "reStructuredText",
+                    "rst",
+                    "reST",
+                    "ReST",
+                    "RST"
+                ],
+                "configuration": "./rst.language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "restructuredtext",
+                "scopeName": "text.restructuredtext",
+                "path": "./rst.tmLanguage.json"
+            }
+        ],
+        "snippets": [
+            {
+                "language": "restructuredtext",
+                "path": "./rst.snippets.json"
+            }
+        ],
+        "commands": [
+            {
+                "category": "reStructuredText",
+                "command": "resttext.previewHTMLUserBuild",
+                "title": "%resttext.previewHTMLUserBuild.title%",
+                "icon": "$(preview)",
+                "when": "editorLangId == restructuredtext"
+            },
+            {
+                "category": "reStructuredText",
+                "command": "resttext.previewHTMLHelperBuild",
+                "title": "%resttext.previewHTMLHelperBuild.title%",
+                "icon": "$(preview)",
+                "when": "editorLangId == restructuredtext && isWindows"
+            },
+            {
+                "category": "reStructuredText",
+                "command": "resttext.bold",
+                "title": "%resttext.bold.title%",
+                "when": "editorTextFocus && editorLangId == restructuredtext"
+            },
+            {
+                "category": "reStructuredText",
+                "command": "resttext.italic",
+                "title": "%resttext.italic.title%",
+                "when": "editorTextFocus && editorLangId == restructuredtext"
+            },
+            {
+                "category": "reStructuredText",
+                "command": "resttext.inlineRaw",
+                "title": "%resttext.inlineRaw.title%",
+                "when": "editorTextFocus && editorLangId == restructuredtext"
+            },
+            {
+                "category": "reStructuredText",
+                "command": "resttext.list",
+                "title": "%resttext.list.title%",
+                "when": "editorTextFocus && editorLangId == restructuredtext"
+            },
+            {
+                "category": "reStructuredText",
+                "command": "resttext.list.add",
+                "title": "%resttext.list.add.title%",
+                "when": "editorTextFocus && editorLangId == restructuredtext"
+            },
+            {
+                "category": "reStructuredText",
+                "command": "resttext.heading",
+                "title": "%resttext.heading.title%",
+                "when": "editorTextFocus && editorLangId == restructuredtext"
+            },
+            {
+                "category": "reStructuredText",
+                "command": "resttext.heading.add",
+                "title": "%resttext.heading.add.title%",
+                "when": "editorTextFocus && editorLangId == restructuredtext"
+            },
+            {
+                "category": "reStructuredText",
+                "command": "resttext.table.createGrid",
+                "title": "%resttext.table.createGrid.title%",
+                "when": "editorTextFocus && editorLangId == restructuredtext"
+            },
+            {
+                "category": "reStructuredText",
+                "command": "resttext.table.dataToTable",
+                "title": "%resttext.table.dataToTable.title%",
+                "when": "editorTextFocus && editorHasSelection && editorLangId == restructuredtext"
+            },
+            {
+                "category": "reStructuredText",
+                "command": "resttext.key.enter",
+                "title": "%resttext.key.enter.title%",
+                "when": "resttext.enter.enabled && editorTextFocus && !suggestWidgetVisible && editorLangId==restructuredtext"
+            },
+            {
+                "category": "reStructuredText",
+                "command": "resttext.key.shift.enter",
+                "title": "%resttext.key.shift.enter.title%",
+                "when": "resttext.shift.enter.enabled && editorTextFocus && !suggestWidgetVisible && editorLangId==restructuredtext"
+            },
+            {
+                "category": "reStructuredText",
+                "command": "resttext.key.alt.enter",
+                "title": "%resttext.key.alt.enter.title%",
+                "when": "resttext.alt.enter.enabled && editorTextFocus && !suggestWidgetVisible && editorLangId==restructuredtext"
+            },
+            {
+                "category": "reStructuredText",
+                "command": "resttext.key.tab",
+                "title": "%resttext.key.tab.title%",
+                "when": "resttext.tab.enabled && editorTextFocus && !suggestWidgetVisible && editorLangId==restructuredtext"
+            },
+            {
+                "category": "reStructuredText",
+                "command": "resttext.key.shift.tab",
+                "title": "%resttext.key.shift.tab.title%",
+                "when": "resttext.shift.tab.enabled && editorTextFocus && !suggestWidgetVisible && editorLangId==restructuredtext"
+            }
+
+
+        ],
+        "keybindings": [
+            {
+                "command": "resttext.test",
+                "key": "alt+t",
+                "when": "editorTextFocus && editorLangId == restructuredtext"
+            },
+            {
+                "command": "resttext.bold",
+                "key": "alt+b",
+                "when": "editorTextFocus && editorLangId == restructuredtext"
+            },
+            {
+                "command": "resttext.italic",
+                "key": "alt+i",
+                "when": "editorTextFocus && editorLangId == restructuredtext"
+            },
+            {
+                "command": "resttext.inlineRaw",
+                "key": "alt+c",
+                "when": "editorTextFocus && editorLangId == restructuredtext"
+            },
+            {
+                "command": "resttext.list",
+                "key": "alt+l",
+                "when": "editorTextFocus && editorLangId == restructuredtext"
+            },
+            {
+                "command": "resttext.heading",
+                "key": "alt+h",
+                "when": "editorTextFocus && editorLangId == restructuredtext"
+            },
+            {
+                "command": "resttext.table.dataToTable",
+                "key": "alt+t",
+                "when": "editorTextFocus && editorHasSelection && editorLangId == restructuredtext"
+            },
+            {
+                "command": "resttext.key.enter",
+                "key": "enter",
+                "when": "resttext.enter.enabled && editorTextFocus && !suggestWidgetVisible && editorLangId==restructuredtext"
+            },
+            {
+                "command": "resttext.key.shift.enter",
+                "key": "shift+enter",
+                "when": "resttext.shift.enter.enabled && editorTextFocus && !suggestWidgetVisible && editorLangId==restructuredtext"
+            },
+            {
+                "command": "resttext.key.alt.enter",
+                "key": "alt+enter",
+                "when": "resttext.alt.enter.enabled && editorTextFocus && !suggestWidgetVisible && editorLangId==restructuredtext"
+            },
+            {
+                "command": "resttext.key.tab",
+                "key": "tab",
+                "when": "resttext.tab.enabled && editorTextFocus && !suggestWidgetVisible && editorLangId==restructuredtext"
+            },
+            {
+                "command": "resttext.key.shift.tab",
+                "key": "shift+tab",
+                "when": "resttext.shift.tab.enabled && editorTextFocus && !suggestWidgetVisible && editorLangId==restructuredtext"
+            }
+        ],
+        "menus": {
+            "commandPalette": [
+                {
+                    "command": "resttext.previewHTMLUserBuild",
+                    "when": "editorLangId == restructuredtext"
+                },
+                {
+                    "command": "resttext.previewHTMLHelperBuild",
+                    "when": "editorLangId == restructuredtext && isWindows"
+                },
+                {
+                    "command": "resttext.bold",
+                    "when": "editorLangId == restructuredtext"
+                },
+                {
+                    "command": "resttext.italic",
+                    "when": "editorLangId == restructuredtext"
+                },
+                {
+                    "command": "resttext.inlineRaw",
+                    "when": "editorLangId == restructuredtext"
+                },
+                {
+                    "command": "resttext.list",
+                    "when": "editorLangId == restructuredtext"
+                },
+                {
+                    "command": "resttext.list.add",
+                    "when": "never"
+                },
+                {
+                    "command": "resttext.heading",
+                    "when": "editorLangId == restructuredtext"
+                },
+                {
+                    "command": "resttext.heading.add",
+                    "when": "never"
+                },
+                {
+                    "command": "resttext.table.createGrid",
+                    "when": "never"
+                },
+                {
+                    "command": "resttext.table.dataToTable",
+                    "when": "editorTextFocus && !editorHasMultipleSelections && editorHasSelection && editorLangId == restructuredtext"
+                },
+                {
+                    "command": "resttext.key.enter",
+                    "when": "never"
+                },
+                {
+                    "command": "resttext.key.shift.enter",
+                    "when": "never"
+                },
+                {
+                    "command": "resttext.key.alt.enter",
+                    "when": "never"
+                },
+                {
+                    "command": "resttext.key.tab",
+                    "when": "never"
+                },
+                {
+                    "command": "resttext.key.shift.tab",
+                    "when": "never"
+                }
+            ],
+            "editor/context": [
+                {
+                    "group": "1_modification",
+                    "command": "resttext.table.dataToTable",
+                    "when": "editorTextFocus && !editorHasMultipleSelections && editorHasSelection && editorLangId == restructuredtext"
+                }
+            ],
+            "editor/title/run": [
+                {
+                    "command": "resttext.previewHTMLUserBuild",
+                    "when": "editorLangId == restructuredtext",
+                    "group": "navigation"
+                },
+                {
+                    "command": "resttext.previewHTMLHelperBuild",
+                    "when": "editorLangId == restructuredtext && isWindows",
+                    "group": "navigation"
+                }
+            ]
+        },
+        "configuration": [
+            {
+                "title": "reStructuredText",
+                "properties": {
+                    "resttext.sphinxQuickStart.options": {
+                        "type": "object",
+                        "properties": {
+                            "Project name": {
+                                "type": "string"
+                            },
+                            "Author name(s)": {
+                                "type": "string"
+                            },
+                            "Project version": {
+                                "type": "string"
+                            },
+                            "Project release": {
+                                "type": "string"
+                            },
+                            "Project language": {
+                                "type": "string",
+                                "enum": [
+                                    "en (English)", "ja (日本語)", "de (German)", "it (Italian)", "fr (French)",
+                                    "es (Spanish)", "nl (Dutch)", "zh_TW (Traditional Chinese)", "zh_CN (Simplified Chinese)",
+                                    "hi (Hindi)", "hi_IN (Hindi (India))", "ar (Arabic)", "bg (Bulgarian)", "bn (Bengali)",
+                                    "ca (Catalan)", "cak (Kaqchikel)", "cs (Czech)", "cy (Welsh)", "da (Danish)", "el (Greek)",
+                                    "eo (Esperanto)", "et (Estonian)", "eu (Basque)", "fa (Iranian)", "fi (Finnish)",
+                                    "he (Hebrew)", "hr (Croatian)", "hu (Hungarian)", "id (Indonesian)", "ko (Korean)",
+                                    "lt (Lithuanian)", "lv (Latvian)", "mk (Macedonian)", "nb_NO (Norwegian Bokmal)",
+                                    "ne (Nepali)", "pl (Polish)", "pt (Portuguese)", "pt_BR (Brazilian Portuguese)",
+                                    "pt_PT (European Portuguese)", "ro (Romanian)", "ru (Russian)", "si (Sinhala)",
+                                    "sk (Slovak)", "sl (Slovenian)", "sq (Albanian)", "uk_UA (Ukrainian)", "ur (Urdu)",
+                                    "sr (Serbian)", "sr@latin (Serbian (Latin))", "sr_RS (Serbian (Cyrillic))", "sv (Swedish)",
+                                    "ta (Tamil)", "te (Telugu)", "tr (Turkish)", "vi (Vietnamese)"
+                                ]
+                            },
+                            "Separate source and build directories": {
+                                "type": "boolean"
+                            },
+                            "Use epub": {
+                                "type": "boolean"
+                            },
+                            "Enable autodoc extension": {
+                                "type": "boolean"
+                            },
+                            "Enable doctest extension": {
+                                "type": "boolean"
+                            },
+                            "Enable intersphinx extension": {
+                                "type": "boolean"
+                            },
+                            "Enable todo extension": {
+                                "type": "boolean"
+                            },
+                            "Enable coverage extension": {
+                                "type": "boolean"
+                            },
+                            "Enable imgmath extension": {
+                                "type": "boolean"
+                            },
+                            "Enable mathjax extension": {
+                                "type": "boolean"
+                            },
+                            "Enable ifconfig extension": {
+                                "type": "boolean"
+                            },
+                            "Enable viewcode extension": {
+                                "type": "boolean"
+                            }
+                        },
+                        "default": {
+                            "Project name": "My Document",
+                            "Author name(s)": "Your name",
+                            "Project version": "1.0",
+                            "Project release": "1.0",
+                            "Project language": "en (English)",
+                            "Separate source and build directories": true,
+                            "Use epub": true,
+                            "Enable autodoc extension": true,
+                            "Enable doctest extension": true,
+                            "Enable intersphinx extension": true,
+                            "Enable todo extension": true,
+                            "Enable coverage extension": true,
+                            "Enable imgmath extension": true,
+                            "Enable mathjax extension": true,
+                            "Enable ifconfig extension": true,
+                            "Enable viewcode extension": true
+                        },
+                        "uniqueItems": true,
+                        "markdownDescription": "%conf.sphinx.quickstart%"
+                    }
+                }
+            }
+        ],
+        "taskDefinitions": [
+            {
+                "type": "sphinx",
+                "required": [
+                    "command",
+                    "label"
+                ],
+                "properties": {
+                    "command": {
+                        "type": "string",
+                        "description": "%resttext.sphinxtask.command.desc%"
+                    },
+                    "label": {
+                        "type": "string"
+                    }
+                }
+            }
+        ]
+    },
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./",
+        "pretest": "npm run compile && npm run lint",
+        "lint": "eslint src --ext ts",
+        "test": "node ./out/test/runTest.js"
+    },
+    "devDependencies": {
+        "@types/vscode": "^1.53.0",
+        "@types/glob": "^7.1.3",
+        "@types/mocha": "^8.0.4",
+        "@types/node": "^12.11.7",
+        "eslint": "^7.15.0",
+        "@typescript-eslint/eslint-plugin": "^4.9.0",
+        "@typescript-eslint/parser": "^4.9.0",
+        "glob": "^7.1.6",
+        "mocha": "^8.1.3",
+        "typescript": "^4.1.2",
+        "vscode-test": "^1.4.1"
+    }
 }
