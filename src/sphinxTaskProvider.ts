@@ -41,7 +41,7 @@ export class SphinxTaskProvider implements vscode.TaskProvider {
     static TASK_TYPE = 'sphinx';
     static COMMAND_LIST = [
         ['Sphinx_QuickStart',   'Quick Start',                'all'],
-        ['TeX_LaunchInstaller', 'Launch Installer',           'all'],
+        ['TeX_LaunchInstaller', 'Launch TeX Installer',       'all'],
         ['Build_html',          'html [User env build]',      'all'],
         ['Build_html',          'html [Built-in build]',      'win'],
         ['Build_epub',          'epub [User env build]',      'all'],
@@ -49,7 +49,8 @@ export class SphinxTaskProvider implements vscode.TaskProvider {
         ['Build_latex',         'latex [User env build]',     'all'],
         ['Build_latex',         'latex [Built-in build]',     'win'],
         ['Build_latexpdf',      'latex pdf [User env build]', 'all'],
-        ['Build_latexpdf',      'latex pdf [Built-in build]', 'win']
+        ['Build_latexpdf',      'latex pdf [Built-in build]', 'win'],
+        ['Build_clean',         'Make Clean',                 'all']
     ]
 
     public provideTasks(): Thenable<vscode.Task[]> | undefined {
@@ -175,16 +176,16 @@ function _getQuickStartFlags(): string | undefined {
         "--language", `'${optLanguage}'`
     ]
     optSeparate? flags.push("--sep"): flags.push("--no-sep");
-    if (optEpub)        { flags.push("--epub") };
-    if (optAutodoc)     { flags.push("--ext-autodoc") };
-    if (optDoctest)     { flags.push("--ext-doctest") };
-    if (optIntersphinx) { flags.push("--ext-intersphinx") };
-    if (optTodo)        { flags.push("--ext-todo") };
-    if (optCoverage)    { flags.push("--ext-coverage") };
-    if (optImgmath)     { flags.push("--ext-imgmath") };
-    if (optMathjax)     { flags.push("--ext-mathjax") };
-    if (optIfconfig)    { flags.push("--ext-ifconfig") };
-    if (optViewcode)    { flags.push("--ext-viewcode") };
+    if (optEpub)        {flags.push("--epub")};
+    if (optAutodoc)     {flags.push("--ext-autodoc")};
+    if (optDoctest)     {flags.push("--ext-doctest")};
+    if (optIntersphinx) {flags.push("--ext-intersphinx")};
+    if (optTodo)        {flags.push("--ext-todo")};
+    if (optCoverage)    {flags.push("--ext-coverage")};
+    if (optImgmath)     {flags.push("--ext-imgmath")};
+    if (optMathjax)     {flags.push("--ext-mathjax")};
+    if (optIfconfig)    {flags.push("--ext-ifconfig")};
+    if (optViewcode)    {flags.push("--ext-viewcode")};
 
     return flags.join(" ")
 }
@@ -221,11 +222,12 @@ function _createTask(definition: vscode.TaskDefinition): vscode.Task | undefined
 
         const regRunAsBuiltin = /(\[Built-in build\])/;
         const regRunAsUserEnv = /(\[User env build\])/;
-        if (regRunAsBuiltin.exec(definition.label)) {
+        const exportType = definition.command.split("_")[1];
+
+        if (regRunAsBuiltin.exec(definition.label) || exportType == "clean") {
             const sphinxHelperExe = _getSphinxhelper();
             if (!sphinxHelperExe) { return }
 
-            const exportType = definition.command.split("_")[1];
             const makefileInfo = _getMakefileInfo();
             if (!makefileInfo) { return }
             const sourceDir = makefileInfo["SOURCEDIR"];
@@ -241,7 +243,9 @@ function _createTask(definition: vscode.TaskDefinition): vscode.Task | undefined
             );
 
         } else if (regRunAsUserEnv.exec(definition.label)) {
-            const exportType = definition.command.split("_")[1];
+            const makefileInfo = _getMakefileInfo();
+            if (!makefileInfo) { return }
+
             return new vscode.Task(
                 definition,
                 vscode.TaskScope.Workspace,

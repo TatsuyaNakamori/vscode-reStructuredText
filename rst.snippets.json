@@ -13,7 +13,7 @@
 	},
 	"figure": {
 		"prefix": "figure",
-		"body": ".. figure:: ${1:path}\n\n   $0",
+		"body": ".. figure:: ${1:path}\n   :align: ${2:|left,center,right|}\n   :alt: ${3:image01}\n   :scale: ${4:100}%\n   :target: ${5:path}\n\n   $0",
 		"description": "Figure",
 		"scope": "text.restructuredtext"
 	},

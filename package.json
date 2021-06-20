@@ -102,68 +102,68 @@
                 "command": "resttext.previewHTMLUserBuild",
                 "title": "%resttext.previewHTMLUserBuild.title%",
                 "icon": "$(preview)",
-                "when": "editorLangId == restructuredtext"
+                "when": "editorLangId==restructuredtext"
             },
             {
                 "category": "reStructuredText",
                 "command": "resttext.previewHTMLHelperBuild",
                 "title": "%resttext.previewHTMLHelperBuild.title%",
                 "icon": "$(preview)",
-                "when": "editorLangId == restructuredtext && isWindows"
+                "when": "editorLangId==restructuredtext && isWindows"
             },
             {
                 "category": "reStructuredText",
                 "command": "resttext.bold",
                 "title": "%resttext.bold.title%",
-                "when": "editorTextFocus && editorLangId == restructuredtext"
+                "when": "editorTextFocus && editorLangId==restructuredtext"
             },
             {
                 "category": "reStructuredText",
                 "command": "resttext.italic",
                 "title": "%resttext.italic.title%",
-                "when": "editorTextFocus && editorLangId == restructuredtext"
+                "when": "editorTextFocus && editorLangId==restructuredtext"
             },
             {
                 "category": "reStructuredText",
                 "command": "resttext.inlineRaw",
                 "title": "%resttext.inlineRaw.title%",
-                "when": "editorTextFocus && editorLangId == restructuredtext"
+                "when": "editorTextFocus && editorLangId==restructuredtext"
             },
             {
                 "category": "reStructuredText",
                 "command": "resttext.list",
                 "title": "%resttext.list.title%",
-                "when": "editorTextFocus && editorLangId == restructuredtext"
+                "when": "editorTextFocus && editorLangId==restructuredtext"
             },
             {
                 "category": "reStructuredText",
                 "command": "resttext.list.add",
                 "title": "%resttext.list.add.title%",
-                "when": "editorTextFocus && editorLangId == restructuredtext"
+                "when": "editorTextFocus && editorLangId==restructuredtext"
             },
             {
                 "category": "reStructuredText",
                 "command": "resttext.heading",
                 "title": "%resttext.heading.title%",
-                "when": "editorTextFocus && editorLangId == restructuredtext"
+                "when": "editorTextFocus && editorLangId==restructuredtext"
             },
             {
                 "category": "reStructuredText",
                 "command": "resttext.heading.add",
                 "title": "%resttext.heading.add.title%",
-                "when": "editorTextFocus && editorLangId == restructuredtext"
+                "when": "editorTextFocus && editorLangId==restructuredtext"
             },
             {
                 "category": "reStructuredText",
                 "command": "resttext.table.createGrid",
                 "title": "%resttext.table.createGrid.title%",
-                "when": "editorTextFocus && editorLangId == restructuredtext"
+                "when": "editorTextFocus && editorLangId==restructuredtext"
             },
             {
                 "category": "reStructuredText",
                 "command": "resttext.table.dataToTable",
                 "title": "%resttext.table.dataToTable.title%",
-                "when": "editorTextFocus && editorHasSelection && editorLangId == restructuredtext"
+                "when": "editorTextFocus && editorHasSelection && editorLangId==restructuredtext"
             },
             {
                 "category": "reStructuredText",
@@ -195,44 +195,42 @@
                 "title": "%resttext.key.shift.tab.title%",
                 "when": "resttext.shift.tab.enabled && editorTextFocus && !suggestWidgetVisible && editorLangId==restructuredtext"
             }
-
-
         ],
         "keybindings": [
             {
                 "command": "resttext.test",
                 "key": "alt+t",
-                "when": "editorTextFocus && editorLangId == restructuredtext"
+                "when": "editorTextFocus && editorLangId==restructuredtext"
             },
             {
                 "command": "resttext.bold",
                 "key": "alt+b",
-                "when": "editorTextFocus && editorLangId == restructuredtext"
+                "when": "editorTextFocus && editorLangId==restructuredtext"
             },
             {
                 "command": "resttext.italic",
                 "key": "alt+i",
-                "when": "editorTextFocus && editorLangId == restructuredtext"
+                "when": "editorTextFocus && editorLangId==restructuredtext"
             },
             {
                 "command": "resttext.inlineRaw",
                 "key": "alt+c",
-                "when": "editorTextFocus && editorLangId == restructuredtext"
+                "when": "editorTextFocus && editorLangId==restructuredtext"
             },
             {
                 "command": "resttext.list",
                 "key": "alt+l",
-                "when": "editorTextFocus && editorLangId == restructuredtext"
+                "when": "editorTextFocus && editorLangId==restructuredtext"
             },
             {
                 "command": "resttext.heading",
                 "key": "alt+h",
-                "when": "editorTextFocus && editorLangId == restructuredtext"
+                "when": "editorTextFocus && editorLangId==restructuredtext"
             },
             {
                 "command": "resttext.table.dataToTable",
                 "key": "alt+t",
-                "when": "editorTextFocus && editorHasSelection && editorLangId == restructuredtext"
+                "when": "editorTextFocus && editorHasSelection && editorLangId==restructuredtext"
             },
             {
                 "command": "resttext.key.enter",
@@ -264,27 +262,27 @@
             "commandPalette": [
                 {
                     "command": "resttext.previewHTMLUserBuild",
-                    "when": "editorLangId == restructuredtext"
+                    "when": "editorLangId==restructuredtext"
                 },
                 {
                     "command": "resttext.previewHTMLHelperBuild",
-                    "when": "editorLangId == restructuredtext && isWindows"
+                    "when": "editorLangId==restructuredtext && isWindows"
                 },
                 {
                     "command": "resttext.bold",
-                    "when": "editorLangId == restructuredtext"
+                    "when": "editorLangId==restructuredtext"
                 },
                 {
                     "command": "resttext.italic",
-                    "when": "editorLangId == restructuredtext"
+                    "when": "editorLangId==restructuredtext"
                 },
                 {
                     "command": "resttext.inlineRaw",
-                    "when": "editorLangId == restructuredtext"
+                    "when": "editorLangId==restructuredtext"
                 },
                 {
                     "command": "resttext.list",
-                    "when": "editorLangId == restructuredtext"
+                    "when": "editorLangId==restructuredtext"
                 },
                 {
                     "command": "resttext.list.add",
@@ -292,7 +290,7 @@
                 },
                 {
                     "command": "resttext.heading",
-                    "when": "editorLangId == restructuredtext"
+                    "when": "editorLangId==restructuredtext"
                 },
                 {
                     "command": "resttext.heading.add",
@@ -304,7 +302,7 @@
                 },
                 {
                     "command": "resttext.table.dataToTable",
-                    "when": "editorTextFocus && !editorHasMultipleSelections && editorHasSelection && editorLangId == restructuredtext"
+                    "when": "editorTextFocus && !editorHasMultipleSelections && editorHasSelection && editorLangId==restructuredtext"
                 },
                 {
                     "command": "resttext.key.enter",
@@ -331,18 +329,18 @@
                 {
                     "group": "1_modification",
                     "command": "resttext.table.dataToTable",
-                    "when": "editorTextFocus && !editorHasMultipleSelections && editorHasSelection && editorLangId == restructuredtext"
+                    "when": "editorTextFocus && !editorHasMultipleSelections && editorHasSelection && editorLangId==restructuredtext"
                 }
             ],
             "editor/title/run": [
                 {
                     "command": "resttext.previewHTMLUserBuild",
-                    "when": "editorLangId == restructuredtext",
+                    "when": "editorLangId==restructuredtext",
                     "group": "navigation"
                 },
                 {
                     "command": "resttext.previewHTMLHelperBuild",
-                    "when": "editorLangId == restructuredtext && isWindows",
+                    "when": "editorLangId==restructuredtext && isWindows",
                     "group": "navigation"
                 }
             ]
