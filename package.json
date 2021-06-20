@@ -437,6 +437,11 @@
                         },
                         "uniqueItems": true,
                         "markdownDescription": "%conf.sphinx.quickstart%"
+                    },
+                    "resttext.previewHTML.endTask.killTerminal": {
+                        "type": "boolean",
+                        "default": true,
+                        "markdownDescription": "%conf.previewHTML.endTask.killTerminal%"
                     }
                 }
             }

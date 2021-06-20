@@ -2,6 +2,7 @@
     "ext.description": "Language Support for reStructuredText",
 
     "conf.sphinx.quickstart": "Configure the Quick Start options. [Click here](https://www.sphinx-doc.org/en/1.4/invocation.html#invocation-of-sphinx-quickstart) to see the specifics of each property. [language options is here](https://www.sphinx-doc.org/en/1.4/config.html#confval-language)",
+    "conf.previewHTML.endTask.killTerminal": "Close the terminal when the build task is finished.",
 
     "resttext.previewHTMLUserBuild.title": "Preview HTML [User env build]",
     "resttext.previewHTMLHelperBuild.title": "Preview HTML [Built-in build]",
