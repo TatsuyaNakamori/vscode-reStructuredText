@@ -98,8 +98,15 @@ export function onDidSaveTextDocument(event: vscode.TextDocument | undefined) {
 }
 
 export function onDidEndTask(event: vscode.TaskEndEvent) {
-    vscode.commands.executeCommand("workbench.action.terminal.kill");
-    vscode.commands.executeCommand("workbench.action.closePanel");
+    const confKillTerminal = vscode.workspace.getConfiguration().get("resttext.previewHTML.endTask.killTerminal");
+    if (confKillTerminal === undefined) {
+        console.log(i18n.localize("resttext.sphinx.getconfig.error"));
+    }
+
+    if (confKillTerminal) {
+        vscode.commands.executeCommand("workbench.action.terminal.kill");
+        vscode.commands.executeCommand("workbench.action.closePanel");
+    }
 
     const regHTML = /^(html)/;
     const buildSourceName = i18n.localize("resttext.sphinxtask.build.source");
@@ -203,7 +210,7 @@ function _toWebviewFormats(webview: vscode.Webview, contents:string, buildHtmlFi
 
     const regHrefStr      = '(<.*? href="(?<!http)(?<href>[-\\w./]*)")';
     const regScriptTagStr = '(<script .*?src="(?<scriptPath>[-\\w./]*)")';
-    const regImgTagStr    = '(<img .*?(alt="(?<!http)(?<altPath>[-\\w./\\\\]*)")? .*?(src="(?<!http)(?<srcPath>[-\\w./\\\\]*)")?)';
+    const regImgTagStr    = '(<img .*?(src="(?<!http)(?<srcPath>[-\\w./\\\\]*)"))';
     const regUrlTags = new RegExp(`${regHrefStr}|${regScriptTagStr}|${regImgTagStr}`, 'g');
 
     const regHeadTag = /<head>/;
@@ -231,26 +238,11 @@ function _toWebviewFormats(webview: vscode.Webview, contents:string, buildHtmlFi
                 line = line.replace(path, linkUri.toString());
 
             } else {
-                const altPath = match.groups["altPath"];
                 const srcPath = match.groups["srcPath"];
-
-                if (altPath == srcPath) {
-                    const altWebviewUri = webview.asWebviewUri(vscode.Uri.joinPath(htmlDirUri, altPath));
-                    line = line.replace(altPath, altWebviewUri.toString());
-
-                } else if (altPath && !srcPath) {
-                    const altWebviewUri = webview.asWebviewUri(vscode.Uri.joinPath(htmlDirUri, altPath));
-                    line = line.replace(altPath, altWebviewUri.toString());
-
-                } else if (!altPath && srcPath) {
+                if (srcPath) {
                     const srcWebviewUri = webview.asWebviewUri(vscode.Uri.joinPath(htmlDirUri, srcPath));
-                    line = line.replace(srcPath, srcWebviewUri.toString());
-
-                } else {
-                    const altWebviewUri = webview.asWebviewUri(vscode.Uri.joinPath(htmlDirUri, altPath));
-                    const srcWebviewUri = webview.asWebviewUri(vscode.Uri.joinPath(htmlDirUri, srcPath));
-                    line = line.replace(altPath, altWebviewUri.toString());
-                    line = line.replace(srcPath, srcWebviewUri.toString());
+                    const regSrcPath = new RegExp(`${srcPath}`, 'g');
+                    line = line.replace(regSrcPath, srcWebviewUri.toString());
                 }
             }
         }
