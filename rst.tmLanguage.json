@@ -137,8 +137,7 @@
         },
         "string-quoted-single": {
             "name": "string.quoted.single.restructuredtext",
-            "begin": "(['](?!'{2,}))",
-            "end": "(\\1)"
+            "match": "(['](?!'{2,})).+?(['](?!'{2,}))"
         },
         "string-quoted-double": {
             "name": "string.quoted.double.restructuredtext",
