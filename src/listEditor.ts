@@ -7,7 +7,8 @@ import * as vscode from 'vscode';
 
 const REG_LIST_LINE = /^(?<indent>\s*)(?<symbol>(\(?([a-zA-Z0-9]+|#)(\.|\))|[-+*]) )?(?<word>.*)/;
 const REG_EMPTY_LINE = /^\s*$/;
-const REG_COMPLETION_TRIGGER = /^(?<indent>\s*)(?<!\s)(?<word>.*)/;
+const REG_COMPLETION_CURSOR_BEFORE = /^(?<indent>\s*)(?<word>[^\s].*)?/;
+const REG_CURSOR_AFTER_HAS_SYMBOL = /^(?<symbol>(\d+\. )|(#\. )|(\* ))(?<word>[^\s].*)?/;
 
 
 interface ListInfo {
@@ -270,7 +271,8 @@ export async function addLine(direction:("prev"|"next"), editor?:vscode.TextEdit
         } else {
             const startPos = selection.start;
             const endPos = curLineRange.end;
-            replaceRange = new vscode.Range(startPos, endPos);
+            // replaceRange = new vscode.Range(startPos, endPos);
+            replaceRange = curLineRange.end;
         }
     } else {
         replaceRange = curLineRange;
@@ -389,7 +391,7 @@ export async function outdentAction(editor?:vscode.TextEditor) {
     const word = match.groups["word"];
     if (!symbol) { return }
 
-    const newText = `${" ".repeat(newDepth)}${symbol}${word}`;
+    const newText = `\n${" ".repeat(newDepth)}${symbol}${word}`;
 
     let replaceRange = curLineRange;
     if (curLine > 0) {
@@ -410,57 +412,57 @@ export async function outdentAction(editor?:vscode.TextEditor) {
     renumbering();
 }
 
-export async function addListModifier(_triggerChar:string) {
+export async function addListModifier(triggerChar:string) {
     const editor = vscode.window.activeTextEditor;
     if (!editor) { return }
 
-    const document = editor.document;
-    let selections = editor.selections;
+    const document  = editor.document;
+    const selection = editor.selection;
+    const curLine   = selection.start.line;
+    const lineRange = document.lineAt(curLine).range;
 
-    for (let i = 0; i < selections.length; i++) {
-        const selection = selections[i];
-        const curLine   = selection.start.line;
-        const lineRange = document.lineAt(curLine).range;
-        const lineText  = document.getText(lineRange);
+    const firstChrPosition = new vscode.Position(curLine, 0);
+    const lastChrPosition = new vscode.Position(curLine, lineRange.end.character);
+    const beforeRange = new vscode.Range(firstChrPosition, selection.start);
+    const afterRange = new vscode.Range(selection.start, lastChrPosition);
 
-        let indent = "";
-        let symbol = "";
-        let word   = "";
-        const match = REG_LIST_LINE.exec(lineText);
-        if (match?.groups) {
-            indent = match.groups["indent"];
-            symbol = match.groups["symbol"];
-            word   = match.groups["word"];
-        }
+    const cursorBeforeText = document.getText(beforeRange);
+    const cursorAfterText = document.getText(afterRange);
 
-        if (!symbol) {
-            const match = REG_COMPLETION_TRIGGER.exec(lineText);
-            if (match?.groups) {
-                indent = match.groups["indent"];
-                word   = match.groups["word"];
-            }
-        }
+    let indent = "";
+    let word = "";
 
-        if (_triggerChar == "*") {
-            var insertText = `${indent}${_triggerChar} ${word}`;
-        } else {
-            var insertText = `${indent}${_triggerChar}. ${word}`;
-        }
-
-        const editOptions = {undoStopBefore: false, undoStopAfter: false};
-        await editor.edit(editBuilder => {
-            editBuilder.replace(lineRange, insertText);
-        }, editOptions);
+    const beforeMatch = REG_COMPLETION_CURSOR_BEFORE.exec(cursorBeforeText);
+    if (beforeMatch?.groups) {
+        indent = beforeMatch.groups["indent"];
     }
+
+    const afterMatch = REG_CURSOR_AFTER_HAS_SYMBOL.exec(cursorAfterText);
+    if (afterMatch?.groups) {
+        word = afterMatch.groups["word"];
+        if (!word) {
+            word = "";
+        }
+    } else {
+        word = cursorAfterText.trim();
+    }
+
+    if (triggerChar == "*") {
+        var insertText = `${indent}${triggerChar} ${word}`;
+    } else {
+        var insertText = `${indent}${triggerChar}. ${word}`;
+    }
+
+    const editOptions = {undoStopBefore: false, undoStopAfter: false};
+    await editor.edit(editBuilder => {
+        editBuilder.replace(lineRange, insertText);
+    }, editOptions);
 
     let newSelections:vscode.Selection[] = [];
-    selections = editor.selections;
-    for (let i = 0; i < selections.length; i++) {
-        const selection = selections[i];
-        newSelections.push(
-            new vscode.Selection(selection.end, selection.end)
-        )
-    }
+    const newLineRange = document.lineAt(curLine).range;
+
+    const newLastChrPosition = new vscode.Selection(newLineRange.end, newLineRange.end);
+    newSelections.push(newLastChrPosition);
     editor.selections = newSelections;
 
     renumbering();
