@@ -108,7 +108,7 @@ export function list(
     const listInfoList = [
         ["List Numbered [1. ]",   "1. ", "1"],
         ["List Numbered [#. ]",   "#. ", "#"],
-        ["List Unnumbered [* ]", "* ", "*"]
+        ["List Unnumbered [* ]",  "* ",  "*"]
     ]
 
     for (let i = 0; i < listInfoList.length; i++) {
