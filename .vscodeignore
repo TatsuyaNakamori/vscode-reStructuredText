@@ -2,7 +2,9 @@
 .vscode-test/**
 out/test/**
 src/**
+
 sphinx/python/**
+publishToGithubPages/python/**
 
 _test/
 _idea/

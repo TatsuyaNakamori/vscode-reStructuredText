@@ -10,3 +10,8 @@ sphinx/python/pyinstaller_work/build
 sphinx/python/src/__pycache__
 sphinx/python/_get_sphinx_modules.py
 sphinx/win32
+
+
+publishToGithubPages/python/pyinstaller_work/build
+publishToGithubPages/python/src/__pycache__
+publishToGithubPages/win32
