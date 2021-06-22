@@ -1,7 +1,6 @@
 import sys
 import os
 import re
-from pprint import pprint
 
 BASE_TEMPLATE = "<base href=\"{}\" charset=\"utf-8\"/>"
 BASE_URL = "https://tatsuyanakamori.github.io/vscode-reStructuredText"
@@ -10,6 +9,7 @@ BASE_URL = "https://tatsuyanakamori.github.io/vscode-reStructuredText"
 
 def main():
     # First, make a pair of full path and url of the html file
+    # like: [["c:/local/path/~/index.html", "https://~.github.io/~/index.html"]]
     pairs_of_html_url_list = []
 
     this_py_file = sys.argv[0]
@@ -34,6 +34,9 @@ def main():
                 ]
             )
 
+    # Insert the base tag after the head tag.
+    # Open the file, extract the text (contents),
+    # insert the base tag, and then write the text in the same file.
     REG_HEAD_TAG = re.compile("(<head>)")
     for html_fullpath, base_tag_href in pairs_of_html_url_list:
         with open(html_fullpath, "r", encoding="utf-8") as f:
@@ -44,20 +47,16 @@ def main():
             continue
 
         last_index = match.span()[1]
-        new_contents = "{head}\n{base_tag}{remaining_str}".format(
-            head=contents[:last_index],
+        new_contents = "{before_head}\n{base_tag}{after_head}".format(
+            before_head=contents[:last_index],
             base_tag=BASE_TEMPLATE.format(base_tag_href),
-            remaining_str=contents[last_index:]
+            after_head=contents[last_index:]
         )
 
         with open(html_fullpath, "w", encoding="utf-8") as f:
             f.write(new_contents)
 
         print(html_fullpath)
-
-
-
-
 
 
 if __name__ == '__main__':
