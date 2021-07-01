@@ -10,5 +10,6 @@
    overview
    install
    firstStep
+   donations
 
 

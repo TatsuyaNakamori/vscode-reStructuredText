@@ -1,14 +1,10 @@
-概要
-####
+更新履歴
+############
 
-| このエクステンションは、reStructuredTextの記述をサポートします。
-| このドキュメントもreStructuredTextで記述されており、 ``VSCode`` と ``reStructuredText Extention for VSCode`` の組み合わせで書かれています。
+0.0.1
+*****
 
-
-----
-
-| エクステンションは次の機能を提供します。
-| 詳細は、 :ref:`各機能の詳細` をご確認ください。
+新規リリース
 
 * スニペット (自動補完候補)
 * グラマー (文字のハイライト表示)
@@ -33,4 +29,3 @@
   * [Sphinx] make latexpdf
   * [Sphinx] make clean
   * Launch TeX Installer [Windowsのみ]
-

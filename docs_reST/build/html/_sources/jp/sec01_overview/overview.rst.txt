@@ -2,7 +2,7 @@
 ####
 
 | このエクステンションは、reStructuredTextの記述をサポートします。
-| このドキュメントもreStructuredTextで記述されており、『VSCode+エクステンション』の組み合わせで書かれています。
+| このドキュメントもreStructuredTextで記述されており、 ``VSCode`` と ``reStructuredText Extention for VSCode`` の組み合わせで書かれています。
 
 
 ----
