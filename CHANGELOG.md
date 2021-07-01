@@ -1,9 +1,10 @@
 # Change Log
 
-All notable changes to the "resttext" extension will be documented in this file.
+Please check this link for all updates.
+全ての更新履歴は、こちらのリンクからご確認ください。
 
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
+## English
+* [Release Notes]()
 
-## [Unreleased]
-
-- Initial release
+## Japanese
+* [更新履歴]()
