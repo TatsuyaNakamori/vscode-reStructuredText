@@ -30,7 +30,7 @@ export function heading(
     context: vscode.CompletionContext):(vscode.CompletionItem[]|undefined) {
 
     let triggeredChar = context.triggerCharacter;
-    if (!(headingCompletionTrigger || triggeredChar)) {
+    if (!(triggeredChar && headingCompletionTrigger)) {
         return
     }
     // triggeredChar > remapping

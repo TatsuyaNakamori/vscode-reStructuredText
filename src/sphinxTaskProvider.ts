@@ -40,17 +40,18 @@ interface MakefileInfo {
 export class SphinxTaskProvider implements vscode.TaskProvider {
     static TASK_TYPE = 'sphinx';
     static COMMAND_LIST = [
-        ['Sphinx_QuickStart',   'Quick Start',                'all'],
-        ['TeX_LaunchInstaller', 'Launch TeX Installer',       'all'],
-        ['Build_html',          'html [User env build]',      'all'],
-        ['Build_html',          'html [Built-in build]',      'win'],
-        ['Build_epub',          'epub [User env build]',      'all'],
-        ['Build_epub',          'epub [Built-in build]',      'win'],
-        ['Build_latex',         'latex [User env build]',     'all'],
-        ['Build_latex',         'latex [Built-in build]',     'win'],
-        ['Build_latexpdf',      'latex pdf [User env build]', 'all'],
-        ['Build_latexpdf',      'latex pdf [Built-in build]', 'win'],
-        ['Build_clean',         'Make Clean',                 'all']
+        ['Sphinx_QuickStart',   'Quick Start',                 'win'],
+        ['TeX_LaunchInstaller', 'Launch TeX Installer',        'win'],
+        ['Build_html',          'html [User env build]',       'all'],
+        ['Build_html',          'html [Built-in build]',       'win'],
+        ['Build_epub',          'epub [User env build]',       'all'],
+        ['Build_epub',          'epub [Built-in build]',       'win'],
+        ['Build_latex',         'latex [User env build]',      'all'],
+        ['Build_latex',         'latex [Built-in build]',      'win'],
+        ['Build_latexpdf',      'latex pdf [User env build]',  'all'],
+        ['Build_latexpdf',      'latex pdf [Built-in build]',  'win'],
+        ['Build_clean',         'Make Clean [User env build]', 'all'],
+        ['Build_clean',         'Make Clean [Built-in build]', 'win']
     ]
 
     public provideTasks(): Thenable<vscode.Task[]> | undefined {
@@ -236,7 +237,7 @@ function _createTask(definition: vscode.TaskDefinition): vscode.Task | undefined
         const regRunAsUserEnv = /(\[User env build\])/;
         const exportType = definition.command.split("_")[1];
 
-        if (regRunAsBuiltin.exec(definition.label) || exportType == "clean") {
+        if (regRunAsBuiltin.exec(definition.label)) {
             const sphinxHelperExe = _getSphinxhelper();
             if (!sphinxHelperExe) {
                 console.log("Sphinx Task::");

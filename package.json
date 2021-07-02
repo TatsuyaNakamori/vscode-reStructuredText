@@ -40,7 +40,6 @@
         "onLanguage:restructuredtext",
         "onCommand:resttext.previewHTMLUserBuild",
         "onCommand:resttext.previewHTMLHelperBuild",
-        "onCommand:resttext.test",
         "onCommand:resttext.bold",
         "onCommand:resttext.italic",
         "onCommand:resttext.inlineRaw",
@@ -163,7 +162,7 @@
                 "category": "reStructuredText",
                 "command": "resttext.table.dataToTable",
                 "title": "%resttext.table.dataToTable.title%",
-                "when": "editorTextFocus && editorHasSelection && editorLangId==restructuredtext"
+                "when": "editorTextFocus && !editorHasMultipleSelections && editorHasSelection && editorLangId==restructuredtext"
             },
             {
                 "category": "reStructuredText",
@@ -198,11 +197,6 @@
         ],
         "keybindings": [
             {
-                "command": "resttext.test",
-                "key": "alt+t",
-                "when": "editorTextFocus && editorLangId==restructuredtext"
-            },
-            {
                 "command": "resttext.bold",
                 "key": "alt+b",
                 "when": "editorTextFocus && editorLangId==restructuredtext"
@@ -223,14 +217,9 @@
                 "when": "editorTextFocus && editorLangId==restructuredtext"
             },
             {
-                "command": "resttext.heading",
-                "key": "alt+h",
-                "when": "editorTextFocus && editorLangId==restructuredtext"
-            },
-            {
                 "command": "resttext.table.dataToTable",
                 "key": "alt+t",
-                "when": "editorTextFocus && editorHasSelection && editorLangId==restructuredtext"
+                "when": "editorTextFocus && !editorHasMultipleSelections && editorHasSelection && editorLangId==restructuredtext"
             },
             {
                 "command": "resttext.key.enter",
@@ -290,7 +279,7 @@
                 },
                 {
                     "command": "resttext.heading",
-                    "when": "editorLangId==restructuredtext"
+                    "when": "never"
                 },
                 {
                     "command": "resttext.heading.add",
