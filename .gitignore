@@ -2,7 +2,7 @@ out
 dist
 node_modules
 .vscode-test/
-# *.vsix
+*.vsix
 
 sphinx/python/pyinstaller_work/build
 sphinx/python/src/__pycache__
