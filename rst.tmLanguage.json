@@ -23,7 +23,7 @@
         "comments": {
             "name": "comment.block.restructuredtext",
             "description": "end: [^(スペース から始まらない)]",
-            "begin": "(\\.\\. )",
+            "begin": "(\\.\\. ).*(?<!::)$",
             "end": "^(?!\\s)",
             "patterns": [
                 {"include": "#keyword-special"},
@@ -64,12 +64,64 @@
                     "match": "^(\\w*)::$"
                 },
                 {
+                    "name": "keyword.image.block.restructuredtext",
+                    "match": "\\.\\. image::"
+                },
+                {
+                    "name": "keyword.figure.block.restructuredtext",
+                    "match": "\\.\\. figure::"
+                },
+                {
+                    "name": "keyword.attention.block.restructuredtext",
+                    "match": "\\.\\. attention::"
+                },
+                {
                     "name": "keyword.note.block.restructuredtext",
                     "match": "\\.\\. note::"
                 },
                 {
                     "name": "keyword.warning.block.restructuredtext",
                     "match": "\\.\\. warning::"
+                },
+                {
+                    "name": "keyword.error.block.restructuredtext",
+                    "match": "\\.\\. error::"
+                },
+                {
+                    "name": "keyword.hint.block.restructuredtext",
+                    "match": "\\.\\. hint::"
+                },
+                {
+                    "name": "keyword.important.block.restructuredtext",
+                    "match": "\\.\\. important::"
+                },
+                {
+                    "name": "keyword.caution.block.restructuredtext",
+                    "match": "\\.\\. caution::"
+                },
+                {
+                    "name": "keyword.danger.block.restructuredtext",
+                    "match": "\\.\\. danger::"
+                },
+                {
+                    "name": "keyword.tip.block.restructuredtext",
+                    "match": "\\.\\. tip::"
+                },
+                {
+                    "name": "keyword.admonition.block.restructuredtext",
+                    "match": "\\.\\. admonition::"
+                },
+                {
+                    "name": "keyword.rubric.block.restructuredtext",
+                    "match": "\\.\\. rubric::"
+                },
+                {
+                    "name": "keyword.seealso.block.restructuredtext",
+                    "match": "\\.\\. seealso::"
+                },
+                {
+                    "name": "keyword.literalinclude.block.restructuredtext",
+                    "match": "\\.\\. literalinclude::"
                 },
                 {
                     "name": "keyword.toctree.block.restructuredtext",
