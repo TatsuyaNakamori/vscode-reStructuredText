@@ -7,6 +7,13 @@
    :maxdepth: 2
    :caption: Contents:
 
+   commands
+   snippet
+   grammar
+   config
+   buildTasks
    table
+   list
+   shortcuts
 
 

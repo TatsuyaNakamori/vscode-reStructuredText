@@ -27,10 +27,3 @@ Welcome to reStructuredText Extention for VSCode's documentation!
    jp/sec02_functions/index
    jp/sec03_other/index
 
-
-.. Indices and tables
-.. ******************
-
-.. * :ref:`genindex`
-.. * :ref:`modindex`
-.. * :ref:`search`

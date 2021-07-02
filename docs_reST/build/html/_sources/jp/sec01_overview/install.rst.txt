@@ -59,6 +59,7 @@ Python/ Sphinx
 
 -----
 
+.. _インストールTeX:
 
 TeX
 *****

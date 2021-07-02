@@ -5,8 +5,10 @@
    :maxdepth: 2
    :caption: Contents:
 
-   license
+   publishToGitHubPages
+   knownIssues
    issues
    releaseNotes
+   license
 
 

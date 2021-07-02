@@ -3,11 +3,16 @@
 
 このセクションでは、基本的な使い方の流れを確認します。
 
-.. seealso::
-   細かい使い方については、 :ref:`各機能の詳細` をご確認ください。
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Contents:
 
    firstStep/quickStart
+   firstStep/buildHTML
+   firstStep/buildPDF
+
+
+.. seealso::
+   細かい仕様・使い方については、 :ref:`各機能の詳細` をご確認ください。
+
