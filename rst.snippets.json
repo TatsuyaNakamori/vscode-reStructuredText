@@ -24,7 +24,7 @@
             ".. figure:: ${1:path}",
             "   :scale: ${2:100}%",
             "   :alt: ${3:image01}",
-            "   :align: ${4:|left,center,right|}",
+            "   :align: ${4|left,center,right|}",
             "   :target: ${5:path}",
             "",
             "$0"
