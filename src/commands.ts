@@ -507,6 +507,4 @@ async function _addNewLine() {
         const curPosition = editor.selection.end;
         editBuilder.insert(curPosition, "\n");
     }, editOptions);
-
-    console.log("Normal line feed [通常の改行] 2");
 }

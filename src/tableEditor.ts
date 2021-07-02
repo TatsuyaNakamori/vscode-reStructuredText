@@ -685,9 +685,6 @@ export class TableEditor {
             const insertText = this._generateTableString(cellContents, hasHeader);
             const tableRange = this._tableRange();
 
-            console.log("removeColumn::cellContents");
-            console.log(cellContents);
-
             editBuilder.replace(tableRange, insertText);
         }, editOptions);
 

@@ -16,13 +16,13 @@ import { SphinxTaskProvider } from './sphinxTaskProvider';
 let sphinxTaskDisposable: (vscode.Disposable|undefined);
 
 export function activate(context: vscode.ExtensionContext) {
-    console.log('Congratulations, your extension "resttext" is now active!');
+    console.log('Congratulations, your extension "vscode-reStructuredText" is now active!');
+    console.log('os.platform:', os.platform());
 
     // Run it once the first time.
     setContext.setContext();
 
     vscode.window.onDidChangeTextEditorSelection((event) => {
-        // console.log(event);
         setContext.setContext();
     })
 

@@ -199,7 +199,11 @@ function _createTask(definition: vscode.TaskDefinition): vscode.Task | undefined
         }
 
         const sphinxHelperExe = _getSphinxhelper();
-        if (!sphinxHelperExe) { return }
+        if (!sphinxHelperExe) {
+            console.log("Sphinx Task::");
+            console.log("Not find sphinxhelper.exe");
+            return
+        }
         const flags = _getQuickStartFlags();
         if (!flags) { return }
 
@@ -214,10 +218,18 @@ function _createTask(definition: vscode.TaskDefinition): vscode.Task | undefined
 
     } else if (definition.command.split("_")[0] == "Build") {
         // The work folder must be open in order to build
-        if (!util.getOpenedWorkfolderUri()) { return }
+        if (!util.getOpenedWorkfolderUri()) {
+            console.log("Sphinx Task::");
+            console.log("Could not get workspaceFolder.");
+            return
+        }
 
         if (definition.command.split("_")[1] == "latexpdf") {
-            if (!_existsTexliveEnvPath()) { return }
+            if (!_existsTexliveEnvPath()) {
+                console.log("Sphinx Task::");
+                console.log('PATH to texlive could not be obtained.');
+                return
+            }
         }
 
         const regRunAsBuiltin = /(\[Built-in build\])/;
@@ -226,7 +238,11 @@ function _createTask(definition: vscode.TaskDefinition): vscode.Task | undefined
 
         if (regRunAsBuiltin.exec(definition.label) || exportType == "clean") {
             const sphinxHelperExe = _getSphinxhelper();
-            if (!sphinxHelperExe) { return }
+            if (!sphinxHelperExe) {
+                console.log("Sphinx Task::");
+                console.log("Not find sphinxhelper.exe");
+                return
+            }
 
             const makefileInfo = _getMakefileInfo();
             if (!makefileInfo) { return }
@@ -258,7 +274,11 @@ function _createTask(definition: vscode.TaskDefinition): vscode.Task | undefined
 
     } else if (definition.command == "TeX_LaunchInstaller") {
         // If TeXlive is installed, there is no need to display the task.
-        if (_existsTexliveEnvPath()) { return }
+        if (_existsTexliveEnvPath()) {
+            console.log("Sphinx Task::");
+            console.log('The PATH to texlive already exists.');
+            return
+        }
 
         const texInstaller = _getTeXinstaller();
         if (!texInstaller) { return }
@@ -280,7 +300,7 @@ async function _generateTasks(): Promise<vscode.Task[]> {
 
     const taskList: vscode.Task[] = [];
     for (const commandInfo of SphinxTaskProvider.COMMAND_LIST) {
-        if (commandInfo[2] == 'all' || (commandInfo[2] == 'win' && isWindows)) {
+        if (commandInfo[2] == 'all' || (commandInfo[2]=='win' && isWindows)) {
             const _task = _createTask(
                 {
                     type: SphinxTaskProvider.TASK_TYPE,
