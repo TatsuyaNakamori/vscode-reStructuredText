@@ -1,3 +1,5 @@
+.. _クイックスタート:
+
 クイックスタート
 ################
 
@@ -23,7 +25,7 @@ Sphinxの機能である `QuickStart <https://www.sphinx-doc.org/ja/master/man/s
         :alt: reST_doc_023.png
 
      .. seealso::
-        オプションの詳細は、 `sphinx-quickstart <https://www.sphinx-doc.org/ja/master/man/sphinx-quickstart.html>`_ と、 :ref:`各機能の詳細> Settings (Config) <設定config>` をご確認ください。
+        オプションの詳細は、 `sphinx-quickstart <https://www.sphinx-doc.org/ja/master/man/sphinx-quickstart.html>`_ と、 :ref:`各機能の詳細> Settings(Config)> Sphinx Quick Start: Options <SphinxクイックスタートOptions>` をご確認ください。
 
 3. ``Terminal> Run Task...`` を選択し、次に ``sphinx> Sphinx: Quick Start`` を選択します
 
