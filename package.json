@@ -291,7 +291,7 @@
                 },
                 {
                     "command": "resttext.table.dataToTable",
-                    "when": "editorTextFocus && !editorHasMultipleSelections && editorHasSelection && editorLangId==restructuredtext"
+                    "when": "!editorHasMultipleSelections && editorHasSelection && editorLangId==restructuredtext"
                 },
                 {
                     "command": "resttext.key.enter",
