@@ -26,7 +26,8 @@ interface QuickstartOptions {
     "Enable imgmath extension": boolean,
     "Enable mathjax extension": boolean,
     "Enable ifconfig extension": boolean,
-    "Enable viewcode extension": boolean
+    "Enable viewcode extension": boolean,
+    "Enable githubpages extension": boolean
 }
 
 interface MakefileInfo {
@@ -158,6 +159,7 @@ function _getQuickStartFlags(): string | undefined {
     const optMathjax    : boolean = options["Enable mathjax extension"];
     const optIfconfig   : boolean = options["Enable ifconfig extension"];
     const optViewcode   : boolean = options["Enable viewcode extension"];
+    const optGithubpages: boolean = options["Enable githubpages extension"];
 
     // Get locale
     const langReg = /^([\w@]+)(?= \()/;
@@ -187,6 +189,7 @@ function _getQuickStartFlags(): string | undefined {
     if (optMathjax)     {flags.push("--ext-mathjax")};
     if (optIfconfig)    {flags.push("--ext-ifconfig")};
     if (optViewcode)    {flags.push("--ext-viewcode")};
+    if (optGithubpages) {flags.push("--ext-githubpages")};
 
     return flags.join(" ")
 }
