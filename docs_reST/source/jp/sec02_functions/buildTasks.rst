@@ -11,6 +11,8 @@
    :alt: reST_doc_034.png
 
 
+----------
+
 タスクの種類
 ************
 
@@ -31,12 +33,53 @@
 | Make Clean | buildフォルダのリセット(フォルダ内コンテンツの削除)) |
 +------------+------------------------------------------------------+
 
+----------
+
+使い方
+************
+
+1. ``make.bat`` ファイルが保存されているディレクトリを、ワークスペースフォルダとして開きます( ``File> Open Folder...`` )
+
+   .. figure:: ./../../_images/reST_doc_017.png
+      :scale: 100%
+      :alt: reST_doc_017.png
+
+2. ``Terminal> Run Task...`` を選択します
+
+   .. figure:: ./../../_images/reST_doc_003.png
+      :scale: 100%
+      :alt: reST_doc_003.png
+
+3. ``sphinx`` という項目を選択すると、ビルドできる項目が表示されます
+
+   * 環境によって、表示されない項目もあります。
+
+   .. figure:: ./../../_images/reST_doc_004.png
+      :scale: 100%
+      :alt: reST_doc_004.png
+
+   .. figure:: ./../../_images/reST_doc_034.png
+      :scale: 100%
+      :alt: reST_doc_034.png
+
+3. Terminalが起動し、ビルドが開始されます
+
+   .. figure:: ./../../_images/reST_doc_025.png
+      :scale: 60%
+      :alt: reST_doc_025.png
+
+4. 最後に ``Enter`` などのボタンを押し、Terminalを閉じてください
+
+
+----------
 
 [User env build]
 ****************
 
 ユーザーのマシンの環境を利用してビルドを行います。
 ご自身で環境を整えている方は、こちらのオプションを利用することを推奨します。
+
+``[Built-in build]`` の環境で提供しているもの以上にカスタマイズを行いたい場合は、ご自身で環境を整え、こちらのオプションで実行する必要があります。
 
 このオプションの項目を選択すると、PowerShellで ``./make XXX`` のコマンドが実行されます。
 
@@ -47,15 +90,44 @@
 エラーが起こった場合は、Terminalのメッセージを確認してください。
 
 
+----------
+
 [Built-in build]
 ****************
 
+(現在、Windowsのみの提供)
 
+エクステンションに同梱されている、 ``sphinxhelper.exe`` を実行させることでビルドを行うオプションです。
+ユーザーが環境を整えられなくても、必要最低限のビルドが行えるようになっています。
 
+ビルドを行うツールの環境は次の通りです。
 
++------------------+------------+
+| ツール名         | バージョン |
++==================+============+
+| Python           | 3.9.6      |
++------------------+------------+
+| Sphinx           | 4.0.2      |
++------------------+------------+
+| sphinx-rtd-theme | 0.5.2      |
++------------------+------------+
+
+pdfファイルへ変換を行いたい場合は、別途 :ref:`インストールTeX` をインストール必要があります。
+
+(もし、 ``[Built-in build]`` で導入してほしいツールがあれば、 `Issues`_ に投稿してください)
 
 
 .. note::
-   もし、トラブルが解決できない場合は、 `Issues <https://github.com/TatsuyaNakamori/vscode-reStructuredText/issues>`_ に報告してください。
+   セキュリティソフトによっては、 ``sphinxhelper.exe`` の実行に制限が加えられる可能性がありますので、このファイルの実行を許可してください。
+
+   尚、このexeファイルの元になっているファイル/プログラムは、 `GitHub <https://github.com/TatsuyaNakamori/vscode-reStructuredText/tree/master/sphinx>`_  で公開されています。
+
+----------
+
+.. note::
+   もし、トラブルが解決できない場合は、 `Issues`_ に報告してください。
    バグなどの報告はこのページからのみ受け付けています。
+
+
+.. _Issues: https://github.com/TatsuyaNakamori/vscode-reStructuredText/issues
 
