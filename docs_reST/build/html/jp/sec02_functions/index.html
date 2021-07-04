@@ -7,12 +7,14 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>各機能の詳細 &mdash; reStructuredText Extention for VSCode 2021-07-03 documentation</title>
+  <title>各機能の詳細 &mdash; reStructuredText Extention for VSCode 2021-07-05 documentation</title>
   
 
   
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
 
   
@@ -30,6 +32,7 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
@@ -99,13 +102,14 @@
 <li class="toctree-l1"><a class="reference internal" href="../sec01_overview/index.html">概要</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">各機能の詳細</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="commands.html">コマンド</a></li>
-<li class="toctree-l2"><a class="reference internal" href="snippet.html">スニペット</a></li>
-<li class="toctree-l2"><a class="reference internal" href="grammar.html">グラマー (文字のハイライト表示)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="config.html">Settings (Config)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="buildTasks.html">ビルド</a></li>
 <li class="toctree-l2"><a class="reference internal" href="table.html">テーブルの機能</a></li>
-<li class="toctree-l2"><a class="reference internal" href="list.html">リスト</a></li>
-<li class="toctree-l2"><a class="reference internal" href="shortcuts.html">キーボードショートカット (まとめ)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="list.html">リストの機能</a></li>
+<li class="toctree-l2"><a class="reference internal" href="snippet.html">スニペット</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intelliSense.html">その他、入力補助</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grammar.html">グラマー (文字のハイライト表示)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shortcuts.html">キーボードショートカット/入力補助 (まとめ)</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../sec03_other/index.html">その他</a></li>
@@ -184,16 +188,46 @@
 <li class="toctree-l1"><a class="reference internal" href="commands.html">コマンド</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="commands.html#id2">文字の修飾</a></li>
 <li class="toctree-l2"><a class="reference internal" href="commands.html#csv">CSVからテーブルへの変換</a></li>
-<li class="toctree-l2"><a class="reference internal" href="commands.html#id3">リスト記号を挿入する</a></li>
+<li class="toctree-l2"><a class="reference internal" href="commands.html#id4">リスト記号を挿入する</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="config.html">Settings (Config)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="config.html#preview-html-end-task-kill-terminal">Preview HTML &gt; End Task: Kill Terminal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html#sphinx-quick-start-options">Sphinx Quick Start: Options</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="buildTasks.html">ビルド</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="buildTasks.html#id3">タスクの種類</a></li>
+<li class="toctree-l2"><a class="reference internal" href="buildTasks.html#id4">使い方</a></li>
+<li class="toctree-l2"><a class="reference internal" href="buildTasks.html#user-env-build">[User env build]</a></li>
+<li class="toctree-l2"><a class="reference internal" href="buildTasks.html#built-in-build">[Built-in build]</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="table.html">テーブルの機能</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="table.html#id2">テーブルの作成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="table.html#id4">セルの選択の移動/ リフォーマット</a></li>
+<li class="toctree-l2"><a class="reference internal" href="table.html#id5">セル内での改行</a></li>
+<li class="toctree-l2"><a class="reference internal" href="table.html#id6">行列の追加/ 削除</a></li>
+<li class="toctree-l2"><a class="reference internal" href="table.html#id7">行列の移動</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="list.html">リストの機能</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="list.html#id2">リストの作成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="list.html#id3">次の行の挿入</a></li>
+<li class="toctree-l2"><a class="reference internal" href="list.html#id4">リストのネスト</a></li>
+<li class="toctree-l2"><a class="reference internal" href="list.html#id5">番号の再構築</a></li>
+<li class="toctree-l2"><a class="reference internal" href="list.html#id6">リストの終了</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="snippet.html">スニペット</a></li>
+<li class="toctree-l1"><a class="reference internal" href="intelliSense.html">その他、入力補助</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="intelliSense.html#id2">ヘッダー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intelliSense.html#id3">テーブル</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intelliSense.html#id4">リスト</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="grammar.html">グラマー (文字のハイライト表示)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="config.html">Settings (Config)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="buildTasks.html">ビルド</a></li>
-<li class="toctree-l1"><a class="reference internal" href="table.html">テーブルの機能</a></li>
-<li class="toctree-l1"><a class="reference internal" href="list.html">リスト</a></li>
-<li class="toctree-l1"><a class="reference internal" href="shortcuts.html">キーボードショートカット (まとめ)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="shortcuts.html">キーボードショートカット/入力補助 (まとめ)</a></li>
 </ul>
 </div>
 </div>

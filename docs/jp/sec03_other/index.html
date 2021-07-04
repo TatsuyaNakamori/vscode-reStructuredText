@@ -8,12 +8,14 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>その他 &mdash; reStructuredText Extention for VSCode 2021-07-01 documentation</title>
+  <title>その他 &mdash; reStructuredText Extention for VSCode 2021-07-05 documentation</title>
   
 
   
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
 
   
@@ -31,6 +33,7 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
@@ -40,8 +43,8 @@
     
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="ライセンス" href="license.html" />
-    <link rel="prev" title="テーブルの機能" href="../sec02_functions/table.html" /> 
+    <link rel="next" title="GitHub Pages用に制作する" href="publishToGitHubPages.html" />
+    <link rel="prev" title="キーボードショートカット/入力補助 (まとめ)" href="../sec02_functions/shortcuts.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -100,9 +103,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../sec01_overview/index.html">概要</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../sec02_functions/index.html">各機能の詳細</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">その他</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="license.html">ライセンス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="publishToGitHubPages.html">GitHub Pages用に制作する</a></li>
+<li class="toctree-l2"><a class="reference internal" href="knownIssues.html">既知の問題と今後の展望</a></li>
 <li class="toctree-l2"><a class="reference internal" href="issues.html">バグの報告</a></li>
 <li class="toctree-l2"><a class="reference internal" href="releaseNotes.html">更新履歴</a></li>
+<li class="toctree-l2"><a class="reference internal" href="license.html">ライセンス</a></li>
 </ul>
 </li>
 </ul>
@@ -177,15 +182,29 @@
 <div class="toctree-wrapper compound">
 <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="license.html">ライセンス</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="license.html#license-for-sphinx">License for Sphinx</a></li>
-<li class="toctree-l2"><a class="reference internal" href="license.html#license-for-tex-live">License for TeX Live</a></li>
-<li class="toctree-l2"><a class="reference internal" href="license.html#id2">その他、サードパーティ製ライブラリのライセンス</a></li>
+<li class="toctree-l1"><a class="reference internal" href="publishToGitHubPages.html">GitHub Pages用に制作する</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="publishToGitHubPages.html#id1">概要</a></li>
+<li class="toctree-l2"><a class="reference internal" href="publishToGitHubPages.html#id2">レイアウトが崩れる原因</a></li>
+<li class="toctree-l2"><a class="reference internal" href="publishToGitHubPages.html#id3">解決策</a></li>
+<li class="toctree-l2"><a class="reference internal" href="publishToGitHubPages.html#id4">機能</a></li>
+<li class="toctree-l2"><a class="reference internal" href="publishToGitHubPages.html#sphinxhtml">SphinxでHTMLを作成する時の注意点</a></li>
+<li class="toctree-l2"><a class="reference internal" href="publishToGitHubPages.html#id7">リンク</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="knownIssues.html">既知の問題と今後の展望</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="knownIssues.html#html-preview">HTML Preview</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="issues.html">バグの報告</a></li>
 <li class="toctree-l1"><a class="reference internal" href="releaseNotes.html">更新履歴</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="releaseNotes.html#id2">0.0.1</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">ライセンス</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="license.html#vscode-restructuredtext">vscode-reStructuredText</a></li>
+<li class="toctree-l2"><a class="reference internal" href="license.html#license-for-sphinx">License for Sphinx</a></li>
+<li class="toctree-l2"><a class="reference internal" href="license.html#license-for-tex-live">License for TeX Live</a></li>
+<li class="toctree-l2"><a class="reference internal" href="license.html#id2">その他、サードパーティ製ライブラリのライセンス</a></li>
 </ul>
 </li>
 </ul>
@@ -198,8 +217,8 @@
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="license.html" class="btn btn-neutral float-right" title="ライセンス" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="../sec02_functions/table.html" class="btn btn-neutral float-left" title="テーブルの機能" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="publishToGitHubPages.html" class="btn btn-neutral float-right" title="GitHub Pages用に制作する" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../sec02_functions/shortcuts.html" class="btn btn-neutral float-left" title="キーボードショートカット/入力補助 (まとめ)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>

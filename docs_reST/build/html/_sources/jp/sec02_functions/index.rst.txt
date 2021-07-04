@@ -8,12 +8,16 @@
    :caption: Contents:
 
    commands
-   snippet
-   grammar
    config
    buildTasks
+
    table
    list
+
+   snippet
+   intelliSense
+   grammar
+
    shortcuts
 
 

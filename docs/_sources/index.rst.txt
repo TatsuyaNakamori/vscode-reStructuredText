@@ -6,6 +6,8 @@
 Welcome to reStructuredText Extention for VSCode's documentation!
 #################################################################
 
+Latest update date of the document: [|today|]
+
 | This document is available in English and Japanese.
 | このドキュメントは英語と日本語が用意されています。
 
@@ -27,10 +29,3 @@ Welcome to reStructuredText Extention for VSCode's documentation!
    jp/sec02_functions/index
    jp/sec03_other/index
 
-
-.. Indices and tables
-.. ******************
-
-.. * :ref:`genindex`
-.. * :ref:`modindex`
-.. * :ref:`search`

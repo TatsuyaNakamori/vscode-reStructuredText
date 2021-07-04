@@ -1,6 +1,8 @@
 ライセンス
 ############
 
+vscode-reStructuredText
+***********************
 
   MIT License
 

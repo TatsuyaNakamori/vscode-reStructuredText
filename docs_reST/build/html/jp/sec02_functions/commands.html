@@ -7,12 +7,14 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>コマンド &mdash; reStructuredText Extention for VSCode 2021-07-03 documentation</title>
+  <title>コマンド &mdash; reStructuredText Extention for VSCode 2021-07-05 documentation</title>
   
 
   
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
 
   
@@ -30,6 +32,7 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
@@ -39,7 +42,7 @@
     
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="スニペット" href="snippet.html" />
+    <link rel="next" title="Settings (Config)" href="config.html" />
     <link rel="prev" title="各機能の詳細" href="index.html" /> 
 </head>
 
@@ -101,16 +104,17 @@
 <li class="toctree-l2 current"><a class="current reference internal" href="#">コマンド</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#id2">文字の修飾</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#csv">CSVからテーブルへの変換</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id3">リスト記号を挿入する</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">リスト記号を挿入する</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="snippet.html">スニペット</a></li>
-<li class="toctree-l2"><a class="reference internal" href="grammar.html">グラマー (文字のハイライト表示)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="config.html">Settings (Config)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="buildTasks.html">ビルド</a></li>
 <li class="toctree-l2"><a class="reference internal" href="table.html">テーブルの機能</a></li>
-<li class="toctree-l2"><a class="reference internal" href="list.html">リスト</a></li>
-<li class="toctree-l2"><a class="reference internal" href="shortcuts.html">キーボードショートカット (まとめ)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="list.html">リストの機能</a></li>
+<li class="toctree-l2"><a class="reference internal" href="snippet.html">スニペット</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intelliSense.html">その他、入力補助</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grammar.html">グラマー (文字のハイライト表示)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shortcuts.html">キーボードショートカット/入力補助 (まとめ)</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../sec03_other/index.html">その他</a></li>
@@ -192,11 +196,11 @@
 <p>既に修飾文字が付いている場合は、解除します。</p>
 <table class="docutils align-default">
 <colgroup>
-<col style="width: 20%" />
-<col style="width: 22%" />
-<col style="width: 21%" />
-<col style="width: 23%" />
-<col style="width: 15%" />
+<col style="width: 18%" />
+<col style="width: 31%" />
+<col style="width: 19%" />
+<col style="width: 18%" />
+<col style="width: 14%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>コマンド名</p></th>
@@ -213,7 +217,7 @@
 </div>
 </td>
 <td><div class="line-block">
-<div class="line">**Bold**</div>
+<div class="line"><strong>**</strong>Bold<strong>**</strong></div>
 <div class="line"><br /></div>
 </div>
 </td>
@@ -228,7 +232,7 @@
 </div>
 </td>
 <td><div class="line-block">
-<div class="line">alt + b</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">alt</span> <span class="pre">+</span> <span class="pre">b</span></code></div>
 <div class="line"><br /></div>
 </div>
 </td>
@@ -239,7 +243,7 @@
 </div>
 </td>
 <td><div class="line-block">
-<div class="line">*Italic*</div>
+<div class="line"><strong>*</strong>Italic<strong>*</strong></div>
 <div class="line"><br /></div>
 </div>
 </td>
@@ -254,7 +258,7 @@
 </div>
 </td>
 <td><div class="line-block">
-<div class="line">alt + i</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">alt</span> <span class="pre">+</span> <span class="pre">i</span></code></div>
 <div class="line"><br /></div>
 </div>
 </td>
@@ -265,7 +269,7 @@
 </div>
 </td>
 <td><div class="line-block">
-<div class="line">``InlineRow(Code)``</div>
+<div class="line"><strong>``</strong>InlineRow(Code)<strong>``</strong></div>
 <div class="line"><br /></div>
 </div>
 </td>
@@ -275,22 +279,22 @@
 </div>
 </td>
 <td><div class="line-block">
-<div class="line">インラインRaw(コード)</div>
-<div class="line"><br /></div>
+<div class="line">インラインRaw</div>
+<div class="line">(インラインコード)</div>
 </div>
 </td>
 <td><div class="line-block">
-<div class="line">alt + c</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">alt</span> <span class="pre">+</span> <span class="pre">c</span></code></div>
 <div class="line"><br /></div>
 </div>
 </td>
 </tr>
 </tbody>
 </table>
-</div>
 <hr class="docutils" />
+</div>
 <div class="section" id="csv">
-<h2>CSVからテーブルへの変換<a class="headerlink" href="#csv" title="Permalink to this headline">¶</a></h2>
+<span id="id3"></span><h2>CSVからテーブルへの変換<a class="headerlink" href="#csv" title="Permalink to this headline">¶</a></h2>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 29%" />
@@ -315,7 +319,7 @@
 </div>
 </td>
 <td><div class="line-block">
-<div class="line">alt + t</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">alt</span> <span class="pre">+</span> <span class="pre">t</span></code></div>
 <div class="line"><br /></div>
 </div>
 </td>
@@ -324,19 +328,22 @@
 </table>
 <p>次の手順で実行します。</p>
 <ol class="arabic">
-<li><p>テーブルに変換したい文字列を、カンマ区切りで用意する(空白が入っていても構いません。)</p>
+<li><p>テーブルに変換したい文字列を、カンマ区切りで用意する</p>
+<ul class="simple">
+<li><p>空白が入っていても構いません</p></li>
+<li><p>先頭と末尾に入っている空白は取り除かれます</p></li>
+</ul>
 <div class="figure align-default">
 <a class="reference internal image-reference" href="../../_images/reST_doc_027.png"><img alt="reST_doc_027.png" src="../../_images/reST_doc_027.png" style="width: 580.0px; height: 58.0px;" /></a>
 </div>
 </li>
 <li><p>変換したい文字列を選択します</p></li>
-<li><p>ショートカット <code class="docutils literal notranslate"><span class="pre">alt</span> <span class="pre">+</span> <span class="pre">t</span></code> もしくは <code class="docutils literal notranslate"><span class="pre">右クリック&gt;</span> <span class="pre">Convert</span> <span class="pre">data</span> <span class="pre">to</span> <span class="pre">a</span> <span class="pre">table</span></code> でコマンドを実行します。</p>
+<li><p>コマンドを実行します</p>
+<ul class="simple">
+<li><p>ショートカット <code class="docutils literal notranslate"><span class="pre">alt</span> <span class="pre">+</span> <span class="pre">t</span></code> もしくは <code class="docutils literal notranslate"><span class="pre">右クリック&gt;</span> <span class="pre">Convert</span> <span class="pre">data</span> <span class="pre">to</span> <span class="pre">a</span> <span class="pre">table</span></code> からでも実行できます</p></li>
+</ul>
 <div class="figure align-default">
 <a class="reference internal image-reference" href="../../_images/reST_doc_026.png"><img alt="reST_doc_026.png" src="../../_images/reST_doc_026.png" style="width: 506.0px; height: 134.0px;" /></a>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>※このコマンドは、Command Paletteに表示されない不具合があるため、ショートカットもしくはコンテキストメニューから実行してください。</p>
 </div>
 </li>
 <li><p>選択ダイアログの項目を選択します</p>
@@ -356,8 +363,8 @@
 </ol>
 </div>
 <hr class="docutils" />
-<div class="section" id="id3">
-<h2>リスト記号を挿入する<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id4">
+<h2>リスト記号を挿入する<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 30%" />
@@ -382,7 +389,7 @@
 </div>
 </td>
 <td><div class="line-block">
-<div class="line">alt+l</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">alt</span> <span class="pre">+</span> <span class="pre">l</span></code></div>
 <div class="line"><br /></div>
 </div>
 </td>
@@ -412,7 +419,7 @@
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="snippet.html" class="btn btn-neutral float-right" title="スニペット" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="config.html" class="btn btn-neutral float-right" title="Settings (Config)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
         <a href="index.html" class="btn btn-neutral float-left" title="各機能の詳細" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 

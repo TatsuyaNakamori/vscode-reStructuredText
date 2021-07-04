@@ -7,12 +7,14 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>テーブルの機能 &mdash; reStructuredText Extention for VSCode 2021-07-03 documentation</title>
+  <title>テーブルの機能 &mdash; reStructuredText Extention for VSCode 2021-07-05 documentation</title>
   
 
   
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
 
   
@@ -30,6 +32,7 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
@@ -39,7 +42,7 @@
     
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="リスト" href="list.html" />
+    <link rel="next" title="リストの機能" href="list.html" />
     <link rel="prev" title="ビルド" href="buildTasks.html" /> 
 </head>
 
@@ -99,12 +102,25 @@
 <li class="toctree-l1"><a class="reference internal" href="../sec01_overview/index.html">概要</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">各機能の詳細</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="commands.html">コマンド</a></li>
-<li class="toctree-l2"><a class="reference internal" href="snippet.html">スニペット</a></li>
-<li class="toctree-l2"><a class="reference internal" href="grammar.html">グラマー (文字のハイライト表示)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="config.html">Settings (Config)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="buildTasks.html">ビルド</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">テーブルの機能</a></li>
-<li class="toctree-l2"><a class="reference internal" href="list.html">リスト</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">テーブルの機能</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">テーブルの作成</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#csv">CSV からの変換</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#x">[行数]x[列数] 指定</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">セルの選択の移動/ リフォーマット</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">セル内での改行</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">行列の追加/ 削除</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">行列の移動</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="list.html">リストの機能</a></li>
+<li class="toctree-l2"><a class="reference internal" href="snippet.html">スニペット</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intelliSense.html">その他、入力補助</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grammar.html">グラマー (文字のハイライト表示)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shortcuts.html">キーボードショートカット/入力補助 (まとめ)</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../sec03_other/index.html">その他</a></li>
@@ -178,10 +194,216 @@
            <div itemprop="articleBody">
             
   <div class="section" id="id1">
-<h1>テーブルの機能<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<h1><a class="toc-backref" href="#id8">テーブルの機能</a><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="contents topic" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#id1" id="id8">テーブルの機能</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id2" id="id9">テーブルの作成</a></p>
+<ul>
+<li><p><a class="reference internal" href="#csv" id="id10">CSV からの変換</a></p></li>
+<li><p><a class="reference internal" href="#x" id="id11">[行数]x[列数] 指定</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#id4" id="id12">セルの選択の移動/ リフォーマット</a></p></li>
+<li><p><a class="reference internal" href="#id5" id="id13">セル内での改行</a></p></li>
+<li><p><a class="reference internal" href="#id6" id="id14">行列の追加/ 削除</a></p></li>
+<li><p><a class="reference internal" href="#id7" id="id15">行列の移動</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<p>テーブルの作成方法、編集方法をまとめたページです。</p>
+<p>このエクステンションは、グリッドテーブルをサポートしています。</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>行は <code class="docutils literal notranslate"><span class="pre">+----+----+</span></code> で区切ります (ヘッダー部分は <code class="docutils literal notranslate"><span class="pre">+====+====+</span></code> )</p></li>
+<li><p>列は <code class="docutils literal notranslate"><span class="pre">|</span></code> で区切ります</p></li>
+<li><p>セル内の文字は、列の <code class="docutils literal notranslate"><span class="pre">|</span></code> 記号と接しないように、最低1つの半角空白が必要です</p></li>
+</ul>
+</div></blockquote>
+<hr class="docutils" />
+<div class="section" id="id2">
+<h2><a class="toc-backref" href="#id9">テーブルの作成</a><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>テーブルの作成方法は2つあります。</p>
+<div class="section" id="csv">
+<h3><a class="toc-backref" href="#id10">CSV からの変換</a><a class="headerlink" href="#csv" title="Permalink to this headline">¶</a></h3>
+<p>カンマで区切られた文字列をテーブルに変換します。</p>
+<div class="figure align-default">
+<a class="reference internal image-reference" href="../../_images/reST_doc_027.png"><img alt="reST_doc_027.png" src="../../_images/reST_doc_027.png" style="width: 580.0px; height: 58.0px;" /></a>
+</div>
+<p>↓</p>
+<div class="figure align-default">
+<a class="reference internal image-reference" href="../../_images/reST_doc_028.png"><img alt="reST_doc_028.png" src="../../_images/reST_doc_028.png" style="width: 693.0px; height: 115.0px;" /></a>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>詳しい使い方は、 <a class="reference internal" href="commands.html#csv"><span class="std std-ref">CSVからテーブルへの変換</span></a> を参照してください。</p>
+</div>
+</div>
+<div class="section" id="x">
+<span id="id3"></span><h3><a class="toc-backref" href="#id11">[行数]x[列数] 指定</a><a class="headerlink" href="#x" title="Permalink to this headline">¶</a></h3>
+<p>エディタで、 <code class="docutils literal notranslate"><span class="pre">[行数]x[列数]</span></code> という形で入力すると、入力補助の候補が出てきます。</p>
+<div class="figure align-default">
+<a class="reference internal image-reference" href="../../_images/reST_doc_035.png"><img alt="reST_doc_035.png" src="../../_images/reST_doc_035.png" style="width: 811.0px; height: 141.0px;" /></a>
+</div>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>トリガー 文字</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">1</span></code> <code class="docutils literal notranslate"><span class="pre">2</span></code> <code class="docutils literal notranslate"><span class="pre">3</span></code> <code class="docutils literal notranslate"><span class="pre">4</span></code> <code class="docutils literal notranslate"><span class="pre">5</span></code> <code class="docutils literal notranslate"><span class="pre">6</span></code> <code class="docutils literal notranslate"><span class="pre">7</span></code> <code class="docutils literal notranslate"><span class="pre">8</span></code> <code class="docutils literal notranslate"><span class="pre">9</span></code> <code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><p>トリガー文字が入力されたときに、その直前の文字列の形が、 <code class="docutils literal notranslate"><span class="pre">[行数]x[列数]</span></code> になっていることが必要です。</p>
+<ul>
+<li><p>例: <code class="docutils literal notranslate"><span class="pre">4x9</span></code> , <code class="docutils literal notranslate"><span class="pre">10x20</span></code> など</p></li>
+</ul>
+</li>
+<li><p>ヘッダー部分の行は <code class="docutils literal notranslate"><span class="pre">[行数]</span></code> に入れません</p>
+<ul>
+<li><p>入力補助の <code class="docutils literal notranslate"><span class="pre">(Table</span> <span class="pre">with</span> <span class="pre">header)</span></code> の項目を選択すると、ヘッダー部分の行を追加で挿入します</p></li>
+</ul>
+</li>
+</ul>
+<div class="line-block">
+<div class="line">入力補助候補のいずれかを選択すると、空のテーブルが作成されます。</div>
+<div class="line">([下図] 上が <code class="docutils literal notranslate"><span class="pre">(Table</span> <span class="pre">with</span> <span class="pre">header)</span></code> ,  下が <code class="docutils literal notranslate"><span class="pre">(Table</span> <span class="pre">without</span> <span class="pre">header)</span></code> のテーブル。いずれも <code class="docutils literal notranslate"><span class="pre">2x3</span></code> のグリッド)</div>
+</div>
+<div class="figure align-default">
+<a class="reference internal image-reference" href="../../_images/reST_doc_037.png"><img alt="reST_doc_037.png" src="../../_images/reST_doc_037.png" style="width: 205.0px; height: 345.0px;" /></a>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="id4">
+<h2><a class="toc-backref" href="#id12">セルの選択の移動/ リフォーマット</a><a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line">テーブルにカーソルがある状態で、次のキーを押すことで、セルの選択の移動が可能です。</div>
+<div class="line">また、同時にリフォーマット(各セルの横幅の調整)を行います。</div>
+</div>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 39%" />
+<col style="width: 61%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>アクション</p></th>
+<th class="head"><p>キー</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>下に移動</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Enter</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>上に移動</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Shift</span> <span class="pre">+</span> <span class="pre">Enter</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>右に移動</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Tab</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>左に移動</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Shift</span> <span class="pre">+</span> <span class="pre">Tab</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr class="docutils" />
+<div class="section" id="id5">
+<h2><a class="toc-backref" href="#id13">セル内での改行</a><a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p>セル内で改行するには、セルを選択している状態で <code class="docutils literal notranslate"><span class="pre">Alt</span> <span class="pre">+</span> <span class="pre">Enter</span></code> キーを押します。</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="id6">
+<h2><a class="toc-backref" href="#id14">行列の追加/ 削除</a><a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<p>行と列を追加したり、削除することができます。</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 83%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>アクション</p></th>
+<th class="head"><p>方法</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>行を追加</p></td>
+<td><p>行の一番右端にカーソルがある状態で <code class="docutils literal notranslate"><span class="pre">Enter</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>行を削除</p></td>
+<td><p>行の一番右端に <code class="docutils literal notranslate"><span class="pre">-</span></code> を追記し、 <code class="docutils literal notranslate"><span class="pre">Enter</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>列を追加</p></td>
+<td><p>セルの区切り線( <code class="docutils literal notranslate"><span class="pre">|</span></code> )の側に <code class="docutils literal notranslate"><span class="pre">+</span></code> を追記し、<code class="docutils literal notranslate"><span class="pre">Enter</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>列を削除</p></td>
+<td><p>セルの区切り線( <code class="docutils literal notranslate"><span class="pre">|</span></code> )の側に <code class="docutils literal notranslate"><span class="pre">-</span></code> を追記し、<code class="docutils literal notranslate"><span class="pre">Enter</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr class="docutils" />
+<div class="section" id="id7">
+<h2><a class="toc-backref" href="#id15">行列の移動</a><a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<p>行と列を上下左右に移動できます。</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>アクション</p></th>
+<th class="head"><p>方法</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>行を上に移動</p></td>
+<td><p>セルの区切り線( <code class="docutils literal notranslate"><span class="pre">|</span></code> )の側に <code class="docutils literal notranslate"><span class="pre">^</span></code> を追記し、<code class="docutils literal notranslate"><span class="pre">Enter</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>行を下に移動</p></td>
+<td><p>セルの区切り線( <code class="docutils literal notranslate"><span class="pre">|</span></code> )の側に <code class="docutils literal notranslate"><span class="pre">v</span></code> を追記し、<code class="docutils literal notranslate"><span class="pre">Enter</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>列を右に移動</p></td>
+<td><p>セルの区切り線( <code class="docutils literal notranslate"><span class="pre">|</span></code> )の側に <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> を追記し、<code class="docutils literal notranslate"><span class="pre">Enter</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>列を左に移動</p></td>
+<td><p>セルの区切り線( <code class="docutils literal notranslate"><span class="pre">|</span></code> )の側に <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> を追記し、<code class="docutils literal notranslate"><span class="pre">Enter</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p><code class="docutils literal notranslate"><span class="pre">^</span></code> <code class="docutils literal notranslate"><span class="pre">v</span></code> <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> を複数回入力すると、その分移動します。
+例えば、 <code class="docutils literal notranslate"><span class="pre">^^^</span></code> と入力して <code class="docutils literal notranslate"><span class="pre">Enter</span></code> キーを押すと、3行分上に移動します。</p>
+<hr class="docutils" />
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<ul class="simple">
+<li><p>現状、セルが結合されているテーブルには対応していません(ビルドはできます)</p></li>
+<li><p>テーブルにカーソルがある状態で <code class="docutils literal notranslate"><span class="pre">Enter</span></code> や <code class="docutils literal notranslate"><span class="pre">Tab</span></code> キーなどが押されると、全てのセルが分割された状態にリフォーマットされてしまいます</p></li>
+<li><p>結合したセルを持つテーブルを編集したい場合…</p>
+<ol class="arabic simple">
+<li><p>全てのセルが分割された状態で、セルの中身を編集します(結合する部分は空白にしておきます)</p></li>
+<li><p>編集が終わった後に、手動でセルを結合します</p></li>
+<li><p>セルの結合の編集が終わったら、カーソルをテーブルの外に持っていきます</p>
+<ul>
+<li><p>この時、 <code class="docutils literal notranslate"><span class="pre">Enter</span></code> や <code class="docutils literal notranslate"><span class="pre">Tab</span></code> キーなどを押さないようにしてください</p></li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>もし、トラブルが解決できない場合は、 <a class="reference external" href="https://github.com/TatsuyaNakamori/vscode-reStructuredText/issues">Issues</a> に報告してください。バグなどの報告はこのページからのみ受け付けています。</p>
+</div>
 </div>
 </div>
 
@@ -191,7 +413,7 @@
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="list.html" class="btn btn-neutral float-right" title="リスト" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="list.html" class="btn btn-neutral float-right" title="リストの機能" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
         <a href="buildTasks.html" class="btn btn-neutral float-left" title="ビルド" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
