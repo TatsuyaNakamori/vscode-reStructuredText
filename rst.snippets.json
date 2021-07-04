@@ -38,6 +38,15 @@
         "description": "Link",
         "scope": "text.restructuredtext"
     },
+    "link target": {
+        "prefix": "linktarget",
+        "body": [
+            "`${1:Title}`_",
+            ".. _${1:Title}: ${2:http://link}"
+        ],
+        "description": "Link target",
+        "scope": "text.restructuredtext"
+    },
     "attention": {
         "prefix": "attention",
         "body": [
