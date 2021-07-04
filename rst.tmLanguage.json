@@ -126,6 +126,10 @@
                 {
                     "name": "keyword.toctree.block.restructuredtext",
                     "match": "\\.\\. toctree::"
+                },
+                {
+                    "name": "keyword.contents.block.restructuredtext",
+                    "match": "\\.\\. contents::"
                 }
             ]
         },

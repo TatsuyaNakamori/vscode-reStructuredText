@@ -181,7 +181,7 @@
     },
     "doc": {
         "prefix": "doc",
-        "body": ":doc:`/${1:text}` $0",
+        "body": ":doc:`${1:/DOC}` $0",
         "description": "Doc reference",
         "scope": "text.restructuredtext"
     },
@@ -203,7 +203,7 @@
     },
     "download": {
         "prefix": "download",
-        "body": ":download:`${1:Title} <${2:path}>` $0",
+        "body": ":download:`${1:Title} <${2:PATH}>` $0",
         "description": "Download",
         "scope": "text.restructuredtext"
     },
@@ -265,9 +265,20 @@
             "   :maxdepth: ${1:2}",
             "   :caption: ${2:Contents:}",
             "",
-            "   $0"
+            "$0"
         ],
         "description": "Literal Include",
+        "scope": "text.restructuredtext"
+    },
+    "contents": {
+        "prefix": "contents",
+        "body": [
+            ".. contents:: ${1:Title}",
+            "   :depth: ${2:2}",
+            "",
+            "$0"
+        ],
+        "description": "Contents",
         "scope": "text.restructuredtext"
     }
 }
