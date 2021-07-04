@@ -6,7 +6,10 @@ block_cipher = None
 
 
 a = Analysis(['..\\src\\main.py'],
-             pathex=['E:\\Dropbox\\projects\\VisualStudioCode\\extensions\\reStructuredText\\resttext\\sphinx\\python\\pyinstaller_work\\'],
+             pathex=[
+               '..\\pyinstaller_work',
+               '..\\src'
+            ],
              binaries=[],
              datas=[],
              hiddenimports=[
