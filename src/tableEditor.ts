@@ -226,7 +226,7 @@ export class TableEditor {
 
         // Various regular expressions
         const regContentsLine = /^(\+)?\|.+\|(\+)?$/;
-        const regCellContents = /(?<=\|(\+|-)?([<>^v])*) (?<content>[^|]*?) (?=([<>^v])*(\+|-)?\|)/g;
+        const regCellContents = /(?<=\|(\+|-)?([<>^v])*) (?<content>([^|]|(\*\|\*)|(\`\|\`))*?) (?=([<>^v])*(\+|-)?\|)/g;
 
         let curLineKind:("contents"|undefined);
         const cellContents:string[][] = [];
@@ -450,7 +450,8 @@ export class TableEditor {
         }
 
         // Get Column Index (match.index)
-        const regCellContents = /(?<=\|)(?<cell> [^|]* )(?=\|)/g;
+        const regCellContents = /(?<=\|)(?<cell> ([^|]|(\*\|\*)|(\`\|\`))* )(?=\|)/g;
+
         let curColumn = 0;
         let match;
         while (match = regCellContents.exec(lineText)) {
