@@ -335,7 +335,7 @@ export async function addHeading(_triggerChar:string) {
                 const strCount = util.countTextWidth(lineText);
 
                 if (strCount > 5) {
-                    insertText = `${_triggerChar.repeat(strCount)}\n\n`;
+                    insertText = `${_triggerChar.repeat(strCount)}\n`;
                 }
             }
         }
