@@ -1,8 +1,9 @@
 テーブルの機能
 ###############
 
-.. contents::
-   :depth: 3
+.. contents:: このページの目次
+   :depth: 2
+   :local:
 
 
 テーブルの作成方法、編集方法をまとめたページです。
@@ -50,7 +51,7 @@ CSV からの変換
 エディタで、 ``[行数]x[列数]`` という形で入力すると、入力補助の候補が出てきます。
 
 .. figure:: ./../../_images/reST_doc_035.png
-   :scale: 100%
+   :scale: 75%
    :alt: reST_doc_035.png
 
 +-------------------------------------------------------------+
@@ -72,7 +73,7 @@ CSV からの変換
 | ([下図] 上が ``(Table with header)`` ,  下が ``(Table without header)`` のテーブル。いずれも ``2x3`` のグリッド)
 
 .. figure:: ./../../_images/reST_doc_037.png
-   :scale: 100%
+   :scale: 75%
    :alt: reST_doc_037.png
 
 

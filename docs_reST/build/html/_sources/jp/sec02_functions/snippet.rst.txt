@@ -1,8 +1,9 @@
 スニペット
 #######################
 
-トリガー文字を入力すると、スニペットの候補が表示されます。
-スニペットを挿入すると、プレースホルダ文字のハイライト表示や選択の切り替えができます。
+`スニペット`_ は、コードパターンを簡単に入力できるようにするテンプレートです。
+
+トリガー文字を入力すると、入力候補が表示されます。
 
 +----------------+-----------------------------------------------------+
 | トリガー       | 挿入文字                                            |
@@ -73,5 +74,8 @@
 
 
 .. note::
-   このエクステンションで提供している `スニペット <https://code.visualstudio.com/docs/editor/userdefinedsnippets>`_ で、改善要望がある場合は、`Issues <https://github.com/TatsuyaNakamori/vscode-reStructuredText/issues>`_ から報告してください。
+   このエクステンションで提供している `スニペット`_ で、改善要望がある場合は、`Issues <https://github.com/TatsuyaNakamori/vscode-reStructuredText/issues>`_ から報告してください。
+
+
+.. _スニペット: https://code.visualstudio.com/docs/editor/userdefinedsnippets
 

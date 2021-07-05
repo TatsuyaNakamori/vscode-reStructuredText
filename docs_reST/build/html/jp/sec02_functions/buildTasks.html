@@ -104,8 +104,8 @@
 <li class="toctree-l2"><a class="reference internal" href="commands.html">コマンド</a></li>
 <li class="toctree-l2"><a class="reference internal" href="config.html">Settings (Config)</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">ビルド</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id3">タスクの種類</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id4">使い方</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">タスクの種類</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">使い方</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#user-env-build">[User env build]</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#built-in-build">[Built-in build]</a></li>
 </ul>
@@ -190,13 +190,22 @@
             
   <div class="section" id="id1">
 <span id="id2"></span><h1>ビルド<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="contents local topic" id="id3">
+<p class="topic-title">このページの目次</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#id4" id="id6">タスクの種類</a></p></li>
+<li><p><a class="reference internal" href="#id5" id="id7">使い方</a></p></li>
+<li><p><a class="reference internal" href="#user-env-build" id="id8">[User env build]</a></p></li>
+<li><p><a class="reference internal" href="#built-in-build" id="id9">[Built-in build]</a></p></li>
+</ul>
+</div>
 <p>ビルド機能を使うと、これまでコマンドプロントを立ち上げて行っていたビルド処理をVSCodeから行うことができます。</p>
 <div class="figure align-default">
 <a class="reference internal image-reference" href="../../_images/reST_doc_034.png"><img alt="reST_doc_034.png" src="../../_images/reST_doc_034.png" style="width: 601.0px; height: 257.0px;" /></a>
 </div>
 <hr class="docutils" />
-<div class="section" id="id3">
-<h2>タスクの種類<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id4">
+<h2><a class="toc-backref" href="#id6">タスクの種類</a><a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>各タスクは、 <code class="docutils literal notranslate"><span class="pre">[User</span> <span class="pre">env</span> <span class="pre">build]</span></code> と <code class="docutils literal notranslate"><span class="pre">[Built-in</span> <span class="pre">build]</span></code> が用意されています。</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">[Built-in</span> <span class="pre">build]</span></code> は、現状Windowsのみの対応です。</p></li>
@@ -231,8 +240,8 @@
 </table>
 </div>
 <hr class="docutils" />
-<div class="section" id="id4">
-<h2>使い方<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id5">
+<h2><a class="toc-backref" href="#id7">使い方</a><a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
 <li><p><code class="docutils literal notranslate"><span class="pre">make.bat</span></code> ファイルが保存されているディレクトリを、ワークスペースフォルダとして開きます( <code class="docutils literal notranslate"><span class="pre">File&gt;</span> <span class="pre">Open</span> <span class="pre">Folder...</span></code> )</p>
 <div class="figure align-default">
@@ -267,7 +276,7 @@
 </div>
 <hr class="docutils" />
 <div class="section" id="user-env-build">
-<h2>[User env build]<a class="headerlink" href="#user-env-build" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id8">[User env build]</a><a class="headerlink" href="#user-env-build" title="Permalink to this headline">¶</a></h2>
 <p>ユーザーのマシンの環境を利用してビルドを行います。
 ご自身で環境を整えている方は、こちらのオプションを利用することを推奨します。</p>
 <p><code class="docutils literal notranslate"><span class="pre">[Built-in</span> <span class="pre">build]</span></code> の環境で提供しているもの以上にカスタマイズを行いたい場合は、ご自身で環境を整え、こちらのオプションで実行する必要があります。</p>
@@ -283,7 +292,7 @@
 </div>
 <hr class="docutils" />
 <div class="section" id="built-in-build">
-<h2>[Built-in build]<a class="headerlink" href="#built-in-build" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id9">[Built-in build]</a><a class="headerlink" href="#built-in-build" title="Permalink to this headline">¶</a></h2>
 <p>(現在、Windowsのみの提供)</p>
 <p>エクステンションに同梱されている、 <code class="docutils literal notranslate"><span class="pre">sphinxhelper.exe</span></code> を実行させることでビルドを行うオプションです。
 ユーザーが環境を整えられなくても、必要最低限のビルドが行えるようになっています。</p>
