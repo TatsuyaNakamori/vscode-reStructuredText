@@ -3,6 +3,10 @@
 Settings (Config)
 ##################
 
+.. contents:: このページの目次
+   :depth: 2
+   :local:
+
 
 Settings(Config)画面を開き( ``File> Preferences> Settings`` )、 ``Extensions> reStructuredText`` を選択します
 

@@ -1,6 +1,11 @@
 コマンド
 #########
 
+.. contents:: このページの目次
+   :depth: 2
+   :local:
+
+
 コマンドは、Command Palette( ``Ctrl+Shift+P`` )、もしくはショートカットキーから実行可能です。
 
 
