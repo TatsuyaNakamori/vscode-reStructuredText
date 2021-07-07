@@ -323,7 +323,7 @@
             "patterns": [
                 {
                     "name": "support.function.markup.roles.restructuredtext",
-                    "match": "(^|\\s+)\\:\\w+\\:(?=`)"
+                    "match": "\\:\\w+\\:(?=`)"
                 }
             ]
         },
