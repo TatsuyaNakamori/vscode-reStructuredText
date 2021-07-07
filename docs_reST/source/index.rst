@@ -20,6 +20,7 @@ Latest update date of the document: [|today|]
 
    en/sec01_overview/index
    en/sec02_functions/index
+   en/sec03_other/index
 
 .. toctree::
    :maxdepth: 2

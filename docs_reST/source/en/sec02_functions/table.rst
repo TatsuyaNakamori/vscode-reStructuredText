@@ -1,7 +1,7 @@
 テーブルの機能
 ###############
 
-.. contents:: このページの目次
+.. contents:: Table of contents for this page
    :depth: 2
    :local:
 
@@ -40,13 +40,13 @@ CSV からの変換
    :alt: reST_doc_028.png
 
 .. seealso::
-   詳しい使い方は、 :ref:`CSVからテーブルへの変換` を参照してください。
+   詳しい使い方は、 :ref:`CSV2TableConversion` を参照してください。
 
 
-.. _行数x列数指定:
+.. _SpecifyRowsColumns:
 
-[行数]x[列数] 指定
-==================
+Specify [rows] x [columns]
+==========================
 
 エディタで、 ``[行数]x[列数]`` という形で入力すると、入力補助の候補が出てきます。
 

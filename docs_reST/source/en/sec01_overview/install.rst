@@ -1,34 +1,37 @@
-インストール
+Installation
 ############
 
-このエクステンションは、極力インストールの手間をかけずに利用できるように設計されていますが、ユーザー自身で環境を整えることで、全てのreStructuedTextとSphinxの機能を使用することができます。
-(一部、Windowsのみの提供になります)
 
-+-----------------------------+-----------------------------------------+-------------------------------------+
-|                             | Windows                                 | Mac/ Linux                          |
-+=============================+=========================================+=====================================+
-|| reStructuredText Extention || 必要                                   || 必要                               |
-|| for VSCode                 || VSCodeからインストール                 || VSCodeからインストール             |
-|| (このエクステンション)     ||                                        ||                                    |
-+-----------------------------+-----------------------------------------+-------------------------------------+
-|| Python/ Sphinx             || エクステンションに組み込み済。         || 必要                               |
-||                            || 必要最低限の機能の使用であれば、       ||                                    |
-||                            || インストールは必要ありません。         ||                                    |
-||                            || * Sphinxのカスタマイズを行う場合は、   ||                                    |
-||                            || ご自身で環境を整えることを推奨します。 ||                                    |
-+-----------------------------+-----------------------------------------+-------------------------------------+
-|| TeX                        || pdfに書き出すときは必要                || pdfに書き出すときは必要            |
-||                            || [Taskからインストーラーの起動が可能]   || [ご自身でインストールしてください] |
-+-----------------------------+-----------------------------------------+-------------------------------------+
+This extension is designed to be used with as little installation effort as possible, but users can use all reStructuredText and Sphinx features by setting up their own environment.
+(Some of these features are only available for Windows.)
+
+
++-----------------------------+-----------------------------------------------------+----------------------------------+
+|                             | Windows                                             | Mac/ Linux                       |
++=============================+=====================================================+==================================+
+|| reStructuredText extention || Required.                                          || Required.                       |
+|| for VSCode                 || Install from VSCode                                || Install from VSCode             |
+|| (This extension)           ||                                                    ||                                 |
++-----------------------------+-----------------------------------------------------+----------------------------------+
+|| Python/ Sphinx             || Already built into the extension.                  || Necessary                       |
+||                            || No installation is required                        ||                                 |
+||                            || for minimal functionality.                         ||                                 |
+||                            || * If you want to customize Sphinx,                 ||                                 |
+||                            || we recommend that you set up your own environment. ||                                 |
++-----------------------------+-----------------------------------------------------+----------------------------------+
+|| TeX                        || Required for exporting to pdf.                     || Required for exporting to pdf.  |
+||                            || [You can start the installer from Task]            || [Please install it by yourself] |
++-----------------------------+-----------------------------------------------------+----------------------------------+
+
+
 
 -----
 
+Extension
+*********
 
-エクステンション
-****************
-
-[全てのOS共通]
-  * Visual Studio CodeのExtensionsから、"\ **reStructuredText**\ "と検索し、インストールします。
+[Common to all OS]
+  * From Extensions in Visual Studio Code, search for "\ **reStructuredText**\" and install it.
 
 
 -----
@@ -37,53 +40,54 @@
 Python/ Sphinx
 **************
 
-| 既にPythonやSphinxをインストールされている方は、ご自身の環境をご使用ください。
-| Windowsの方は、エクステンションに組み込まれているものがありますので、必要最低限の機能の使用であれば、インストールは必要ありません。
-| Sphinxなどの環境のカスタマイズを行う場合は、ご自身で環境を整えることを推奨します。
+| If you already have Python or Sphinx installed, please use your own environment.
+| For Windows, there are extensions that are built in. So, if you are using the minimum required functions, you do not need to install them.
+| If you want to customize the environment for Sphinx or other applications, we recommend that you set up your own environment.
 
-[Windows (エクステンションの組み込みを使う場合)]
-  1. VSCodeのメニューの [Terminal> Run Task] を選択する
-  2. 画面上部に出てくるダイアログから、[sphinx] を選択する
-  3. [Quick Start] や [Build: html [Built-in build]] などの項目が表示されるので、実行したいタスクを選択する
+[Windows (When using the built-in extensions)]
+  1) Select ``Terminal> Run Task`` from the VSCode menu.
+  2) Select ``sphinx`` from the dialog box that appears at the top of the screen.
+  3) Select the task you want to execute from the list of items such as ``Quick Start`` and ``Build: html [Built-in build]`` .
+
 
 [Mac/ Linux/ Windows(自身で環境を整える方)]
-  * `Python <https://www.python.org/downloads/>`_ をインストール
-  * Sphinxをpipインストール
-  * 必要に応じて、`sphinx-rtd-theme <https://sphinx-rtd-theme.readthedocs.io/en/stable/>`_ などのテーマをインストール
+  * Install `Python <https://www.python.org/downloads/>`_.
+  * Pip install Sphinx.
+  * Install themes, such as `sphinx-rtd-theme <https://sphinx-rtd-theme.readthedocs.io/en/stable/>`_, if needed.
 
 .. note::
-   エクステンションのタスクを使ってビルドなどを行う場合、VSCodeで開いているフォルダをワークディレクト  リとして、 ``make html`` などのコマンドが実行されます。
-   この時、仮想環境を指定する機能は無いため、グローバル環境を使用することになります。
-   (PATHを仮想環境のディレクトリに通しておけば、使える可能性はあります)
+   When you use an extension task to build or do other tasks, commands such as ``make html`` will be executed using the folder open in VSCode as the work directory.
+   At this time, there is no function to specify the virtual environment, so the global environment will be used.
+   (If you pass the PATH to the virtual environment directory, you may be able to use it.)
 
 
 -----
 
-.. _インストールTeX:
+.. _InstallTeX:
 
 TeX
 *****
 
-| pdfファイルを書き出す際に必要です。
-| 既にインストールされている方は、ご自身の環境を使用していただいて構いません。
+| This is required for exporting pdf files.
+| If you have already installed TeX, you may use your own environment.
 
-| Windowsの方は、TaskメニューからTeXのインストーラーを起動することができます。
-| 起動するインストーラーのバージョンは **TeX Live 2021** になります。
+| For Windows users, you can launch the TeX installer from the Task menu.
+| The version of the installer to be launched is **TeX Live 2021** .
 
 .. warning::
-   TeX Liveのインストールは1-2時間程度かかるので、時間の余裕のある時に行ってください
+   The installation of TeX Live will take about 1-2 hours, so please do it when you have time to spare.
 
 [Windows]
-  1. VSCodeのメニューの [Terminal> Run Task] を選択する
-  2. 画面上部に出てくるダイアログから、[sphinx> Launch TeX Installer] を選択する
-  3. インストーラーが起動するので、インストーラーの指示に従ってインストールを行う
+  1) Select ``Terminal> Run Task`` from the VSCode menu.
+  2) From the dialog box that appears at the top of the screen, select ``sphinx> Launch TeX Installer`` .
+  3) When the installer starts, follow the instructions of the installer to install.
 
-  * もし、TeXの別のバージョンをインストールしたい場合は、ご自身でインストーラーをダウンロードし、インストールを行ってください。
+  * If you want to install a different version of TeX, please download and install the installer yourself.
 
-    * TeX Liveのインストーラーは、 `こちら <http://www.tug.org/texlive/acquire-netinstall.html>`_ からダウンロードできます。
+    * You can download the installer for TeX Live from `here <http://www.tug.org/texlive/acquire-netinstall.html>`_.
 
 [Mac/ Linux]
-  * ご自身でインストールしてください。
-  * インターネットで、[TeX install]と検索すると情報が出てきます。
-  * TeX Liveのインストーラーは、 `こちら <http://www.tug.org/texlive/acquire-netinstall.html>`_ からダウンロードできます。
+  * Please install it by yourself.
+  * You can find more information on the Internet by searching for [TeX install].
+  * You can download the installer for TeX Live from `here <http://www.tug.org/texlive/acquire-netinstall.html>`_.
 

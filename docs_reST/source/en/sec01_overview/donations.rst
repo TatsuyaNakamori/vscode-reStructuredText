@@ -1,8 +1,8 @@
-.. _寄付:
+.. _Donation:
 
-寄付のお願い
-############
+Request for Donations
+#####################
 
-もしこのツールを使ったことによってあなたの制作時間が短縮できたなら、ツール開発に対する寄付をお願いします。
+If this tool saves you time, please donate to the development of the tool.
 
 * `GitHub Sponsor <https://github.com/sponsors/TatsuyaNakamori>`_

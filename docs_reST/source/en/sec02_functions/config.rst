@@ -1,9 +1,9 @@
-.. _設定config:
+.. _SettingConfig:
 
 Settings (Config)
 ##################
 
-.. contents:: このページの目次
+.. contents:: Table of contents for this page
    :depth: 2
    :local:
 
@@ -33,12 +33,12 @@ Preview HTML > End Task: Kill Terminal
 
 -----
 
-.. _SphinxクイックスタートOptions:
+.. _SphinxQuickStartOptions:
 
 Sphinx Quick Start: Options
 ***************************
 
-Taskの :ref:`クイックスタート` 機能を使用する時のオプションです。
+Taskの :ref:`QuickStart` 機能を使用する時のオプションです。
 
 +---------------------------------------+-------------------------------------------+------------------+
 | オプション名                          | 意味                                      | デフォルト値     |

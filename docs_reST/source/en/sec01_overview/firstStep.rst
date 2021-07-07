@@ -1,7 +1,7 @@
-最初の一歩
-##########
+The First Step
+##############
 
-このセクションでは、基本的な使い方の流れを確認します。
+In this section, we will review the basic usage flow.
 
 
 .. toctree::
@@ -14,5 +14,5 @@
 
 
 .. seealso::
-   細かい仕様・使い方については、 :ref:`各機能の詳細` をご確認ください。
+   For detailed specifications and usage, see :ref:`DetailsOfEachFeature`.
 

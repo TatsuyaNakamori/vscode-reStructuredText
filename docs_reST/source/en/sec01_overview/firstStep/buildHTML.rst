@@ -1,67 +1,66 @@
-HTMLへのビルド/ プレビュー機能
-##############################
+Build to HTML / Preview
+***********************
 
-このエクステンションは、テキストエディタの横に、HTMLのプレビューを表示させることができます。
-また、プレビューモードが有効な状態でファイルを保存すると、自動的にビルドが開始され、ビューが更新されます。
+This extension allows you to display a preview of the HTML next to the text editor.
+Also, when you save a file with the preview mode enabled, it will automatically start building and update the view.
 
 .. figure:: ./../../../_images/reST_doc_012.png
    :scale: 50%
    :alt: reST_doc_012.png
 
+Procedure
+*********
 
-手順
-*****
-
-1. rst形式のファイルを選択し、開きます
+1. Select and open a file in rst format
 
    .. figure:: ./../../../_images/reST_doc_007.png
       :scale: 100%
       :alt: reST_doc_007.png
 
-2. パネルの右上に表示される、三角形マークをクリックします
+2. Click on the triangle symbol that appears in the upper right corner of the panel
 
    .. figure:: ./../../../_images/reST_doc_019.png
       :scale: 100%
       :alt: reST_doc_019.png
 
-3. ``Preview HTML [Built-in build]`` (現在、Windowsのみの対応)と ``Preview HTML [User env build]`` のアイテムが出てくるので、いずれかを選択します
+3. Select one of the following items: ``Preview HTML [Built-in build]`` (currently only available on Windows) or ``Preview HTML [User env build]`` .
 
    .. figure:: ./../../../_images/reST_doc_008.png
       :scale: 100%
       :alt: reST_doc_008.png
 
-   * ``[Built-in build]`` :  エクステンションに同梱されている実行ファイルを用いてビルドを行います(現在、Windowsのみの対応)
-   * ``[User env build]`` :  ユーザーのマシンにインストールされているSphinxの環境を用いてビルドを行います
+   * ``[Built-in build]`` :  Build using the executable file included with the extension
+   * ``[User env build]`` :  Build using the Sphinx environment installed on the user's machine.
 
      .. seealso::
-        詳細は :ref:`ビルド` を参照してください
+        See :ref:`Build` for details.
 
-3. ビルドが実行されると、Terminalに実行状況が表示され、終了すると自動的に閉じます
-4. エディタの右側に、ビルドされたHTMLがプレビューされます
+3. When the build is executed, the execution status will be displayed in the Terminal, which will automatically close when it is finished.
+4. On the right side of the editor, you will see a preview of the built HTML
 
 
-自動更新
-********
+Automatic Updates
+*****************
 
-1. rstファイルの内容を変更し、保存します
+1. Change the contents of the rst file and save it
 
-   * 自動的にビルドが始まり、プレビュー画面が更新されます
+   * The build will start automatically and the preview screen will be updated
 
-2. ビルドやプレビューを終了する時は、プレビュー画面のパネルを閉じてください
+2. Close the preview screen panel when exiting the build or preview
 
 
 ----
 
 .. note::
-   ``Preview HTML [Built-in build]`` の実行には、 ``sphinxhelper.exe`` という、エクステンションに同梱されているファイルが実行されます。セキュリティソフトによっては制限が加えられる可能性がありますので、このファイルの実行を許可してください。
+   Running ``Preview HTML [Built-in build]`` will execute the file ``sphinxhelper.exe`` , which is included with the extension. Please allow the execution of this file, as it may be restricted by your security software.
 
-   尚、このexeファイルの元になっているファイル/プログラムは、 `GitHub <https://github.com/TatsuyaNakamori/vscode-reStructuredText/tree/master/sphinx>`_  で公開されています。
+   The original file/program of this exe file is available on `GitHub <https://github.com/TatsuyaNakamori/vscode-reStructuredText/tree/master/sphinx>`_ .
 
 
 .. seealso::
-   * :ref:`既知の問題> HTML Preview <既知の問題htmlPreview>`
-       既知の問題や、将来的に改善される可能性がある項目がまとめられています。
+   * :ref:`Known Issues> HTML Preview <KnownIssuesHtmlPreview>`
+       Known problems and items that could be improved in the future are summarized.
 
-   * :ref:`各機能の詳細> Settings (Config) <設定config>`
-       ビルドが実行し終えた後に、Terminalを閉じないオプションがあります。
+   * :ref:`Details of each function> Settings (Config) <SettingConfig>`
+       There is an option to not close the Terminal after the build is finished running.
 

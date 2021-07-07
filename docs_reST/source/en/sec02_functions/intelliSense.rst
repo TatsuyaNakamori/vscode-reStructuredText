@@ -1,7 +1,7 @@
 その他、入力補助
 #######################
 
-.. contents:: このページの目次
+.. contents:: Table of contents for this page
    :depth: 2
    :local:
 
@@ -72,7 +72,7 @@
 
 
 .. seealso::
-   詳しい説明は、 :ref:`行数x列数指定` を参照してください
+   詳しい説明は、 :ref:`SpecifyRowsColumns` を参照してください
 
 
 --------
@@ -95,7 +95,7 @@
 
 
 .. seealso::
-   詳しい説明は、 :ref:`リストの作成` を参照してください
+   詳しい説明は、 :ref:`CreatingList` を参照してください
 
 
 --------

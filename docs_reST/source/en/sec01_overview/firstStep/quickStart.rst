@@ -1,35 +1,35 @@
-.. _クイックスタート:
+.. _QuickStart:
 
-クイックスタート
+Quick Start
 ################
 
-Sphinxの機能である `QuickStart <https://www.sphinx-doc.org/ja/master/man/sphinx-quickstart.html>`_  を、Taskから実行させることができます。
+You can run `Quick Start <https://www.sphinx-doc.org/ja/master/man/sphinx-quickstart.html>`_ , a feature of Sphinx, from Task.
 
-(※現在、Windowsのみの提供です)
+(This is currently only available for Windows)
 
-手順
-*****
+Procedure
+*********
 
-1. **中身が空のディレクトリ** を、ワークスペースフォルダとして開きます( ``File> Open Folder...`` )
+1. Open **an empty directory** as a workspace folder( ``File> Open Folder...`` )
 
    .. figure:: ./../../../_images/reST_doc_001.png
       :scale: 100%
       :alt: reST_doc_001.png
 
-2. Config(Settings)画面を開き( ``File> Preferences> Settings`` )、Settings画面から ``Extensions> reStructuredText`` を選択します
+2. Open the Config(Settings) screen ( ``File> Preferences> Settings`` ) and select ``Extensions> reStructuredText`` from the Settings screen
 
-   * ``Sphinx Quick Start: Options`` の項目を適宜書き換えます
+   * Rewrite the ``Sphinx Quick Start: Options`` section accordingly.
 
      .. figure:: ./../../../_images/reST_doc_023.png
         :scale: 100%
         :alt: reST_doc_023.png
 
      .. seealso::
-        オプションの詳細は、 `sphinx-quickstart <https://www.sphinx-doc.org/ja/master/man/sphinx-quickstart.html>`_ と、 :ref:`各機能の詳細> Settings(Config)> Sphinx Quick Start: Options <SphinxクイックスタートOptions>` をご確認ください。
+        For more information about the options, see `sphinx-quickstart <https://www.sphinx-doc.org/ja/master/man/sphinx-quickstart.html>`_ and :ref:`Details of each feature> Settings(Config)> Sphinx Quick Start: Options <SphinxQuickStartOptions>`.
 
-3. ``Terminal> Run Task...`` を選択し、次に ``sphinx> Sphinx: Quick Start`` を選択します
+3. Select ``Terminal> Run Task... and then select ``sphinx> Sphinx: Quick Start`` .
 
-   * ``sphinx> Sphinx: Quick Start`` が出てこない場合は、ワークスペースフォルダが空でない可能性があります。また、OSが対応していない可能性があります。
+   * If you do not see ``sphinx> Sphinx: Quick Start`` , your workspace folder may not be empty. Also, your OS may not support it.
 
    .. figure:: ./../../../_images/reST_doc_003.png
       :scale: 100%
@@ -44,24 +44,24 @@ Sphinxの機能である `QuickStart <https://www.sphinx-doc.org/ja/master/man/s
       :alt: reST_doc_006.png
 
 
-4. QuickStartが実行され、各種ファイルが生成されます
+4. QuickStart will be executed and various files will be generated.
 
    .. figure:: ./../../../_images/reST_doc_017.png
       :scale: 100%
       :alt: reST_doc_017.png
 
-   * 上図は、Config(Settings)の設定の ``Separate source and build directories`` の項目を ``true`` にし、sourceとbuildのディレクトリを分けて作成しています。
+   * The above figure shows how to create separate source and build directories by setting the ``Separate source and build directories`` item to ``true`` in Config(Settings).
 
-5. 問題なく作成されたら、 ``Enter`` などのキーを打ち、Terminalを閉じてください
+5. When the file is created successfully, hit ``Enter`` or similar key to close the Terminal.
 
    .. figure:: ./../../../_images/reST_doc_005.png
       :scale: 100%
       :alt: reST_doc_005.png
 
-   * エラーが起こった場合は、Terminalのメッセージを確認してください
+   * If an error occurs, please check the Terminal message
 
 
 .. note::
-   sphinxのTaskの実行には、 ``sphinxhelper.exe`` という、エクステンションに同梱されているファイルが実行されます。セキュリティソフトによっては制限が加えられる可能性がありますので、このファイルの実行を許可してください。
+   The execution of the sphinx Task will execute ``sphinxhelper.exe`` , a file included with the extension. Please allow this file to run, as it may be restricted by some security software.
 
-   尚、このexeファイルの元になっているファイル/プログラムは、 `GitHub <https://github.com/TatsuyaNakamori/vscode-reStructuredText/tree/master/sphinx>`_  で公開されています。
+   The file/program from which this exe file is derived is available on `GitHub <https://github.com/TatsuyaNakamori/vscode-reStructuredText/tree/master/sphinx>`_ .

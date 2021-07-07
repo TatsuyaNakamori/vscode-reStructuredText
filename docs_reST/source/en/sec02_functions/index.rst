@@ -1,7 +1,8 @@
-.. _各機能の詳細:
+.. _DetailsOfEachFeature:
 
-各機能の詳細
-#############
+Details of each feature
+#######################
+
 
 .. toctree::
    :maxdepth: 2

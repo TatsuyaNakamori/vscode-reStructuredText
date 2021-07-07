@@ -1,41 +1,41 @@
-概要
-####
+Overview
+########
 
-| このエクステンションは、reStructuredTextの記述をサポートします。
-| このドキュメントもreStructuredTextで記述されており、 ``VSCode`` と ``reStructuredText Extention for VSCode`` の組み合わせで書かれています。
+| This extension supports writing in reStructuredText.
+| This document is also written in reStructuredText, which is a combination of ``VSCode`` and ``reStructuredText Extention for VSCode`` .
 
 ----
 
-| エクステンションは次の機能を提供します。
-| 詳細は、 :ref:`各機能の詳細` をご確認ください。
+| The extension provides the following features
+| For more information, see :ref:`DetailsOfEachFeature`.
 
-* コマンド
+* Command
 
-  * ボールド
-  * イタリック
-  * インラインRaw
-  * CSV形式のテキストからグリッドテーブルの作成
-  * リストの記号の挿入
+  * Bold
+  * Italic
+  * Inline Raw
+  * Create grid tables from text in CSV format
+  * Inserting symbols in a list
 
-* 入力補助
+* Input aids
 
-  * リスト
-  * テーブル [グリッドテーブル]
+  * Lists
+  * Table [Grid Table].
 
-* スニペット
-* IntelliSense (その他、自動補完候補)
+* Snippets
+* IntelliSense (and other auto-completion candidates)
 
-  * ヘッダー
-  * リスト (先頭の記号の挿入)
-  * テーブル (新規テーブルの作成)
+  * Headers
+  * Lists (Insert leading symbols)
+  * Tables (create a new table)
 
-* グラマー (文字のハイライト表示)
-* タスク
+* Grammer (highlighting text)
+* Tasks
 
   * [Sphinx] Quick Start
-  * Launch TeX Installer [Windowsのみ]
+  * Launch TeX Installer [Windows only].
 
-* タスク(ビルド)
+* Tasks (build)
 
   * [Sphinx] make html
   * [Sphinx] make epub

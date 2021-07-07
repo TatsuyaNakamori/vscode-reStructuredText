@@ -1,27 +1,30 @@
-PDFへのビルド
+Build to PDF
 ##############
 
-PDFやepubへの変換は、 ``Terminal> Run Task...`` から行います。(HTMLへの変換もできます)
+Conversion to PDF or epub can be done from ``Terminal> Run Task...`` (You can also convert to HTML from this menu).
 
-ここでは、PDFファイルへの変換方法を見ていきます。
 
-準備
-*****
+In this section, we will see how to convert it to a PDF file.
 
-PDFに変換するには、 ``TeX`` が必要です。 :ref:`インストール>TeX <インストールTeX>` を参照し、 **TeX Live 2021** のインストールを行ってください。
 
-手順
-*****
+Preparation
+***********
 
-1. ``make.bat`` ファイルが保存されているディレクトリを、ワークスペースフォルダとして開きます( ``File> Open Folder...`` )
+To convert to PDF, you will need ``TeX`` . See :ref:`Installation>TeX <InstallTeX>` to install **TeX Live 2021** .
+
+
+Procedure
+*********
+
+1. Open the directory where the ``make.bat`` file is stored as a workspace folder( ``File> Open Folder...`` )
 
    .. figure:: ./../../../_images/reST_doc_017.png
       :scale: 100%
       :alt: reST_doc_017.png
 
-2. ``Terminal> Run Task...`` を選択し、次に ``sphinx> Build: latex pdf [User env build]`` もしくは  ``sphinx> Build: latex pdf [Built-in build]`` を選択します
+2. Select ``Terminal> Run Task...`` and then select ``sphinx> Build: latex pdf [User env build]`` or ``sphinx> Build: latex pdf [Built-in build]`` .
 
-   * ``[User env build]`` はユーザーのマシン環境を使用し、 ``[Built-in build]`` はエクステンションに組み込まれた実行ファイルを使用してビルドします。
+   * The ``[User env build]`` builds using the user's machine environment, and the ``[Built-in build]`` builds using the executable built into the extension.
 
    .. figure:: ./../../../_images/reST_doc_003.png
       :scale: 100%
@@ -35,17 +38,17 @@ PDFに変換するには、 ``TeX`` が必要です。 :ref:`インストール>
       :scale: 100%
       :alt: reST_doc_024.png
 
-3. Terminalが起動し、pdfファイルへの変換が開始されます
+3. Terminal will be launched and the conversion to pdf file will be started
 
    .. figure:: ./../../../_images/reST_doc_025.png
       :scale: 60%
       :alt: reST_doc_025.png
 
-4. 問題なければ ``Enter`` などのボタンを押し、Terminalを閉じてください
+4. If everything is OK, press ``Enter`` or similar button to close the Terminal.
 
 ----
 
 .. note::
-   ``Preview HTML [Built-in build]`` の実行には、 ``sphinxhelper.exe`` という、エクステンションに同梱されているファイルが実行されます。セキュリティソフトによっては制限が加えられる可能性がありますので、このファイルの実行を許可してください。
+   The ``[Built-in build]`` will execute the file ``sphinxhelper.exe``, which is included with the extension. Please allow the execution of this file, as it may be restricted by some security software.
 
-   尚、このexeファイルの元になっているファイル/プログラムは、 `GitHub <https://github.com/TatsuyaNakamori/vscode-reStructuredText/tree/master/sphinx>`_  で公開されています。
+   The original file/program of this exe file is available on `GitHub <https://github.com/TatsuyaNakamori/vscode-reStructuredText/tree/master/sphinx>`_.

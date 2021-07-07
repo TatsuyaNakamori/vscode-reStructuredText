@@ -1,79 +1,76 @@
-コマンド
+Commands
 #########
 
-.. contents:: このページの目次
+.. contents:: Table of contents for this page
    :depth: 2
    :local:
 
 
-コマンドは、Command Palette( ``Ctrl+Shift+P`` )、もしくはショートカットキーから実行可能です。
+Commands can be executed from the Command Palette ( ``Ctrl+Shift+P`` ) or from shortcut keys.
 
 
-文字の修飾
-**********
+Character decoration
+********************
 
-次のコマンドは、文字を選択してから実行すると、選択文字の両端に修飾文字を追加します。文字が選択されていない場合は、修飾文字のみ作成します。
+The following command, when executed after a character is selected, adds a modifier character to both ends of the selected character.
+If the character is not selected, only the modifier character will be created.
 
-既に修飾文字が付いている場合は、解除します。
+If the character already has a modifier character, it will be removed.
 
 
-+---------------------+------------------------------------+----------------------+---------------------+----------------+
-| コマンド名          | 修飾                               | 実行結果             | 意味                | ショートカット |
-+=====================+====================================+======================+=====================+================+
-|| Bold               || **\*\***\ Bold\ **\*\***          || **Bold**            || より強い強調       || ``alt + b``   |
-|| (太字)             ||                                   ||                     ||                    ||               |
-+---------------------+------------------------------------+----------------------+---------------------+----------------+
-|| Italic             || **\***\ Italic\ **\***            || *Italic*            || 強調               || ``alt + i``   |
-|| (斜体)             ||                                   ||                     ||                    ||               |
-+---------------------+------------------------------------+----------------------+---------------------+----------------+
-|| InlineRow(Code)    || **\``**\ InlineRow(Code)\ **\``** || ``InlineRow(Code)`` || インラインRaw      || ``alt + c``   |
-|| (インラインコード) ||                                   ||                     || (インラインコード) ||               |
-+---------------------+------------------------------------+----------------------+---------------------+----------------+
++-----------------+-----------------------------------+---------------------+-------------------+-------------+
+| Command         | Decoration                        | Execution result    | Meaning           | Shortcut    |
++=================+===================================+=====================+===================+=============+
+| Bold            | **\*\***\ Bold\ **\*\***          | **Bold**            | Stronger emphasis | ``alt + b`` |
++-----------------+-----------------------------------+---------------------+-------------------+-------------+
+| Italic          | **\***\ Italic\ **\***            | *Italic*            | Emphasis          | ``alt + i`` |
++-----------------+-----------------------------------+---------------------+-------------------+-------------+
+| InlineRow(Code) | **\``**\ InlineRow(Code)\ **\``** | ``InlineRow(Code)`` | Inline Row        | ``alt + c`` |
++-----------------+-----------------------------------+---------------------+-------------------+-------------+
 
 -----
 
-.. _CSVからテーブルへの変換:
+.. _CSV2TableConversion:
 
-CSVからテーブルへの変換
+CSV to Table Conversion
 ***********************
 
-+--------------------------+-------------------------------------------------+----------------+
-| コマンド名               | 意味                                            | ショートカット |
-+==========================+=================================================+================+
-|| Convert data to a table || カンマで区切られた文字列からテーブルを作成する || ``alt + t``   |
-|| (データを表に変換)      ||                                                ||               |
-+--------------------------+-------------------------------------------------+----------------+
++-------------------------+----------------------------------------------+-------------+
+| Command                 | Meaning                                      | Shortcut    |
++=========================+==============================================+=============+
+| Convert data to a table | Create a table from a comma-separated string | ``alt + t`` |
++-------------------------+----------------------------------------------+-------------+
 
-次の手順で実行します。
+Follow the steps below.
 
-1. テーブルに変換したい文字列を、カンマ区切りで用意する
+1. Prepare a comma-separated list of strings to be converted into a table
 
-   * 空白が入っていても構いません
-   * 先頭と末尾に入っている空白は取り除かれます
+   * Spaces are acceptable.
+   * Leading and trailing whitespace will be stripped.
 
    .. figure:: ./../../_images/reST_doc_027.png
       :scale: 100%
       :alt: reST_doc_027.png
 
-2. 変換したい文字列を選択します
-3. コマンドを実行します
+2. Select the string to be converted
+3. Execute the command
 
-   * ショートカット ``alt + t`` もしくは ``右クリック> Convert data to a table`` からでも実行できます
+   * You can do this by using the shortcut ``alt + t`` or ``right-click> Convert data to a table`` .
 
    .. figure:: ./../../_images/reST_doc_026.png
       :scale: 100%
       :alt: reST_doc_026.png
 
-4. 選択ダイアログの項目を選択します
+4. Select an item in the selection dialog
 
-   * ``With Header`` : ヘッダー行を作ります
-   * ``Without Header`` : ヘッダー行を作りません
+   * ``With Header`` : Create a header line
+   * ``Without Header`` : Do not create a header line
 
    .. figure:: ./../../_images/reST_doc_029.png
       :scale: 100%
       :alt: reST_doc_029.png
 
-5. グリッドテーブルへ変換されます
+5. Convert to grid table
 
    .. figure:: ./../../_images/reST_doc_028.png
       :scale: 100%
@@ -81,8 +78,9 @@ CSVからテーブルへの変換
 
 -----
 
-リスト記号を挿入する
-********************
+Inserting a list symbol
+***********************
+
 
 +----------------------------+------------------------------------------------+----------------+
 | コマンド名                 | 意味                                           | ショートカット |

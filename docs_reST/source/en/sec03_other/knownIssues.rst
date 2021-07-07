@@ -1,7 +1,7 @@
 既知の問題と今後の展望
 ######################
 
-.. _既知の問題htmlPreview:
+.. _KnownIssuesHtmlPreview:
 
 HTML Preview
 ************

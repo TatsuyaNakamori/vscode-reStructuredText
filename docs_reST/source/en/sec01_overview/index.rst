@@ -1,7 +1,8 @@
-概要
-####
+Overview
+########
 
-このセクションでは、このエクステンションの概要・インストール方法・簡潔な使い方を見ていきます。
+In this section, we will look at the overview, installation, and concise usage of this extension.
+
 
 .. toctree::
    :maxdepth: 2

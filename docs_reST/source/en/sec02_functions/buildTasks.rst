@@ -1,13 +1,13 @@
-.. _ビルド:
+.. _Build:
 
-ビルド
-###############
+Build
+######
 
-.. contents:: このページの目次
+.. contents:: Table of contents for this page
    :depth: 2
    :local:
 
-ビルド機能を使うと、これまでコマンドプロントを立ち上げて行っていたビルド処理をVSCodeから行うことができます。
+Using the build function, you can perform the build process from VSCode, which used to be done by launching a command pronto.
 
 
 .. figure:: ./../../_images/reST_doc_034.png
@@ -17,46 +17,46 @@
 
 ----------
 
-タスクの種類
+Type of task
 ************
 
-* 各タスクは、 ``[User env build]`` と ``[Built-in build]`` が用意されています。
-* ``[Built-in build]`` は、現状Windowsのみの対応です。
+* Each task is available as ``[User env build]`` and ``[Built-in build]`` .
+* ``[Built-in build]`` is currently only supported on Windows.
 
-+------------+------------------------------------------------------+
-| Task       | 説明                                                 |
-+============+======================================================+
-| epub       | epubへ変換                                           |
-+------------+------------------------------------------------------+
-| html       | HTMLへ変換                                           |
-+------------+------------------------------------------------------+
-| latex      | latexへ変換                                          |
-+------------+------------------------------------------------------+
-| latex pdf  | PDFへ変換                                            |
-+------------+------------------------------------------------------+
-| Make Clean | buildフォルダのリセット(フォルダ内コンテンツの削除)) |
-+------------+------------------------------------------------------+
++------------+-------------------------------------------------------------+
+| Task       | Description                                                 |
++============+=============================================================+
+| epub       | Convert to epub                                             |
++------------+-------------------------------------------------------------+
+| html       | Convert to HTML                                             |
++------------+-------------------------------------------------------------+
+| latex      | Convert to latex                                            |
++------------+-------------------------------------------------------------+
+| latex pdf  | Convert to PDF                                              |
++------------+-------------------------------------------------------------+
+| Make Clean | Reset the build folder (delete the contents of the folder)) |
++------------+-------------------------------------------------------------+
 
 ----------
 
-使い方
+How to use
 ************
 
-1. ``make.bat`` ファイルが保存されているディレクトリを、ワークスペースフォルダとして開きます( ``File> Open Folder...`` )
+1. Open the directory where the ``make.bat`` file is stored as a workspace folder( ``File> Open Folder...`` )
 
    .. figure:: ./../../_images/reST_doc_017.png
       :scale: 100%
       :alt: reST_doc_017.png
 
-2. ``Terminal> Run Task...`` を選択します
+2. Select ``Terminal> Run Task...`` .
 
    .. figure:: ./../../_images/reST_doc_003.png
       :scale: 100%
       :alt: reST_doc_003.png
 
-3. ``sphinx`` という項目を選択すると、ビルドできる項目が表示されます
+3. Selecting the ``sphinx`` item will show you the items you can build
 
-   * 環境によって、表示されない項目もあります。
+   * Some items may not be displayed depending on the environment
 
    .. figure:: ./../../_images/reST_doc_004.png
       :scale: 100%
@@ -66,13 +66,13 @@
       :scale: 100%
       :alt: reST_doc_034.png
 
-3. Terminalが起動し、ビルドが開始されます
+3. The Terminal will start and the build will begin
 
    .. figure:: ./../../_images/reST_doc_025.png
       :scale: 60%
       :alt: reST_doc_025.png
 
-4. 最後に ``Enter`` などのボタンを押し、Terminalを閉じてください
+4. Finally, press ``Enter`` or similar button to close the Terminal
 
 
 ----------
@@ -80,57 +80,57 @@
 [User env build]
 ****************
 
-ユーザーのマシンの環境を利用してビルドを行います。
-ご自身で環境を整えている方は、こちらのオプションを利用することを推奨します。
+Build using the environment of the user's machine.
+If you have your own environment, we recommend you to use this option.
 
-``[Built-in build]`` の環境で提供しているもの以上にカスタマイズを行いたい場合は、ご自身で環境を整え、こちらのオプションで実行する必要があります。
+If you want to customize it beyond what is provided in the ``[Built-in build]`` environment, you will need to set up your own environment and run it with this option.
 
-このオプションの項目を選択すると、PowerShellで ``./make XXX`` のコマンドが実行されます。
+Selecting this optional item will cause PowerShell to execute the command ``. /make XXX`` command will be executed in PowerShell.
 
-  * ``./make XXX`` の ``XXX`` の部分には、 ``html`` ``epub`` ``latex`` ``latexpdf`` ``clean`` のいずれかが入ります
-  * カレントディレクトリ(ワークディレクトリ)は、VSCodeのワークスペースフォルダになります
+  * The ``XXX`` part of ``. /make XXX`` where ``XXX`` is one of ``html`` ``epub`` ``latex`` ``latexpdf`` ``clean`` .
+  * The current directory (work directory) will be the workspace folder of VSCode
 
-各種環境パスが適切に通っていることが必要です。
-エラーが起こった場合は、Terminalのメッセージを確認してください。
-
+.. note::
+   The various environment paths must be properly passed.
+   If an error occurs, please check the Terminal message.
 
 ----------
 
 [Built-in build]
 ****************
 
-(現在、Windowsのみの提供)
+(Currently available for Windows only)
 
-エクステンションに同梱されている、 ``sphinxhelper.exe`` を実行させることでビルドを行うオプションです。
-ユーザーが環境を整えられなくても、必要最低限のビルドが行えるようになっています。
+The option to build by running ``sphinxhelper.exe`` , which is included in the extension.
+It is designed to do the minimum required build even if the user is not able to set up the environment.
 
-ビルドを行うツールの環境は次の通りです。
+The environment for the build tool is as follows.
 
-+------------------+------------+
-| ツール名         | バージョン |
-+==================+============+
-| Python           | 3.9.6      |
-+------------------+------------+
-| Sphinx           | 4.0.2      |
-+------------------+------------+
-| sphinx-rtd-theme | 0.5.2      |
-+------------------+------------+
++------------------+---------+
+| Tool Name        | Version |
++==================+=========+
+| Python           | 3.9.6   |
++------------------+---------+
+| Sphinx           | 4.0.2   |
++------------------+---------+
+| sphinx-rtd-theme | 0.5.2   |
++------------------+---------+
 
-pdfファイルへ変換を行いたい場合は、別途 :ref:`インストールTeX` をインストール必要があります。
+If you want to convert to pdf files, you need to install :ref:`InstallTeX` separately.
 
-(もし、 ``[Built-in build]`` で導入してほしいツールがあれば、 `Issues`_ に投稿してください)
+(If you have a tool you would like to see implemented in ``[Built-in build]`` , please post it in the `Issues`_ section.)
 
 
 .. note::
-   セキュリティソフトによっては、 ``sphinxhelper.exe`` の実行に制限が加えられる可能性がありますので、このファイルの実行を許可してください。
+   Some security software may place restrictions on the execution of ``sphinxhelper.exe`` , so please allow this file to run.
 
-   尚、このexeファイルの元になっているファイル/プログラムは、 `GitHub <https://github.com/TatsuyaNakamori/vscode-reStructuredText/tree/master/sphinx>`_  で公開されています。
+   The original file/program of this exe file is available on `GitHub <https://github.com/TatsuyaNakamori/vscode-reStructuredText/tree/master/sphinx>`_ .
 
 ----------
 
 .. note::
-   もし、トラブルが解決できない場合は、 `Issues`_ に報告してください。
-   バグなどの報告はこのページからのみ受け付けています。
+   If you cannot solve a problem, please report it to `Issues`_.
+   Bugs and other reports are only accepted from this page.
 
 
 .. _Issues: https://github.com/TatsuyaNakamori/vscode-reStructuredText/issues
