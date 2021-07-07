@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>リストの機能 &mdash; reStructuredText Extention for VSCode 2021-07-05 documentation</title>
+  <title>リストの機能 &mdash; reStructuredText Extention for VSCode 2021-07-08 documentation</title>
   
 
   
@@ -96,7 +96,8 @@
               <p class="caption"><span class="caption-text">Contents (English):</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../en/sec01_overview/index.html">Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../en/sec02_functions/index.html">Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../en/sec02_functions/index.html">Details of each feature</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../en/sec03_other/index.html">その他</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Contents (Japanese):</span></p>
 <ul class="current">
@@ -107,11 +108,11 @@
 <li class="toctree-l2"><a class="reference internal" href="buildTasks.html">ビルド</a></li>
 <li class="toctree-l2"><a class="reference internal" href="table.html">テーブルの機能</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">リストの機能</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id2">リストの作成</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id3">次の行の挿入</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id4">リストのネスト</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id5">番号の再構築</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id6">リストの終了</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">リストの作成</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">次の行の挿入</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">リストのネスト</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">番号の再構築</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">リストの終了</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="snippet.html">スニペット</a></li>
@@ -191,19 +192,15 @@
            <div itemprop="articleBody">
             
   <div class="section" id="id1">
-<h1><a class="toc-backref" href="#id7">リストの機能</a><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
-<div class="contents topic" id="contents">
-<p class="topic-title">Contents</p>
+<h1>リストの機能<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="contents local topic" id="id2">
+<p class="topic-title">このページの目次</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="#id1" id="id7">リストの機能</a></p>
-<ul>
-<li><p><a class="reference internal" href="#id2" id="id8">リストの作成</a></p></li>
-<li><p><a class="reference internal" href="#id3" id="id9">次の行の挿入</a></p></li>
-<li><p><a class="reference internal" href="#id4" id="id10">リストのネスト</a></p></li>
-<li><p><a class="reference internal" href="#id5" id="id11">番号の再構築</a></p></li>
-<li><p><a class="reference internal" href="#id6" id="id12">リストの終了</a></p></li>
-</ul>
-</li>
+<li><p><a class="reference internal" href="#id3" id="id9">リストの作成</a></p></li>
+<li><p><a class="reference internal" href="#id5" id="id10">次の行の挿入</a></p></li>
+<li><p><a class="reference internal" href="#id6" id="id11">リストのネスト</a></p></li>
+<li><p><a class="reference internal" href="#id7" id="id12">番号の再構築</a></p></li>
+<li><p><a class="reference internal" href="#id8" id="id13">リストの終了</a></p></li>
 </ul>
 </div>
 <p>テーブルの作成方法、編集方法をまとめたページです。</p>
@@ -232,8 +229,8 @@
 </tbody>
 </table>
 <hr class="docutils" />
-<div class="section" id="id2">
-<h2><a class="toc-backref" href="#id8">リストの作成</a><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id3">
+<span id="id4"></span><h2><a class="toc-backref" href="#id9">リストの作成</a><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
 <p>エディタで、 次のトリガー文字を入力すると、入力補助の候補が出てきます。
 項目を選択すると、先頭に記号が挿入されます。</p>
 <table class="docutils align-default">
@@ -254,14 +251,14 @@
 </div>
 </div>
 <hr class="docutils" />
-<div class="section" id="id3">
-<h2><a class="toc-backref" href="#id9">次の行の挿入</a><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
-<p>1行目を書き終えた後で、 <code class="docutils literal notranslate"><span class="pre">Enter</span></code> ボタンを押すと、次の行に同じ記号が挿入されます。
-直接数字を入力する方式( <code class="docutils literal notranslate"><span class="pre">1.</span></code> )の場合は、次の数字にインクリメントされた状態で挿入されます。</p>
+<div class="section" id="id5">
+<h2><a class="toc-backref" href="#id10">次の行の挿入</a><a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p>1行目を書き終えた後で、 <code class="docutils literal notranslate"><span class="pre">Enter</span></code> ボタンを押すと、次の行に新しい項目が追加されます( <code class="docutils literal notranslate"><span class="pre">Shift</span> <span class="pre">+</span> <span class="pre">Enter</span></code> で上の行に項目が追加されます)。</p>
+<p>直接数字を入力する方式( <code class="docutils literal notranslate"><span class="pre">1.</span></code> )の場合は、次の数字にインクリメントされた状態で挿入されます。</p>
 </div>
 <hr class="docutils" />
-<div class="section" id="id4">
-<h2><a class="toc-backref" href="#id10">リストのネスト</a><a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id6">
+<h2><a class="toc-backref" href="#id11">リストのネスト</a><a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>リストの行にカーソルがある状態で、 <code class="docutils literal notranslate"><span class="pre">Tab</span></code> ボタンを押すと、リストのネストを行うことができます。</p>
 <ul>
@@ -272,8 +269,8 @@
 </ul>
 </div>
 <hr class="docutils" />
-<div class="section" id="id5">
-<h2><a class="toc-backref" href="#id11">番号の再構築</a><a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id7">
+<h2><a class="toc-backref" href="#id12">番号の再構築</a><a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>直接数字を入力する方式( <code class="docutils literal notranslate"><span class="pre">1.</span></code> )のリストの場合、新しいリストの行を追加するタイミングで番号が再構築されます。(数字を順に並びます)</p></li>
 <li><p>一番先頭の番号は書き変わらないので、1以外の数値からのリストを作ることもできます。</p></li>
@@ -284,8 +281,8 @@
 </div>
 </div>
 <hr class="docutils" />
-<div class="section" id="id6">
-<h2><a class="toc-backref" href="#id12">リストの終了</a><a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id8">
+<h2><a class="toc-backref" href="#id13">リストの終了</a><a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
 <p>リストの記号のみ存在する行で <code class="docutils literal notranslate"><span class="pre">Enter</span></code> ボタンを押すと、リストを終了することができます。</p>
 <p>例えば、あるリストの行を編集後に、2回連続で <code class="docutils literal notranslate"><span class="pre">Enter</span></code> ボタンを押すと、リストの編集を終えることができます。</p>
 <hr class="docutils" />

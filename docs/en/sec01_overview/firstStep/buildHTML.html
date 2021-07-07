@@ -1,0 +1,313 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <base href="https://tatsuyanakamori.github.io/vscode-reStructuredText/en/sec01_overview/firstStep/buildHTML.html" charset="utf-8"/>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Build to HTML / Preview &mdash; reStructuredText Extention for VSCode 2021-07-08 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Build to PDF" href="buildPDF.html" />
+    <link rel="prev" title="Quick Start" href="quickStart.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> reStructuredText Extention for VSCode
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents (English):</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Overview</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../overview.html">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../install.html">Installation</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../firstStep.html">The First Step</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="quickStart.html">Quick Start</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Build to HTML / Preview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#procedure">Procedure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#automatic-updates">Automatic Updates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="buildPDF.html">Build to PDF</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../donations.html">Request for Donations</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../sec02_functions/index.html">Details of each feature</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../sec03_other/index.html">その他</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contents (Japanese):</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../jp/sec01_overview/index.html">概要</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../jp/sec02_functions/index.html">各機能の詳細</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../jp/sec03_other/index.html">その他</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">reStructuredText Extention for VSCode</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">Overview</a> &raquo;</li>
+        
+          <li><a href="../firstStep.html">The First Step</a> &raquo;</li>
+        
+      <li>Build to HTML / Preview</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../_sources/en/sec01_overview/firstStep/buildHTML.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="build-to-html-preview">
+<h1>Build to HTML / Preview<a class="headerlink" href="#build-to-html-preview" title="Permalink to this headline">¶</a></h1>
+<p>This extension allows you to display a preview of the HTML next to the text editor.
+Also, when you save a file with the preview mode enabled, it will automatically start building and update the view.</p>
+<div class="figure align-default">
+<a class="reference internal image-reference" href="../../../_images/reST_doc_012.png"><img alt="reST_doc_012.png" src="../../../_images/reST_doc_012.png" style="width: 523.5px; height: 520.0px;" /></a>
+</div>
+</div>
+<div class="section" id="procedure">
+<h1>Procedure<a class="headerlink" href="#procedure" title="Permalink to this headline">¶</a></h1>
+<ol class="arabic">
+<li><p>Select and open a file in rst format</p>
+<div class="figure align-default">
+<a class="reference internal image-reference" href="../../../_images/reST_doc_007.png"><img alt="reST_doc_007.png" src="../../../_images/reST_doc_007.png" style="width: 824.0px; height: 451.0px;" /></a>
+</div>
+</li>
+<li><p>Click on the triangle symbol that appears in the upper right corner of the panel</p>
+<div class="figure align-default">
+<a class="reference internal image-reference" href="../../../_images/reST_doc_019.png"><img alt="reST_doc_019.png" src="../../../_images/reST_doc_019.png" style="width: 398.0px; height: 241.0px;" /></a>
+</div>
+</li>
+<li><p>Select one of the following items: <code class="docutils literal notranslate"><span class="pre">Preview</span> <span class="pre">HTML</span> <span class="pre">[Built-in</span> <span class="pre">build]</span></code> (currently only available on Windows) or <code class="docutils literal notranslate"><span class="pre">Preview</span> <span class="pre">HTML</span> <span class="pre">[User</span> <span class="pre">env</span> <span class="pre">build]</span></code> .</p>
+<div class="figure align-default">
+<a class="reference internal image-reference" href="../../../_images/reST_doc_008.png"><img alt="reST_doc_008.png" src="../../../_images/reST_doc_008.png" style="width: 212.0px; height: 84.0px;" /></a>
+</div>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">[Built-in</span> <span class="pre">build]</span></code> :  Build using the executable file included with the extension</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[User</span> <span class="pre">env</span> <span class="pre">build]</span></code> :  Build using the Sphinx environment installed on the user’s machine.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>See <a class="reference internal" href="../../sec02_functions/buildTasks.html#build"><span class="std std-ref">Build</span></a> for details.</p>
+</div>
+</li>
+</ul>
+</li>
+</ol>
+<ol class="arabic simple" start="3">
+<li><p>When the build is executed, the execution status will be displayed in the Terminal, which will automatically close when it is finished.</p></li>
+<li><p>On the right side of the editor, you will see a preview of the built HTML</p></li>
+</ol>
+</div>
+<div class="section" id="automatic-updates">
+<h1>Automatic Updates<a class="headerlink" href="#automatic-updates" title="Permalink to this headline">¶</a></h1>
+<ol class="arabic simple">
+<li><p>Change the contents of the rst file and save it</p>
+<ul class="simple">
+<li><p>The build will start automatically and the preview screen will be updated</p></li>
+</ul>
+</li>
+<li><p>Close the preview screen panel when exiting the build or preview</p></li>
+</ol>
+<hr class="docutils" />
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Running <code class="docutils literal notranslate"><span class="pre">Preview</span> <span class="pre">HTML</span> <span class="pre">[Built-in</span> <span class="pre">build]</span></code> will execute the file <code class="docutils literal notranslate"><span class="pre">sphinxhelper.exe</span></code> , which is included with the extension. Please allow the execution of this file, as it may be restricted by your security software.</p>
+<p>The original file/program of this exe file is available on <a class="reference external" href="https://github.com/TatsuyaNakamori/vscode-reStructuredText/tree/master/sphinx">GitHub</a> .</p>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt><a class="reference internal" href="../../sec03_other/knownIssues.html#knownissueshtmlpreview"><span class="std std-ref">Known Issues&gt; HTML Preview</span></a></dt><dd><p>Known problems and items that could be improved in the future are summarized.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><a class="reference internal" href="../../sec02_functions/config.html#settingconfig"><span class="std std-ref">Details of each function&gt; Settings (Config)</span></a></dt><dd><p>There is an option to not close the Terminal after the build is finished running.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="buildPDF.html" class="btn btn-neutral float-right" title="Build to PDF" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="quickStart.html" class="btn btn-neutral float-left" title="Quick Start" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Tatsuya Nakamori.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

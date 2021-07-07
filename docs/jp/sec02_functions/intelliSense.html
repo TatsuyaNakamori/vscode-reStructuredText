@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>その他、入力補助 &mdash; reStructuredText Extention for VSCode 2021-07-05 documentation</title>
+  <title>その他、入力補助 &mdash; reStructuredText Extention for VSCode 2021-07-08 documentation</title>
   
 
   
@@ -96,7 +96,8 @@
               <p class="caption"><span class="caption-text">Contents (English):</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../en/sec01_overview/index.html">Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../en/sec02_functions/index.html">Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../en/sec02_functions/index.html">Details of each feature</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../en/sec03_other/index.html">その他</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Contents (Japanese):</span></p>
 <ul class="current">
@@ -109,9 +110,9 @@
 <li class="toctree-l2"><a class="reference internal" href="list.html">リストの機能</a></li>
 <li class="toctree-l2"><a class="reference internal" href="snippet.html">スニペット</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">その他、入力補助</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id2">ヘッダー</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id3">テーブル</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id4">リスト</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">ヘッダー</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">テーブル</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">リスト</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="grammar.html">グラマー (文字のハイライト表示)</a></li>
@@ -190,11 +191,19 @@
             
   <div class="section" id="id1">
 <h1>その他、入力補助<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="contents local topic" id="id2">
+<p class="topic-title">このページの目次</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#id3" id="id6">ヘッダー</a></p></li>
+<li><p><a class="reference internal" href="#id4" id="id7">テーブル</a></p></li>
+<li><p><a class="reference internal" href="#id5" id="id8">リスト</a></p></li>
+</ul>
+</div>
 <p><a class="reference internal" href="snippet.html"><span class="doc">スニペット</span></a> 以外の入力補助を紹介します。</p>
 <p>テーブルやリストの入力補助についても記載しています。</p>
 <hr class="docutils" />
-<div class="section" id="id2">
-<h2>ヘッダー<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id3">
+<h2><a class="toc-backref" href="#id6">ヘッダー</a><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 100%" />
@@ -208,10 +217,22 @@
 </tr>
 </tbody>
 </table>
+<p>トリガー文字を入力すると、ヘッダーで使用するラインの候補が出てきます。</p>
+<div class="figure align-default">
+<a class="reference internal image-reference" href="../../_images/reST_doc_039.png"><img alt="reST_doc_039.png" src="../../_images/reST_doc_039.png" style="width: 709.0px; height: 161.0px;" /></a>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>reStructuredTextの場合、ヘッダーのラインで使う記号の順番に制限はありませんが、このエクステンションでは <a class="reference external" href="https://devguide.python.org/documenting/#sections">Python Developer’s Guide</a> が推奨する順番で自動補完候補が現れます。</p>
+</div>
+<p>自動補完候補を選択すると、1行上の文字列の幅に合わせてラインが作成されます。(ヘッダーの文字数が短い場合でも、最低でも5文字分挿入されます。)</p>
+<div class="figure align-default">
+<a class="reference internal image-reference" href="../../_images/reST_doc_040.png"><img alt="reST_doc_040.png" src="../../_images/reST_doc_040.png" style="width: 125.0px; height: 78.0px;" /></a>
+</div>
 </div>
 <hr class="docutils" />
-<div class="section" id="id3">
-<h2>テーブル<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id4">
+<h2><a class="toc-backref" href="#id7">テーブル</a><a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 100%" />
@@ -238,14 +259,20 @@
 </ul>
 </li>
 </ul>
+<div class="figure align-default">
+<a class="reference internal image-reference" href="../../_images/reST_doc_035.png"><img alt="reST_doc_035.png" src="../../_images/reST_doc_035.png" style="width: 608.25px; height: 105.75px;" /></a>
+</div>
+<div class="figure align-default">
+<a class="reference internal image-reference" href="../../_images/reST_doc_037.png"><img alt="reST_doc_037.png" src="../../_images/reST_doc_037.png" style="width: 153.75px; height: 258.75px;" /></a>
+</div>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <p>詳しい説明は、 <a class="reference internal" href="table.html#x"><span class="std std-ref">[行数]x[列数] 指定</span></a> を参照してください</p>
 </div>
 </div>
 <hr class="docutils" />
-<div class="section" id="id4">
-<h2>リスト<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id5">
+<h2><a class="toc-backref" href="#id8">リスト</a><a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 100%" />
@@ -259,6 +286,15 @@
 </tr>
 </tbody>
 </table>
+<p>エディタで、 トリガー文字を入力すると、入力補助の候補が出てきます。
+項目を選択すると、先頭に記号が挿入されます。</p>
+<div class="figure align-default">
+<a class="reference internal image-reference" href="../../_images/reST_doc_038.png"><img alt="reST_doc_038.png" src="../../_images/reST_doc_038.png" style="width: 784.0px; height: 96.0px;" /></a>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>詳しい説明は、 <a class="reference internal" href="list.html#id3"><span class="std std-ref">リストの作成</span></a> を参照してください</p>
+</div>
 <hr class="docutils" />
 <div class="admonition note">
 <p class="admonition-title">Note</p>
