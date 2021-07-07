@@ -60,10 +60,6 @@
                     "match": "\\.\\. list-table::"
                 },
                 {
-                    "name": "keyword.literalcode.block.restructuredtext",
-                    "match": "^(\\w*)::$"
-                },
-                {
                     "name": "keyword.image.block.restructuredtext",
                     "match": "\\.\\. image::"
                 },
@@ -130,22 +126,18 @@
                 {
                     "name": "keyword.contents.block.restructuredtext",
                     "match": "\\.\\. contents::"
+                },
+                {
+                    "name": "keyword.literalcode.block.restructuredtext",
+                    "match": "(.*?)::$"
                 }
             ]
         },
         "keyword-insert": {
             "patterns": [
                 {
-                    "name": "keyword.insert.image.restructuredtext",
-                    "match": "\\.\\. image::"
-                },
-                {
-                    "name": "keyword.insert.figure.restructuredtext",
-                    "match": "\\.\\. figure::"
-                },
-                {
                     "name": "keyword.insert.link.restructuredtext",
-                    "match": "\\.\\. _\\w+:"
+                    "match": "\\.\\. _[\\w\\s]+:"
                 }
             ]
         },
@@ -155,11 +147,11 @@
         },
         "keyword-language": {
             "name": "keyword.language.restructuredtext",
-            "match": "(?i)(Python|PHP|Java|JavaScript|Java|C\\+\\+)"
+            "match": "(?i)(Python|PHP|JavaScript|Java|C\\+\\+)"
         },
         "keyword-software": {
             "name": "keyword.software.restructuredtext",
-            "match": "(?i)(Maya|Nuke|After ?Effects|Houdini)"
+            "match": "(?i)(Maya|Nuke|After ?Effects|Houdini|VSCode|reStructuredText)"
         },
         "numbers": {
             "patterns": [
@@ -217,6 +209,7 @@
                 {"include": "#markup-inline-raw"},
                 {"include": "#markup-table"},
                 {"include": "#markup-list"},
+                {"include": "#markup-roles"},
                 {"include": "#markup-options"},
                 {"include": "#markup-link"},
                 {"include": "#markup-heading"}
@@ -287,7 +280,7 @@
         },
         "markup-list-numbered": {
             "name": "markup.list.numbered.restructuredtext",
-            "match": "^\\s*((\\(?([a-zA-Z0-9]+|#)(\\.|\\))) )(?=[-.\\w:]+)",
+            "match": "^\\s*((\\(?([a-zA-Z0-9]{1,2}|#)(\\.|\\))) )(?=[^\\s]+)",
             "captures": {
                 "2": {
                     "name": "punctuation.definition.list.begin.markdown"
@@ -299,8 +292,8 @@
         },
         "markup-list-unnumbered": {
             "name": "markup.list.unnumbered.restructuredtext",
-            "description": "[<スペース0個以上>* (?=<文字列>)]",
-            "match": "^\\s*([-+*] )(?=[-.\\w:]+)",
+            "description": "[<スペース0個以上>* (?=<文字列(スペース以外の文字)>)]",
+            "match": "^\\s*([-+*] )(?=[^\\s]+)",
             "captures": {
                 "1": {
                     "name": "punctuation.definition.list.begin.markdown"
@@ -322,7 +315,15 @@
             "patterns": [
                 {
                     "name": "support.function.markup.options.restructuredtext",
-                    "match": "\\s+\\:\\w+\\:"
+                    "match": "\\s+\\:\\w+\\:(\\s|$)"
+                }
+            ]
+        },
+        "markup-roles": {
+            "patterns": [
+                {
+                    "name": "support.function.markup.roles.restructuredtext",
+                    "match": "(^|\\s+)\\:\\w+\\:(?=`)"
                 }
             ]
         },
@@ -711,5 +712,3 @@
         }
     }
 }
-
-
