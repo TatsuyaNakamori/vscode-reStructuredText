@@ -1,0 +1,390 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Build &mdash; reStructuredText Extention for VSCode 2021-07-08 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="テーブルの機能" href="table.html" />
+    <link rel="prev" title="Settings (Config)" href="config.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> reStructuredText Extention for VSCode
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents (English):</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../sec01_overview/index.html">Overview</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Details of each feature</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="commands.html">Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html">Settings (Config)</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Build</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#type-of-task">Type of task</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#how-to-use">How to use</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#user-env-build">[User env build]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#built-in-build">[Built-in build]</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="table.html">テーブルの機能</a></li>
+<li class="toctree-l2"><a class="reference internal" href="list.html">リストの機能</a></li>
+<li class="toctree-l2"><a class="reference internal" href="snippet.html">スニペット</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intelliSense.html">その他、入力補助</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grammar.html">グラマー (文字のハイライト表示)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shortcuts.html">キーボードショートカット/入力補助 (まとめ)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../sec03_other/index.html">その他</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contents (Japanese):</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../jp/sec01_overview/index.html">概要</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../jp/sec02_functions/index.html">各機能の詳細</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../jp/sec03_other/index.html">その他</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">reStructuredText Extention for VSCode</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html">Details of each feature</a> &raquo;</li>
+        
+      <li>Build</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/en/sec02_functions/buildTasks.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="build">
+<span id="id1"></span><h1>Build<a class="headerlink" href="#build" title="Permalink to this headline">¶</a></h1>
+<div class="contents local topic" id="table-of-contents-for-this-page">
+<p class="topic-title">Table of contents for this page</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#type-of-task" id="id2">Type of task</a></p></li>
+<li><p><a class="reference internal" href="#how-to-use" id="id3">How to use</a></p></li>
+<li><p><a class="reference internal" href="#user-env-build" id="id4">[User env build]</a></p></li>
+<li><p><a class="reference internal" href="#built-in-build" id="id5">[Built-in build]</a></p></li>
+</ul>
+</div>
+<p>Using the build function, you can perform the build process from VSCode, which used to be done by launching a command pronto.</p>
+<div class="figure align-default">
+<a class="reference internal image-reference" href="../../_images/reST_doc_034.png"><img alt="reST_doc_034.png" src="../../_images/reST_doc_034.png" style="width: 601.0px; height: 257.0px;" /></a>
+</div>
+<hr class="docutils" />
+<div class="section" id="type-of-task">
+<h2><a class="toc-backref" href="#id2">Type of task</a><a class="headerlink" href="#type-of-task" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Each task is available as <code class="docutils literal notranslate"><span class="pre">[User</span> <span class="pre">env</span> <span class="pre">build]</span></code> and <code class="docutils literal notranslate"><span class="pre">[Built-in</span> <span class="pre">build]</span></code> .</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[Built-in</span> <span class="pre">build]</span></code> is currently only supported on Windows.</p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 16%" />
+<col style="width: 84%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Task</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>epub</p></td>
+<td><p>Convert to epub</p></td>
+</tr>
+<tr class="row-odd"><td><p>html</p></td>
+<td><p>Convert to HTML</p></td>
+</tr>
+<tr class="row-even"><td><p>latex</p></td>
+<td><p>Convert to latex</p></td>
+</tr>
+<tr class="row-odd"><td><p>latex pdf</p></td>
+<td><p>Convert to PDF</p></td>
+</tr>
+<tr class="row-even"><td><p>Make Clean</p></td>
+<td><p>Reset the build folder (delete the contents of the folder))</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr class="docutils" />
+<div class="section" id="how-to-use">
+<h2><a class="toc-backref" href="#id3">How to use</a><a class="headerlink" href="#how-to-use" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p>Open the directory where the <code class="docutils literal notranslate"><span class="pre">make.bat</span></code> file is stored as a workspace folder( <code class="docutils literal notranslate"><span class="pre">File&gt;</span> <span class="pre">Open</span> <span class="pre">Folder...</span></code> )</p>
+<div class="figure align-default">
+<a class="reference internal image-reference" href="../../_images/reST_doc_017.png"><img alt="reST_doc_017.png" src="../../_images/reST_doc_017.png" style="width: 268.0px; height: 170.0px;" /></a>
+</div>
+</li>
+<li><p>Select <code class="docutils literal notranslate"><span class="pre">Terminal&gt;</span> <span class="pre">Run</span> <span class="pre">Task...</span></code> .</p>
+<div class="figure align-default">
+<a class="reference internal image-reference" href="../../_images/reST_doc_003.png"><img alt="reST_doc_003.png" src="../../_images/reST_doc_003.png" style="width: 144.0px; height: 130.0px;" /></a>
+</div>
+</li>
+<li><p>Selecting the <code class="docutils literal notranslate"><span class="pre">sphinx</span></code> item will show you the items you can build</p>
+<ul class="simple">
+<li><p>Some items may not be displayed depending on the environment</p></li>
+</ul>
+<div class="figure align-default">
+<a class="reference internal image-reference" href="../../_images/reST_doc_004.png"><img alt="reST_doc_004.png" src="../../_images/reST_doc_004.png" style="width: 204.0px; height: 150.0px;" /></a>
+</div>
+<div class="figure align-default">
+<a class="reference internal image-reference" href="../../_images/reST_doc_034.png"><img alt="reST_doc_034.png" src="../../_images/reST_doc_034.png" style="width: 601.0px; height: 257.0px;" /></a>
+</div>
+</li>
+</ol>
+<ol class="arabic" start="3">
+<li><p>The Terminal will start and the build will begin</p>
+<div class="figure align-default">
+<a class="reference internal image-reference" href="../../_images/reST_doc_025.png"><img alt="reST_doc_025.png" src="../../_images/reST_doc_025.png" style="width: 502.79999999999995px; height: 352.8px;" /></a>
+</div>
+</li>
+<li><p>Finally, press <code class="docutils literal notranslate"><span class="pre">Enter</span></code> or similar button to close the Terminal</p></li>
+</ol>
+</div>
+<hr class="docutils" />
+<div class="section" id="user-env-build">
+<h2><a class="toc-backref" href="#id4">[User env build]</a><a class="headerlink" href="#user-env-build" title="Permalink to this headline">¶</a></h2>
+<p>Build using the environment of the user’s machine.
+If you have your own environment, we recommend you to use this option.</p>
+<p>If you want to customize it beyond what is provided in the <code class="docutils literal notranslate"><span class="pre">[Built-in</span> <span class="pre">build]</span></code> environment, you will need to set up your own environment and run it with this option.</p>
+<p>Selecting this optional item will cause PowerShell to execute the command <code class="docutils literal notranslate"><span class="pre">.</span> <span class="pre">/make</span> <span class="pre">XXX</span></code> command will be executed in PowerShell.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">XXX</span></code> part of <code class="docutils literal notranslate"><span class="pre">.</span> <span class="pre">/make</span> <span class="pre">XXX</span></code> where <code class="docutils literal notranslate"><span class="pre">XXX</span></code> is one of <code class="docutils literal notranslate"><span class="pre">html</span></code> <code class="docutils literal notranslate"><span class="pre">epub</span></code> <code class="docutils literal notranslate"><span class="pre">latex</span></code> <code class="docutils literal notranslate"><span class="pre">latexpdf</span></code> <code class="docutils literal notranslate"><span class="pre">clean</span></code> .</p></li>
+<li><p>The current directory (work directory) will be the workspace folder of VSCode</p></li>
+</ul>
+</div></blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The various environment paths must be properly passed.
+If an error occurs, please check the Terminal message.</p>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="built-in-build">
+<h2><a class="toc-backref" href="#id5">[Built-in build]</a><a class="headerlink" href="#built-in-build" title="Permalink to this headline">¶</a></h2>
+<p>(Currently available for Windows only)</p>
+<p>The option to build by running <code class="docutils literal notranslate"><span class="pre">sphinxhelper.exe</span></code> , which is included in the extension.
+It is designed to do the minimum required build even if the user is not able to set up the environment.</p>
+<p>The environment for the build tool is as follows.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 67%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Tool Name</p></th>
+<th class="head"><p>Version</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Python</p></td>
+<td><p>3.9.6</p></td>
+</tr>
+<tr class="row-odd"><td><p>Sphinx</p></td>
+<td><p>4.0.2</p></td>
+</tr>
+<tr class="row-even"><td><p>sphinx-rtd-theme</p></td>
+<td><p>0.5.2</p></td>
+</tr>
+</tbody>
+</table>
+<p>If you want to convert to pdf files, you need to install <a class="reference internal" href="../sec01_overview/install.html#installtex"><span class="std std-ref">TeX</span></a> separately.</p>
+<p>(If you have a tool you would like to see implemented in <code class="docutils literal notranslate"><span class="pre">[Built-in</span> <span class="pre">build]</span></code> , please post it in the <a class="reference external" href="https://github.com/TatsuyaNakamori/vscode-reStructuredText/issues">Issues</a> section.)</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Some security software may place restrictions on the execution of <code class="docutils literal notranslate"><span class="pre">sphinxhelper.exe</span></code> , so please allow this file to run.</p>
+<p>The original file/program of this exe file is available on <a class="reference external" href="https://github.com/TatsuyaNakamori/vscode-reStructuredText/tree/master/sphinx">GitHub</a> .</p>
+</div>
+<hr class="docutils" />
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you cannot solve a problem, please report it to <a class="reference external" href="https://github.com/TatsuyaNakamori/vscode-reStructuredText/issues">Issues</a>.
+Bugs and other reports are only accepted from this page.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="table.html" class="btn btn-neutral float-right" title="テーブルの機能" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="config.html" class="btn btn-neutral float-left" title="Settings (Config)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Tatsuya Nakamori.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

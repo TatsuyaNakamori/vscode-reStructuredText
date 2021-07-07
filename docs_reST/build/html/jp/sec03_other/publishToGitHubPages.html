@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>GitHub Pages用に制作する &mdash; reStructuredText Extention for VSCode 2021-07-05 documentation</title>
+  <title>GitHub Pages用に制作する &mdash; reStructuredText Extention for VSCode 2021-07-08 documentation</title>
   
 
   
@@ -95,7 +95,8 @@
               <p class="caption"><span class="caption-text">Contents (English):</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../en/sec01_overview/index.html">Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../en/sec02_functions/index.html">Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../en/sec02_functions/index.html">Details of each feature</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../en/sec03_other/index.html">その他</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Contents (Japanese):</span></p>
 <ul class="current">
@@ -108,7 +109,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#id3">解決策</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id4">機能</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#sphinxhtml">SphinxでHTMLを作成する時の注意点</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id7">リンク</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">リンク</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="knownIssues.html">既知の問題と今後の展望</a></li>
@@ -192,9 +193,8 @@
 <h2>概要<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <p>GitHub Pages用にページを制作することを考えていますか?</p>
 <p>Sphinxで作成したHTMLをGitHub Pagesとしてアップロードすると直面する問題が、CSSのレイアウトが崩れるという問題です。
-この問題を解決するためのツールが、 <a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=TatsuyaNakamori.htmlgithubpages">Convert to GitHub Pages</a>  として公開されています。</p>
-<p>このエクステンションに組み込むことも考えましたが、より広く使っていただくため、別のツールとしています。
-是非、ダウンロードしてご活用ください。</p>
+この問題を解決するためのツールが、 <a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=TatsuyaNakamori.htmlgithubpages">Convert to GitHub Pages</a> として公開されています。</p>
+<p>是非、ダウンロードしてご活用ください。</p>
 </div>
 <div class="section" id="id2">
 <h2>レイアウトが崩れる原因<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
@@ -224,19 +224,20 @@
 </div>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p>詳細は、<a class="reference external" href="https://tatsuyanakamori.github.io/vscode-ConvertHtmlForGithubPages/">ドキュメント</a> を参照してください。</p>
+<p>詳細は、”Convert to GitHub Pages”の <a class="reference external" href="https://tatsuyanakamori.github.io/vscode-ConvertHtmlForGithubPages/">ドキュメント</a> を参照してください。</p>
 </div>
 </div>
 <div class="section" id="sphinxhtml">
 <h2>SphinxでHTMLを作成する時の注意点<a class="headerlink" href="#sphinxhtml" title="Permalink to this headline">¶</a></h2>
-<p>特にありません。通常通り作成してください。</p>
-<p><a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=TatsuyaNakamori.htmlgithubpages">Convert to GitHub Pages</a>  は、 <code class="docutils literal notranslate"><span class="pre">build/html</span></code> に書き出されたHTMLのファイルを、 <code class="docutils literal notranslate"><span class="pre">docs</span></code> フォルダ(もしくは <code class="docutils literal notranslate"><span class="pre">Root直下</span></code> )にコピーし、 <code class="docutils literal notranslate"><span class="pre">&lt;base&gt;</span></code> タグを挿入するという処理まで行います。</p>
+<p>注意事項は特にありません。通常通り作成してください。</p>
+<p>Sphinxには <code class="docutils literal notranslate"><span class="pre">githubpages</span> <span class="pre">拡張</span></code> がありますが、それを使う必要はありません。</p>
+<p>“Convert to GitHub Pages” は、 <code class="docutils literal notranslate"><span class="pre">build/html</span></code> に書き出されたHTMLのファイルを、 <code class="docutils literal notranslate"><span class="pre">docs</span></code> フォルダ(もしくは <code class="docutils literal notranslate"><span class="pre">Root直下</span></code> )にコピーし、 <code class="docutils literal notranslate"><span class="pre">&lt;base&gt;</span></code> タグを挿入するという処理まで行います。</p>
 </div>
-<div class="section" id="id7">
-<h2>リンク<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id5">
+<h2>リンク<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p><a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=TatsuyaNakamori.htmlgithubpages">Convert to GitHub Pages (marketplace)</a></p></li>
-<li><p><a class="reference external" href="https://tatsuyanakamori.github.io/vscode-ConvertHtmlForGithubPages/">Convert to GitHub Pages (Document)</a></p></li>
+<li><p><a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=TatsuyaNakamori.htmlgithubpages">Convert to GitHub Pages</a> (Marketplace)</p></li>
+<li><p><a class="reference external" href="https://tatsuyanakamori.github.io/vscode-ConvertHtmlForGithubPages/">ドキュメント</a></p></li>
 </ul>
 </div>
 </div>

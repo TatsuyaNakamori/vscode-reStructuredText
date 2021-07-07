@@ -29,7 +29,7 @@ Sphinxの機能である `QuickStart <https://www.sphinx-doc.org/ja/master/man/s
 
 3. ``Terminal> Run Task...`` を選択し、次に ``sphinx> Sphinx: Quick Start`` を選択します
 
-   * ``sphinx> Sphinx: Quick Start`` が出てこない場合は、
+   * ``sphinx> Sphinx: Quick Start`` が出てこない場合は、ワークスペースフォルダが空でない可能性があります。また、OSが対応していない可能性があります。
 
    .. figure:: ./../../../_images/reST_doc_003.png
       :scale: 100%
@@ -50,17 +50,15 @@ Sphinxの機能である `QuickStart <https://www.sphinx-doc.org/ja/master/man/s
       :scale: 100%
       :alt: reST_doc_017.png
 
-   * Config(Settings)のデフォルトでは、sourceとbuildのディレクトリが分かれて作成されるようになっています(Sphinxのデフォルトのように、ファイルやフォルダを作成したい場合は、 ``Separate source and build directories`` の項目を ``false`` にしてください)
+   * 上図は、Config(Settings)の設定の ``Separate source and build directories`` の項目を ``true`` にし、sourceとbuildのディレクトリを分けて作成しています。
 
-     .. figure:: ./../../../_images/reST_doc_018.png
-        :scale: 100%
-        :alt: reST_doc_018.png
-
-5. 問題なければ、 ``Enter`` などのキーを打ち、Terminalを閉じてください
+5. 問題なく作成されたら、 ``Enter`` などのキーを打ち、Terminalを閉じてください
 
    .. figure:: ./../../../_images/reST_doc_005.png
       :scale: 100%
       :alt: reST_doc_005.png
+
+   * エラーが起こった場合は、Terminalのメッセージを確認してください
 
 
 .. note::

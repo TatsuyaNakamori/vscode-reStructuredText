@@ -46,6 +46,6 @@ PDFに変換するには、 ``TeX`` が必要です。 :ref:`インストール>
 ----
 
 .. note::
-   ``Preview HTML [Built-in build]`` の実行には、 ``sphinxhelper.exe`` という、エクステンションに同梱されているファイルが実行されます。セキュリティソフトによっては制限が加えられる可能性がありますので、このファイルの実行を許可してください。
+   ``[Built-in build]`` での実行には、 ``sphinxhelper.exe`` という、エクステンションに同梱されているファイルが実行されます。セキュリティソフトによっては制限が加えられる可能性がありますので、このファイルの実行を許可してください。
 
    尚、このexeファイルの元になっているファイル/プログラムは、 `GitHub <https://github.com/TatsuyaNakamori/vscode-reStructuredText/tree/master/sphinx>`_  で公開されています。

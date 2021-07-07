@@ -53,29 +53,29 @@ Taskの :ref:`クイックスタート` 機能を使用する時のオプショ�
 +---------------------------------------+-------------------------------------------+------------------+
 | Project language                      | ドキュメント言語 ( `language`_ )          | ``en (English)`` |
 +---------------------------------------+-------------------------------------------+------------------+
-| Separate source and build directories | ソースとビルドのディレクトリを分割します  | ``true``         |
+| Separate source and build directories | ソースとビルドのディレクトリを分割します  | ``false``        |
 +---------------------------------------+-------------------------------------------+------------------+
-| Use epub                              | epub を使用するとき、有効にします         | ``true``         |
+| Use epub                              | epub を使用するとき、有効にします         | ``false``        |
 +---------------------------------------+-------------------------------------------+------------------+
-| Enable autodoc extension              | sphinx.ext.autodoc 拡張を有効にします     | ``true``         |
+| Enable autodoc extension              | sphinx.ext.autodoc 拡張を有効にします     | ``false``        |
 +---------------------------------------+-------------------------------------------+------------------+
-| Enable doctest extension              | sphinx.ext.doctest 拡張を有効にします     | ``true``         |
+| Enable doctest extension              | sphinx.ext.doctest 拡張を有効にします     | ``false``        |
 +---------------------------------------+-------------------------------------------+------------------+
-| Enable intersphinx extension          | sphinx.ext.intersphinx 拡張を有効にします | ``true``         |
+| Enable intersphinx extension          | sphinx.ext.intersphinx 拡張を有効にします | ``false``        |
 +---------------------------------------+-------------------------------------------+------------------+
-| Enable todo extension                 | sphinx.ext.todo 拡張を有効にします        | ``true``         |
+| Enable todo extension                 | sphinx.ext.todo 拡張を有効にします        | ``false``        |
 +---------------------------------------+-------------------------------------------+------------------+
-| Enable coverage extension             | sphinx.ext.coverage 拡張を有効にします    | ``true``         |
+| Enable coverage extension             | sphinx.ext.coverage 拡張を有効にします    | ``false``        |
 +---------------------------------------+-------------------------------------------+------------------+
-| Enable imgmath extension              | sphinx.ext.imgmath 拡張を有効にします     | ``true``         |
+| Enable imgmath extension              | sphinx.ext.imgmath 拡張を有効にします     | ``false``        |
 +---------------------------------------+-------------------------------------------+------------------+
-| Enable mathjax extension              | sphinx.ext.mathjax 拡張を有効にします     | ``true``         |
+| Enable mathjax extension              | sphinx.ext.mathjax 拡張を有効にします     | ``false``        |
 +---------------------------------------+-------------------------------------------+------------------+
-| Enable ifconfig extension             | sphinx.ext.ifconfig 拡張を有効にします    | ``true``         |
+| Enable ifconfig extension             | sphinx.ext.ifconfig 拡張を有効にします    | ``false``        |
 +---------------------------------------+-------------------------------------------+------------------+
-| Enable viewcode extension             | sphinx.ext.viewcode 拡張を有効にします    | ``true``         |
+| Enable viewcode extension             | sphinx.ext.viewcode 拡張を有効にします    | ``false``        |
 +---------------------------------------+-------------------------------------------+------------------+
-| Enable githubpages extension          | sphinx.ext.githubpages 拡張を有効にします | ``true``         |
+| Enable githubpages extension          | sphinx.ext.githubpages 拡張を有効にします | ``false``        |
 +---------------------------------------+-------------------------------------------+------------------+
 
 .. _project: https://www.sphinx-doc.org/ja/master/usage/configuration.html#confval-project
@@ -88,9 +88,6 @@ Taskの :ref:`クイックスタート` 機能を使用する時のオプショ�
 .. seealso::
    * `sphinx-quickstart <https://www.sphinx-doc.org/ja/master/man/sphinx-quickstart.html>`_
    * `設定(conf.py) <https://www.sphinx-doc.org/ja/master/usage/configuration.html>`_
-
-
-
 
 -----
 
