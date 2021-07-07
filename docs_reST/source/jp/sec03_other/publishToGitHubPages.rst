@@ -7,9 +7,8 @@ GitHub Pages用に制作する
 GitHub Pages用にページを制作することを考えていますか?
 
 Sphinxで作成したHTMLをGitHub Pagesとしてアップロードすると直面する問題が、CSSのレイアウトが崩れるという問題です。
-この問題を解決するためのツールが、 `Convert to GitHub Pages <https://marketplace.visualstudio.com/items?itemName=TatsuyaNakamori.htmlgithubpages>`_  として公開されています。
+この問題を解決するためのツールが、 `Convert to GitHub Pages`_ として公開されています。
 
-このエクステンションに組み込むことも考えましたが、より広く使っていただくため、別のツールとしています。
 是非、ダウンロードしてご活用ください。
 
 
@@ -48,23 +47,26 @@ Sphinxでビルドして、ローカルで問題なく表示できても、そ�
     :alt: reST_doc_022.png
 
 .. seealso::
-   詳細は、`ドキュメント <https://tatsuyanakamori.github.io/vscode-ConvertHtmlForGithubPages/>`_ を参照してください。
+   詳細は、"Convert to GitHub Pages"の `ドキュメント`_ を参照してください。
 
 
 SphinxでHTMLを作成する時の注意点
 ********************************
 
-特にありません。通常通り作成してください。
+注意事項は特にありません。通常通り作成してください。
 
-`Convert to GitHub Pages <https://marketplace.visualstudio.com/items?itemName=TatsuyaNakamori.htmlgithubpages>`_  は、 ``build/html`` に書き出されたHTMLのファイルを、 ``docs`` フォルダ(もしくは ``Root直下`` )にコピーし、 ``<base>`` タグを挿入するという処理まで行います。
+Sphinxには ``githubpages 拡張`` がありますが、それを使う必要はありません。
 
+"Convert to GitHub Pages" は、 ``build/html`` に書き出されたHTMLのファイルを、 ``docs`` フォルダ(もしくは ``Root直下`` )にコピーし、 ``<base>`` タグを挿入するという処理まで行います。
 
 
 リンク
-******
+*******
 
-* `Convert to GitHub Pages (marketplace) <https://marketplace.visualstudio.com/items?itemName=TatsuyaNakamori.htmlgithubpages>`_
-* `Convert to GitHub Pages (Document) <https://tatsuyanakamori.github.io/vscode-ConvertHtmlForGithubPages/>`_
+* `Convert to GitHub Pages`_ (Marketplace)
+* `ドキュメント`_
 
 
+.. _Convert to GitHub Pages: https://marketplace.visualstudio.com/items?itemName=TatsuyaNakamori.htmlgithubpages
+.. _ドキュメント: https://tatsuyanakamori.github.io/vscode-ConvertHtmlForGithubPages/
 
