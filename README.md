@@ -1,29 +1,43 @@
 # vscode-reStructuredText README
 
-[WORK IN PROGRESS]
-
 [日本語は下に記載]
 
 ## English
 
 ### Overview
 
+* This extension has features to support editing of reStructuredText.
+* Snippets (auto-completion suggestions)
+* Grammer (text highlighting)
+* Description support
+  * Bold
+  * Italic
+  * Inline Raw
+  * Header
+  * List
+  * Table [Grid Table].
+    * Create a new table
+    * Create a table from text in CSV format
+* Tasks
+  * [Sphinx] Quick Start
+  * [Sphinx] make html
+  * [Sphinx] make epub
+  * [Sphinx] make latex
+  * [Sphinx] make latexpdf
+  * [Sphinx] make clean
+  * Launch TeX Installer [Windows only]
+
 ### Features
 
-### Details
+For more information about each function, please refer to the following web page.
+(This web page is written in reStructuredText!)
 
-For more information on each of these, please refer to the following web pages.
-(These web pages are available on GitHub Pages!).
-
-* [Top Page]()
-* [Overview]()
-* [How to use]()
-* [Donations]()
-* [Details of each function]()
-* [License]()
-* [Report a bug]()
-* [Release Notes]()
-
+* [Top Page](https://tatsuyanakamori.github.io/vscode-reStructuredText/index.html)
+* [Overview](https://tatsuyanakamori.github.io/vscode-reStructuredText/en/sec01_overview/index.html)
+* [Details of each feature](https://tatsuyanakamori.github.io/vscode-reStructuredText/en/sec02_functions/index.html)
+* [Report a bug](https://tatsuyanakamori.github.io/vscode-reStructuredText/en/sec03_other/issues.html)
+* [License](https://tatsuyanakamori.github.io/vscode-reStructuredText/en/sec03_other/license.html)
+* [Release Notes](https://tatsuyanakamori.github.io/vscode-reStructuredText/en/sec03_other/releaseNotes.html)
 
 ### Donations
 
@@ -31,40 +45,48 @@ If this tool saves you time, please donate to the development of the tool.
 
 * GitHub Sponsor<br>[![GitHub Sponsor](https://github.com/sponsors/TatsuyaNakamori/button)](https://github.com/sponsors/TatsuyaNakamori)
 
-  or
-
-* paypal<br>[![paypal](https://www.paypalobjects.com/en_US/GB/i/btn/btn_subscribeCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=92TF7YW4SUBHS)
-
 ------------------------------------------------------------------------
 
 ## Japanese
 
 ### 概要
 
+このエクステンションは、reStructuredTextの編集をサポートする機能を備えています。
+
+* スニペット (自動補完候補)
+* グラマー (文字のハイライト表示)
+* 記述サポート
+  * ボールド
+  * イタリック
+  * インラインRaw
+  * ヘッダー
+  * リスト
+  * テーブル [グリッドテーブル]
+    * 新規テーブルの作成
+    * CSV形式のテキストからテーブルの作成
+* タスク
+  * [Sphinx] Quick Start
+  * [Sphinx] make html
+  * [Sphinx] make epub
+  * [Sphinx] make latex
+  * [Sphinx] make latexpdf
+  * [Sphinx] make clean
+  * Launch TeX Installer [Windowsのみ]
+
 ### 機能
 
-### 詳細
+各機能の詳細は、次のWebページを参照してください。
+(このWebページはreStructuredTextで書かれています!)
 
-各詳細は、次のWebページを参照してください。
-(これらのWebページはGitHub Pagesで公開されています!)
-
-* [トップページ]()
-* [概要]()
-* [使い方]()
-* [寄付のお願い]()
-* [各機能の詳細]()
-* [ライセンス]()
-* [バグの報告]()
-* [更新履歴]()
-
+* [トップページ](https://tatsuyanakamori.github.io/vscode-reStructuredText/index.html)
+* [概要](https://tatsuyanakamori.github.io/vscode-reStructuredText/jp/sec01_overview/index.html)
+* [各機能の詳細](https://tatsuyanakamori.github.io/vscode-reStructuredText/jp/sec02_functions/index.html)
+* [バグの報告](https://tatsuyanakamori.github.io/vscode-reStructuredText/jp/sec03_other/issues.html)
+* [ライセンス](https://tatsuyanakamori.github.io/vscode-reStructuredText/jp/sec03_other/license.html)
+* [更新履歴](https://tatsuyanakamori.github.io/vscode-reStructuredText/jp/sec03_other/releaseNotes.html)
 
 ### 寄付
 
-もしこのツールを使ったことによってあなたの制作時間が短縮できたなら、ツール開発に対する寄付をお願いします。
+このツール開発の支援をお願いします。
 
 * GitHub Sponsor<br>[![GitHub Sponsor](https://github.com/sponsors/TatsuyaNakamori/button)](https://github.com/sponsors/TatsuyaNakamori)
-
-  or
-
-* paypal<br>[![paypal](https://www.paypalobjects.com/en_US/GB/i/btn/btn_subscribeCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=92TF7YW4SUBHS)
-
