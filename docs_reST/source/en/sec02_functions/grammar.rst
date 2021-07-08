@@ -1,9 +1,9 @@
-グラマー (文字のハイライト表示)
-###############################
+Grammer (highlighting of text)
+##############################
 
-このエクステンションでは、reStructuredText用のシンタックスハイライト表示の機能があります。
+This extension provides syntax highlighting for reStructuredText.
 
-インラインマークアップやリスト、テーブル、キーワードなどを適切に色分けします。
+It will colorize inline markup, lists, tables, keywords, etc. appropriately.
 
 
 .. figure:: ./../../_images/reST_doc_032.png
@@ -12,5 +12,5 @@
 
 
 .. note::
-   上手く色分けされないなどの改善要望がある場合は、`Issues <https://github.com/TatsuyaNakamori/vscode-reStructuredText/issues>`_ から報告してください。
+   If you have any requests for improvement, such as color coding not working properly, please report them via `Issues <https://github.com/TatsuyaNakamori/vscode-reStructuredText/issues>`_ .
 

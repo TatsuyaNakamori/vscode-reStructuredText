@@ -1,6 +1,6 @@
-バグの報告
+Report a bug
 ############
 
-`Issues <https://github.com/TatsuyaNakamori/vscode-reStructuredText/issues>`_ から報告してください。
+Please report it from `Issues <https://github.com/TatsuyaNakamori/vscode-reStructuredText/issues>`_.
 
-バグ・トラブルの報告はこのページからのみ受け付けています。
+Bug and trouble reports are accepted only from this page.

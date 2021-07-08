@@ -1,4 +1,4 @@
-その他、入力補助
+Other input assistance
 #######################
 
 .. contents:: Table of contents for this page
@@ -6,34 +6,34 @@
    :local:
 
 
-:doc:`./snippet` 以外の入力補助を紹介します。
+Introduce input aids other than :doc:`./snippet`.
 
-テーブルやリストの入力補助についても記載しています。
+Input assistance for tables and lists is also described.
 
 
 --------
 
-ヘッダー
+header
 ********
 
 +-------------------------------------------------------------------------------------+
-| トリガー 文字                                                                       |
+| Trigger Character                                                                   |
 +=====================================================================================+
 | ``h`` ``h1`` ``h2`` ``h3`` ``h4`` ``h5`` ``h6`` ``#`` ``*`` ``=`` ``-`` ``^`` ``"`` |
 +-------------------------------------------------------------------------------------+
 
-トリガー文字を入力すると、ヘッダーで使用するラインの候補が出てきます。
+When you enter the trigger character, you will get a list of possible lines to use in the header.
 
 .. figure:: ./../../_images/reST_doc_039.png
    :scale: 100%
    :alt: reST_doc_039.png
 
 .. note::
-   reStructuredTextの場合、ヘッダーのラインで使う記号の順番に制限はありませんが、このエクステンションでは `Python Developer's Guide <https://devguide.python.org/documenting/#sections>`_ が推奨する順番で自動補完候補が現れます。
+   In the case of reStructuredText, there is no restriction on the order of symbols used in the header lines, but in this extension, the order in which the `Python Developer's Guide <https://devguide.python.org/documenting/#sections>`_ recommends.
 
 
-
-自動補完候補を選択すると、1行上の文字列の幅に合わせてラインが作成されます。(ヘッダーの文字数が短い場合でも、最低でも5文字分挿入されます。)
+When you select an auto-completion candidate, a line will be created to match the width of the string one line above it.
+(At least 5 characters will be inserted, even if the header is short.)
 
 .. figure:: ./../../_images/reST_doc_040.png
    :scale: 100%
@@ -42,24 +42,24 @@
 
 --------
 
-テーブル
+Table
 ********
 
 +-------------------------------------------------------------+
-| トリガー 文字                                               |
+| Trigger Character                                           |
 +=============================================================+
 | ``1`` ``2`` ``3`` ``4`` ``5`` ``6`` ``7`` ``8`` ``9`` ``0`` |
 +-------------------------------------------------------------+
 
-空のテーブルを作成します。
+Create an empty table.
 
-* トリガー文字が入力されたときに、その直前の文字列の形が、 ``[行数]x[列数]`` になっていることが必要です。
+* When the trigger character is entered, the form of the string immediately before it must be ``[Rows]x[Columns]`` .
 
-  * 例: ``4x9`` , ``10x20`` など
+  * Examples: ``4x9`` , ``10x20`` , etc.
 
-* ヘッダー部分の行は ``[行数]`` に入れません
+* Header lines are not included in ``[number of rows]`` .
 
-  * 入力補助の ``(Table with header)`` の項目を選択すると、ヘッダー部分の行を追加で挿入します
+  * Selecting the ``(Table with header)`` item in the input help will insert an additional row for the header.
 
 
 .. figure:: ./../../_images/reST_doc_035.png
@@ -72,22 +72,22 @@
 
 
 .. seealso::
-   詳しい説明は、 :ref:`SpecifyRowsColumns` を参照してください
+   For more information, see :ref:`SpecifyRowsColumns`.
 
 
 --------
 
-リスト
+List
 ******
 
 +-------------------+
-| トリガー 文字     |
+| Trigger Character |
 +===================+
 | ``1`` ``#`` ``*`` |
 +-------------------+
 
-エディタで、 トリガー文字を入力すると、入力補助の候補が出てきます。
-項目を選択すると、先頭に記号が挿入されます。
+When you enter a trigger character in the editor, suggestions for input assistance will appear.
+When you select an item, a symbol will be inserted at the beginning.
 
 .. figure:: ./../../_images/reST_doc_038.png
    :scale: 100%
@@ -95,11 +95,11 @@
 
 
 .. seealso::
-   詳しい説明は、 :ref:`CreatingList` を参照してください
+   See :ref:`CreatingList` for a detailed description
 
 
 --------
 
 .. note::
-   バグなどの報告は、`Issues <https://github.com/TatsuyaNakamori/vscode-reStructuredText/issues>`_ から報告してください。
+   Please report bugs and other issues via `Issues <https://github.com/TatsuyaNakamori/vscode-reStructuredText/issues>`_.
 

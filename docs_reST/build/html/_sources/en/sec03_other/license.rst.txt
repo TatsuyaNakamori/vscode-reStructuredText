@@ -1,4 +1,4 @@
-ライセンス
+License
 ############
 
 vscode-reStructuredText
@@ -58,7 +58,7 @@ License for Sphinx
   OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 
-組込ソフトウェアのライセンス(Sphinx)
+Embedded Software Licensing (Sphinx)
 ====================================
 
 The included smartypants module, included as sphinx.util.smartypants,
@@ -385,7 +385,7 @@ CTAN home page: http://www.ctan.org/
 
 ----------------------------------------------------------------------------------
 
-その他、サードパーティ製ライブラリのライセンス
+Other third party library licenses
 **********************************************
 
 ::

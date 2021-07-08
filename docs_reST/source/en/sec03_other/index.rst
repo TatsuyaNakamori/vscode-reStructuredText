@@ -1,4 +1,4 @@
-その他
+Others
 ######
 
 .. toctree::

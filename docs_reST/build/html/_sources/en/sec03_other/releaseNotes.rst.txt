@@ -1,26 +1,26 @@
-更新履歴
-############
+Release Notes
+#############
 
 0.0.1
 *****
 
-新規リリース
+New Release
 
-* スニペット (自動補完候補)
-* グラマー (文字のハイライト表示)
-* 記述サポート
+* Snippets (auto-completion suggestions)
+* Grammer (text highlighting)
+* Description support
 
-  * ボールド
-  * イタリック
-  * インラインRaw
-  * ヘッダー
-  * リスト
-  * テーブル [グリッドテーブル]
+  * Bold
+  * Italic
+  * Inline Raw
+  * Header
+  * List
+  * Table [Grid Table].
 
-    * 新規テーブルの作成
-    * CSV形式のテキストからテーブルの作成
+    * Create a new table
+    * Create a table from text in CSV format
 
-* タスク
+* Tasks
 
   * [Sphinx] Quick Start
   * [Sphinx] make html
@@ -28,4 +28,4 @@
   * [Sphinx] make latex
   * [Sphinx] make latexpdf
   * [Sphinx] make clean
-  * Launch TeX Installer [Windowsのみ]
+  * Launch TeX Installer [Windows only]

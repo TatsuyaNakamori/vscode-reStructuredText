@@ -1,12 +1,12 @@
-スニペット
+Snippet
 #######################
 
-`スニペット`_ は、コードパターンを簡単に入力できるようにするテンプレートです。
+`Snippet`_ is a template that makes it easy to enter code patterns.
 
-トリガー文字を入力すると、入力候補が表示されます。
+When you enter a trigger character, input suggestions will be displayed.
 
 +----------------+-----------------------------------------------------+
-| トリガー       | 挿入文字                                            |
+| Triggers       | Inserted character                                  |
 +================+=====================================================+
 | code           | **\.. code-block:\:** *LANGUAGE*                    |
 +----------------+-----------------------------------------------------+
@@ -74,8 +74,8 @@
 
 
 .. note::
-   このエクステンションで提供している `スニペット`_ で、改善要望がある場合は、`Issues <https://github.com/TatsuyaNakamori/vscode-reStructuredText/issues>`_ から報告してください。
+   If you have any improvement requests for the `Snippet`_ provided by this extension, please report them via `Issues <https://github.com/TatsuyaNakamori/vscode-reStructuredText/issues>`_.
 
 
-.. _スニペット: https://code.visualstudio.com/docs/editor/userdefinedsnippets
+.. _Snippet: https://code.visualstudio.com/docs/editor/userdefinedsnippets
 

@@ -8,7 +8,7 @@ Settings (Config)
    :local:
 
 
-Settings(Config)画面を開き( ``File> Preferences> Settings`` )、 ``Extensions> reStructuredText`` を選択します
+Open the Settings (Config) screen ( ``File> Preferences> Settings`` ) and select ``Extensions> reStructuredText`` .
 
   .. figure:: ./../../_images/reST_doc_033.png
      :scale: 75%
@@ -20,15 +20,15 @@ Settings(Config)画面を開き( ``File> Preferences> Settings`` )、 ``Extensio
 Preview HTML > End Task: Kill Terminal
 **************************************
 
-+-------------------------------------------------+--------------+
-| 内容                                            | デフォルト値 |
-+=================================================+==============+
-|| HTMLのプレビュー機能を使っているときに、       || ``true``    |
-|| 自動的にTerminalを閉じるかどうかを設定します。 ||             |
-+-------------------------------------------------+--------------+
++----------------------------------------------------------+---------------+
+| Description                                              | Default value |
++==========================================================+===============+
+|| Sets whether or not to automatically close the Terminal || ``true``     |
+|| when building with the HTML preview function.           ||              |
++----------------------------------------------------------+---------------+
 
-| 値を ``false`` にすると、Terminalは閉じなくなります。
-| エラーなどの内容を確認したいときは ``false`` に変更してください。
+| If you set the value to ``false`` , Terminal will not close.
+| If you want to check for errors, etc., change the value to ``false`` .
 
 
 -----
@@ -38,45 +38,45 @@ Preview HTML > End Task: Kill Terminal
 Sphinx Quick Start: Options
 ***************************
 
-Taskの :ref:`QuickStart` 機能を使用する時のオプションです。
+This is an option when using the :ref:`QuickStart` feature of Task.
 
-+---------------------------------------+-------------------------------------------+------------------+
-| オプション名                          | 意味                                      | デフォルト値     |
-+=======================================+===========================================+==================+
-| Project name                          | プロジェクト名 ( `project`_ )             | ``My Document``  |
-+---------------------------------------+-------------------------------------------+------------------+
-| Author name(s)                        | 著者名 ( `copyright`_ )                   | ``Your name``    |
-+---------------------------------------+-------------------------------------------+------------------+
-| Project version                       | プロジェクトのバージョン ( `version`_ )   | ``1.0``          |
-+---------------------------------------+-------------------------------------------+------------------+
-| Project release                       | プロジェクトのリリース ( `release`_ )     | ``1.0.0``        |
-+---------------------------------------+-------------------------------------------+------------------+
-| Project language                      | ドキュメント言語 ( `language`_ )          | ``en (English)`` |
-+---------------------------------------+-------------------------------------------+------------------+
-| Separate source and build directories | ソースとビルドのディレクトリを分割します  | ``false``        |
-+---------------------------------------+-------------------------------------------+------------------+
-| Use epub                              | epub を使用するとき、有効にします         | ``false``        |
-+---------------------------------------+-------------------------------------------+------------------+
-| Enable autodoc extension              | sphinx.ext.autodoc 拡張を有効にします     | ``false``        |
-+---------------------------------------+-------------------------------------------+------------------+
-| Enable doctest extension              | sphinx.ext.doctest 拡張を有効にします     | ``false``        |
-+---------------------------------------+-------------------------------------------+------------------+
-| Enable intersphinx extension          | sphinx.ext.intersphinx 拡張を有効にします | ``false``        |
-+---------------------------------------+-------------------------------------------+------------------+
-| Enable todo extension                 | sphinx.ext.todo 拡張を有効にします        | ``false``        |
-+---------------------------------------+-------------------------------------------+------------------+
-| Enable coverage extension             | sphinx.ext.coverage 拡張を有効にします    | ``false``        |
-+---------------------------------------+-------------------------------------------+------------------+
-| Enable imgmath extension              | sphinx.ext.imgmath 拡張を有効にします     | ``false``        |
-+---------------------------------------+-------------------------------------------+------------------+
-| Enable mathjax extension              | sphinx.ext.mathjax 拡張を有効にします     | ``false``        |
-+---------------------------------------+-------------------------------------------+------------------+
-| Enable ifconfig extension             | sphinx.ext.ifconfig 拡張を有効にします    | ``false``        |
-+---------------------------------------+-------------------------------------------+------------------+
-| Enable viewcode extension             | sphinx.ext.viewcode 拡張を有効にします    | ``false``        |
-+---------------------------------------+-------------------------------------------+------------------+
-| Enable githubpages extension          | sphinx.ext.githubpages 拡張を有効にします | ``false``        |
-+---------------------------------------+-------------------------------------------+------------------+
++---------------------------------------+------------------------------------------------+------------------+
+| Options                               | Description                                    | Default value    |
++=======================================+================================================+==================+
+| Project name                          | Set the project name ( `project`_ )            | ``My Document``  |
++---------------------------------------+------------------------------------------------+------------------+
+| Author name(s)                        | Set author name ( `copyright`_ )               | ``Your name``    |
++---------------------------------------+------------------------------------------------+------------------+
+| Project version                       | Set the version of the project ( `version`_ )  | ``1.0``          |
++---------------------------------------+------------------------------------------------+------------------+
+| Project release                       | Set the release for the project ( `release`_ ) | ``1.0.0``        |
++---------------------------------------+------------------------------------------------+------------------+
+| Project language                      | Set the document language ( `language`_ )      | ``en (English)`` |
++---------------------------------------+------------------------------------------------+------------------+
+| Separate source and build directories | Split the source and build directories         | ``false``        |
++---------------------------------------+------------------------------------------------+------------------+
+| Use epub                              | Enable when using epub                         | ``false``        |
++---------------------------------------+------------------------------------------------+------------------+
+| Enable autodoc extension              | Enable the sphinx.ext.autodoc extension        | ``false``        |
++---------------------------------------+------------------------------------------------+------------------+
+| Enable doctest extension              | Enable the sphinx.ext.doctest extension        | ``false``        |
++---------------------------------------+------------------------------------------------+------------------+
+| Enable intersphinx extension          | Enable the sphinx.ext.intersphinx extension    | ``false``        |
++---------------------------------------+------------------------------------------------+------------------+
+| Enable todo extension                 | Enable the sphinx.ext.todo extension           | ``false``        |
++---------------------------------------+------------------------------------------------+------------------+
+| Enable coverage extension             | Enable the sphinx.ext.coverage extension       | ``false``        |
++---------------------------------------+------------------------------------------------+------------------+
+| Enable imgmath extension              | Enable the sphinx.ext.imgmath extension        | ``false``        |
++---------------------------------------+------------------------------------------------+------------------+
+| Enable mathjax extension              | Enable the sphinx.ext.mathjax extension        | ``false``        |
++---------------------------------------+------------------------------------------------+------------------+
+| Enable ifconfig extension             | Enable the sphinx.ext.ifconfig extension       | ``false``        |
++---------------------------------------+------------------------------------------------+------------------+
+| Enable viewcode extension             | Enable the sphinx.ext.viewcode extension       | ``false``        |
++---------------------------------------+------------------------------------------------+------------------+
+| Enable githubpages extension          | Enable the sphinx.ext.githubpages extension    | ``false``        |
++---------------------------------------+------------------------------------------------+------------------+
 
 .. _project: https://www.sphinx-doc.org/ja/master/usage/configuration.html#confval-project
 .. _copyright: https://www.sphinx-doc.org/ja/master/usage/configuration.html#confval-copyright
@@ -87,10 +87,10 @@ Taskの :ref:`QuickStart` 機能を使用する時のオプションです。
 
 .. seealso::
    * `sphinx-quickstart <https://www.sphinx-doc.org/ja/master/man/sphinx-quickstart.html>`_
-   * `設定(conf.py) <https://www.sphinx-doc.org/ja/master/usage/configuration.html>`_
+   * `Configuration(conf.py) <https://www.sphinx-doc.org/ja/master/usage/configuration.html>`_
 
 -----
 
 .. note::
-   もし、何かトラブルがあった場合は、 `Issues <https://github.com/TatsuyaNakamori/vscode-reStructuredText/issues>`_ に報告してください。バグなどの報告はこのページからのみ受け付けています。
+   If you have any trouble, please report it to `Issues <https://github.com/TatsuyaNakamori/vscode-reStructuredText/issues>`_. Bugs and other reports are only accepted from this page.
 

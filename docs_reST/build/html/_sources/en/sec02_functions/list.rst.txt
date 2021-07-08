@@ -1,25 +1,25 @@
-リストの機能
-###############
+List
+#####################
 
 .. contents:: Table of contents for this page
    :depth: 3
    :local:
 
 
-テーブルの作成方法、編集方法をまとめたページです。
+This page contains information on how to create and edit lists.
 
-このエクステンションでは、次の記号をサポートしています。
-(他の書式でも、ビルドを行うことはできます)
+The following symbols are supported by this extension.
+(You can still use other formats to build)
 
-+--------+-------------------------------------+
-| 記号   | 意味                                |
-+========+=====================================+
-| ``1.`` | 段落番号 (直接数字を入力)           |
-+--------+-------------------------------------+
-| ``#.`` | 段落番号 (ビルド時に数字に置き換え) |
-+--------+-------------------------------------+
-| ``*``  | 箇条書き                            |
-+--------+-------------------------------------+
++--------+-------------------------------------------------------+
+| Symbol | Meaning                                               |
++========+=======================================================+
+| ``1.`` | Paragraph number (enter a number directly)            |
++--------+-------------------------------------------------------+
+| ``#.`` | Paragraph number (replaced by a number at build time) |
++--------+-------------------------------------------------------+
+| ``*``  | Itemization                                           |
++--------+-------------------------------------------------------+
 
 
 -----------------
@@ -29,11 +29,11 @@
 Creating a list
 ***************
 
-エディタで、 次のトリガー文字を入力すると、入力補助の候補が出てきます。
-項目を選択すると、先頭に記号が挿入されます。
+In the editor, typing the following trigger characters will bring up suggestions for input assistance.
+When you select an item, a symbol will be inserted at the beginning.
 
 +-------------------------+
-| トリガー 文字           |
+| Trigger Character       |
 +=========================+
 | ``.`` ``1`` ``#`` ``*`` |
 +-------------------------+
@@ -45,50 +45,50 @@ Creating a list
 
 -----------------
 
-次の行の挿入
+Inserting the next line
 ********************************
 
-1行目を書き終えた後で、 ``Enter`` ボタンを押すと、次の行に新しい項目が追加されます( ``Shift + Enter`` で上の行に項目が追加されます)。
+Pressing the ``Enter`` button after finishing the first line will add a new entry to the next line ( ``Shift + Enter`` will add an entry to the line above).
 
 
-直接数字を入力する方式( ``1.`` )の場合は、次の数字にインクリメントされた状態で挿入されます。
-
------------------
-
-リストのネスト
-**************
-
-* リストの行にカーソルがある状態で、 ``Tab`` ボタンを押すと、リストのネストを行うことができます。
-
-  * その際、リストの先頭の記号の選択肢が現れるので、いずれかの記号を選択します。
-
-* ネストされているリストの行で ``Shift + Tab`` を押すと、ネストが解除されます。
-
+In the case of the direct numeric input method ( ``1.`` ), the number will be inserted incremented to the next number.
 
 -----------------
 
-番号の再構築
+Nesting lists
 **************
 
-* 直接数字を入力する方式( ``1.`` )のリストの場合、新しいリストの行を追加するタイミングで番号が再構築されます。(数字を順に並びます)
-* 一番先頭の番号は書き変わらないので、1以外の数値からのリストを作ることもできます。
+* You can nest the list by pressing the ``Tab`` button while the cursor is on a line of the list.
+
+  * When you do so, a choice of symbols for the beginning of the list will appear, and you can select one of them.
+
+* Pressing ``Shift + Tab`` on a line of the nested list will un-nest it.
+
+
+-----------------
+
+Rebuild the number
+******************
+
+* For lists with a direct numbering scheme ( ``1.`` ), the numbers are reconstructed when you add a new list line. (The numbers are sorted in order.)
+* The first number is not rewritten, so it is possible to create a list from numbers other than 1.
 
 .. note::
-   一部の書式で、数字の再構築が上手くいかない場合があるので、その時は手動で書き換えをお願いします。
+   In some formats, the numbers may not be reconstructed properly, so please rewrite them manually in that case.
 
 
 -----------------
 
-リストの終了
+End of list
 **************
 
-リストの記号のみ存在する行で ``Enter`` ボタンを押すと、リストを終了することができます。
+Pressing the ``Enter`` button on a line where there are only symbols in the list will quit the list.
 
-例えば、あるリストの行を編集後に、2回連続で ``Enter`` ボタンを押すと、リストの編集を終えることができます。
+For example, after editing a line in a list, you can press the ``Enter`` button twice in a row to finish editing the list.
 
 -----------------
 
 .. note::
-   もし、トラブルが解決できない場合は、 `Issues <https://github.com/TatsuyaNakamori/vscode-reStructuredText/issues>`_ に報告してください。バグなどの報告はこのページからのみ受け付けています。
+   If you cannot solve a problem, please report it to `Issues <https://github.com/TatsuyaNakamori/vscode-reStructuredText/issues>`_. Bugs and other reports are only accepted from this page.
 
 

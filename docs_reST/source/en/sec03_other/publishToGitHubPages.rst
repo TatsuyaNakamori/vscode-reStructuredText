@@ -1,45 +1,45 @@
-GitHub Pages用に制作する
+Create for GitHub Pages
 ##########################
 
-概要
-******
+Overview
+********
 
-GitHub Pages用にページを制作することを考えていますか?
+Thinking of creating a page for GitHub Pages?
 
-Sphinxで作成したHTMLをGitHub Pagesとしてアップロードすると直面する問題が、CSSのレイアウトが崩れるという問題です。
-この問題を解決するためのツールが、 `Convert to GitHub Pages`_ として公開されています。
+When you upload HTML created by Sphinx as GitHub Pages, you will face a problem that the CSS layout is broken.
+A tool to solve this problem is available as `Convert to GitHub Pages`_.
 
-是非、ダウンロードしてご活用ください。
+Please download and use it.
 
 
-レイアウトが崩れる原因
-**********************
+Causes of layout collapse
+*************************
 
-Sphinxでビルドして、ローカルで問題なく表示できても、そのままGitHub Pagesにアップロードするとレイアウトが崩れます。
+Even if you build with Sphinx and display it locally without any problems, the layout will be broken when you upload it directly to GitHub Pages.
 
-レイアウトが崩れる原因は2つあります。
+There are two reasons why the layout is broken.
 
-1. GitHub Pagesはデフォルトで `jekyll <http://jekyllrb-ja.github.io/>`_  を使用してホスティングを行うため、jekyllでサポートしていないパスを正確に読み取ってくれない
-2. CSSなどのパス指定がサーバとローカルで異なり、GitHub Pagesのサーバー上のURLを指定する必要がある
+1. GitHub Pages uses `jekyll <http://jekyllrb-ja.github.io/>`_ for hosting by default, so it doesn't accurately read paths that are not supported by jekyll
+2. The path to CSS and other files is different between the server and local, and the URL on the GitHub Pages server needs to be specified.
 
 .. figure:: ./../../_images/reST_doc_021.png
     :scale: 100%
     :alt: reST_doc_021.png
 
 
-解決策
-******
+Solutions
+*********
 
-次のように設定することで、解決することができます。
+You can solve this problem by setting the following
 
-1. GithHub Pagesを公開するフォルダ直下に ``.nojekyll`` という空ファイルを置くことで、jekyllをホスティングしないようにする
-2. HTMLに記述されているCSSファイルなどへの相対パスを、 ``<base>`` タグを使用してGitHub PagesのURLに変換する
+1. Put an empty file ``.nojekyll`` directly under the folder where you publish your GithHub Pages to stop hosting jekyll.
+2. Convert relative paths to CSS files in HTML to GitHub Pages URLs using ``<base>`` tags.
 
 
-機能
-******
+Function
+********
 
-``.nojekyll`` ファイルを作成する機能と、HTMLの ``<head>`` 内に ``<base>`` タグを挿入する機能があり、それぞれTaskから実行することができます。
+There is a function to create a ``.nojekyll`` file and a function to insert a ``<base>`` tag in the ``<head>`` of HTML, each of which can be executed from Task.
 
 
 .. figure:: ./../../_images/reST_doc_022.png
@@ -47,26 +47,26 @@ Sphinxでビルドして、ローカルで問題なく表示できても、そ�
     :alt: reST_doc_022.png
 
 .. seealso::
-   詳細は、"Convert to GitHub Pages"の `ドキュメント`_ を参照してください。
+   For more information, see the `Document`_ on "Convert to GitHub Pages".
 
 
-SphinxでHTMLを作成する時の注意点
-********************************
+Points to note when creating HTML with Sphinx
+*********************************************
 
-注意事項は特にありません。通常通り作成してください。
+There are no special precautions. Just create it as usual.
 
-Sphinxには ``githubpages 拡張`` がありますが、それを使う必要はありません。
+There is a ``githubpages extension`` to Sphinx, but you don't need to use it.
 
-"Convert to GitHub Pages" は、 ``build/html`` に書き出されたHTMLのファイルを、 ``docs`` フォルダ(もしくは ``Root直下`` )にコピーし、 ``<base>`` タグを挿入するという処理まで行います。
+"Convert to GitHub Pages" will copy the HTML files exported to ``build/html`` to the ``docs`` folder (or ``Root`` ), and insert ``<base>`` tags.
 
 
-リンク
+Links
 *******
 
 * `Convert to GitHub Pages`_ (Marketplace)
-* `ドキュメント`_
+* `Document`_
 
 
 .. _Convert to GitHub Pages: https://marketplace.visualstudio.com/items?itemName=TatsuyaNakamori.htmlgithubpages
-.. _ドキュメント: https://tatsuyanakamori.github.io/vscode-ConvertHtmlForGithubPages/
+.. _Document: https://tatsuyanakamori.github.io/vscode-ConvertHtmlForGithubPages/
 

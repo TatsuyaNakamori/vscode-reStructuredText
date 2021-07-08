@@ -1,4 +1,4 @@
-テーブルの機能
+Table
 ###############
 
 .. contents:: Table of contents for this page
@@ -6,27 +6,27 @@
    :local:
 
 
-テーブルの作成方法、編集方法をまとめたページです。
+This page contains information on how to create and edit tables.
 
-このエクステンションは、グリッドテーブルをサポートしています。
+This extension supports grid tables.
 
-  * 行は ``+----+----+`` で区切ります (ヘッダー部分は ``+====+====+`` )
-  * 列は ``|`` で区切ります
-  * セル内の文字は、列の ``|`` 記号と接しないように、最低1つの半角空白が必要です
+  * Lines are separated by ``+----+----+`` . (The header section is ``+====+====+`` .)
+  * Columns are separated by ``|`` .
+  * Characters in a cell must have at least one space between them so that they are not adjacent to the ``|`` symbol in the column.
 
 
 -----------------
 
-テーブルの作成
-**************
+Creating a table
+****************
 
-テーブルの作成方法は2つあります。
+There are two ways to create a table.
 
 
-CSV からの変換
-==================
+Conversion from CSV
+===================
 
-カンマで区切られた文字列をテーブルに変換します。
+Converts a comma-separated string to a table.
 
 
 .. figure:: ./../../_images/reST_doc_027.png
@@ -40,7 +40,7 @@ CSV からの変換
    :alt: reST_doc_028.png
 
 .. seealso::
-   詳しい使い方は、 :ref:`CSV2TableConversion` を参照してください。
+   See :ref:`CSV2TableConversion` for detailed usage.
 
 
 .. _SpecifyRowsColumns:
@@ -48,29 +48,29 @@ CSV からの変換
 Specify [rows] x [columns]
 ==========================
 
-エディタで、 ``[行数]x[列数]`` という形で入力すると、入力補助の候補が出てきます。
+In the editor, typing ``[Rows]x[Columns]`` will give you suggestions for input assistance.
 
 .. figure:: ./../../_images/reST_doc_035.png
    :scale: 75%
    :alt: reST_doc_035.png
 
 +-------------------------------------------------------------+
-| トリガー 文字                                               |
+| Trigger Character                                           |
 +=============================================================+
 | ``1`` ``2`` ``3`` ``4`` ``5`` ``6`` ``7`` ``8`` ``9`` ``0`` |
 +-------------------------------------------------------------+
 
-* トリガー文字が入力されたときに、その直前の文字列の形が、 ``[行数]x[列数]`` になっていることが必要です。
+* When the trigger character is entered, the form of the string immediately before it must be ``[Rows]x[Columns]`` .
 
-  * 例: ``4x9`` , ``10x20`` など
+  * Examples: ``4x9`` , ``10x20`` , etc.
 
-* ヘッダー部分の行は ``[行数]`` に入れません
+* Header lines are not included in ``[Rows]`` .
 
-  * 入力補助の ``(Table with header)`` の項目を選択すると、ヘッダー部分の行を追加で挿入します
+  * Selecting the ``(Table with header)`` entry will insert an additional row for the header.
 
 
-| 入力補助候補のいずれかを選択すると、空のテーブルが作成されます。
-| ([下図] 上が ``(Table with header)`` ,  下が ``(Table without header)`` のテーブル。いずれも ``2x3`` のグリッド)
+| When you select one of the input aid candidates, an empty table will be created.
+| (The top table is ``(Table with header)`` , the bottom table is ``(Table without header)`` . Both are ``2x3`` grids.)
 
 .. figure:: ./../../_images/reST_doc_037.png
    :scale: 75%
@@ -79,94 +79,99 @@ Specify [rows] x [columns]
 
 -----------------
 
-セルの選択の移動/ リフォーマット
+Move/Reformat cell selections
 ********************************
 
 
-| テーブルにカーソルがある状態で、次のキーを押すことで、セルの選択の移動が可能です。
-| また、同時にリフォーマット(各セルの横幅の調整)を行います。
+| With the cursor in the table, you can move the cell selection by pressing the following key
+| At the same time, it will also reformat (adjust the width of each cell).
 
 +------------+-------------------+
-| アクション | キー              |
+| Actions    | Keys              |
 +============+===================+
-| 下に移動   | ``Enter``         |
+| Move down  | ``Enter``         |
 +------------+-------------------+
-| 上に移動   | ``Shift + Enter`` |
+| Move up    | ``Shift + Enter`` |
 +------------+-------------------+
-| 右に移動   | ``Tab``           |
+| Move right | ``Tab``           |
 +------------+-------------------+
-| 左に移動   | ``Shift + Tab``   |
+| Move left. | ``Shift + Tab``   |
 +------------+-------------------+
 
 
 -----------------
 
-セル内での改行
-**************
+Line break in a cell
+********************
 
-セル内で改行するには、セルを選択している状態で ``Alt + Enter`` キーを押します。
-
-
------------------
-
-行列の追加/ 削除
-****************
-
-行と列を追加したり、削除することができます。
-
-+------------+---------------------------------------------------------+
-| アクション | 方法                                                    |
-+============+=========================================================+
-| 行を追加   | 行の一番右端にカーソルがある状態で ``Enter``            |
-+------------+---------------------------------------------------------+
-| 行を削除   | 行の一番右端に ``-`` を追記し、 ``Enter``               |
-+------------+---------------------------------------------------------+
-| 列を追加   | セルの区切り線( ``|`` )の側に ``+`` を追記し、``Enter`` |
-+------------+---------------------------------------------------------+
-| 列を削除   | セルの区切り線( ``|`` )の側に ``-`` を追記し、``Enter`` |
-+------------+---------------------------------------------------------+
+To break a line in a cell, press ``Alt+Enter`` while the cell is selected.
 
 
 -----------------
 
-行列の移動
-**********
+Add/delete matrices
+*******************
 
-行と列を上下左右に移動できます。
+Rows and columns can be added or deleted.
 
-+--------------+---------------------------------------------------------+
-| アクション   | 方法                                                    |
-+==============+=========================================================+
-| 行を上に移動 | セルの区切り線( ``|`` )の側に ``^`` を追記し、``Enter`` |
-+--------------+---------------------------------------------------------+
-| 行を下に移動 | セルの区切り線( ``|`` )の側に ``v`` を追記し、``Enter`` |
-+--------------+---------------------------------------------------------+
-| 列を右に移動 | セルの区切り線( ``|`` )の側に ``>`` を追記し、``Enter`` |
-+--------------+---------------------------------------------------------+
-| 列を左に移動 | セルの区切り線( ``|`` )の側に ``<`` を追記し、``Enter`` |
-+--------------+---------------------------------------------------------+
++---------------+----------------------------------------------------------------------------+
+| Actions       | How to use                                                                 |
++===============+============================================================================+
+| Add a line    | If the cursor is at the far right of the line, ``Enter``                   |
++---------------+----------------------------------------------------------------------------+
+| Delete a line | Add ``-`` to the far right of the line and ``Enter``                       |
++---------------+----------------------------------------------------------------------------+
+| Add a column  | Add ``+`` to the side of the cell separator ( ``|`` ) and press ``Enter``  |
++---------------+----------------------------------------------------------------------------+
+| Delete column | Add ``-`` to the side of the cell separator ( ``|`` ) and press ``Enter``. |
++---------------+----------------------------------------------------------------------------+
 
-``^`` ``v`` ``>`` ``<`` を複数回入力すると、その分移動します。
-例えば、 ``^^^`` と入力して ``Enter`` キーを押すと、3行分上に移動します。
+
+-----------------
+
+Moving Rows and Columns
+***********************
+
+You can move rows and columns up, down, left, or right.
+
++------------------------------+----------------------------------------------------------+
+| Actions                      | How to use                                               |
++==============================+==========================================================+
+|| Move up a line              || Add ``^`` to the side of the delimiter line (\ ``|``\ ) |
+||                             || and press ``Enter``.                                    |
++------------------------------+----------------------------------------------------------+
+|| Move down the line          || Add ``v`` to the side of the delimiter line (\ ``|``\ ) |
+||                             || and press ``Enter``.                                    |
++------------------------------+----------------------------------------------------------+
+|| Move column to the right    || Add ``>`` to the side of the delimiter line (\ ``|``\ ) |
+||                             || and press ``Enter``.                                    |
++------------------------------+----------------------------------------------------------+
+|| Move the column to the left || Add ``<`` to the side of the delimiter line (\ ``|``\ ) |
+||                             || and press ``Enter``.                                    |
++------------------------------+----------------------------------------------------------+
+
+
+If you type ``^`` ``v`` ``>`` ``<`` multiple times, you will move up by that amount.
+For example, typing ``^^^`` and pressing ``Enter`` will move you up three lines.
 
 
 -----------------
 
 .. warning::
-   * 現状、セルが結合されているテーブルには対応していません(ビルドはできます)
-   * テーブルにカーソルがある状態で ``Enter`` や ``Tab`` キーなどが押されると、全てのセルが分割された状態にリフォーマットされてしまいます
+   * Currently, tables with merged cells are not supported (but can be built).
+   * If the ``Enter`` or ``Tab`` key is pressed while the cursor is in a table, all cells will be reformatted to a split state.
 
 
-   * 結合したセルを持つテーブルを編集したい場合...
+   * If you want to edit a table with joined cells...
 
-     1. 全てのセルが分割された状態で、セルの中身を編集します(結合する部分は空白にしておきます)
-     2. 編集が終わった後に、手動でセルを結合します
-     3. セルの結合の編集が終わったら、カーソルをテーブルの外に持っていきます
+     1. With all cells split, edit the contents of the cells (leave the part to be merged blank)
+     2. Manually merge cells after you are done editing
+     3. When you have finished editing the cell join, bring the cursor outside the table
 
-        * この時、 ``Enter`` や ``Tab`` キーなどを押さないようにしてください
+        * Do not press the ``Enter`` or ``Tab`` keys at this time.
 
 
 .. note::
-   もし、トラブルが解決できない場合は、 `Issues <https://github.com/TatsuyaNakamori/vscode-reStructuredText/issues>`_ に報告してください。バグなどの報告はこのページからのみ受け付けています。
+   If you cannot solve a problem, please report it to `Issues <https://github.com/TatsuyaNakamori/vscode-reStructuredText/issues>`_. Bugs and other reports are only accepted from this page.
 
 
