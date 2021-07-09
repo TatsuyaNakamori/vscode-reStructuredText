@@ -10,8 +10,8 @@ This page contains information on how to create and edit tables.
 
 This extension supports grid tables.
 
-  * Lines are separated by ``+----+----+`` . (The header section is ``+====+====+`` .)
-  * Columns are separated by ``|`` .
+  * Lines are separated by ``+----+----+``. (The header section is ``+====+====+``)
+  * Columns are separated by ``|``.
   * Characters in a cell must have at least one space between them so that they are not adjacent to the ``|`` symbol in the column.
 
 
@@ -60,17 +60,17 @@ In the editor, typing ``[Rows]x[Columns]`` will give you suggestions for input a
 | ``1`` ``2`` ``3`` ``4`` ``5`` ``6`` ``7`` ``8`` ``9`` ``0`` |
 +-------------------------------------------------------------+
 
-* When the trigger character is entered, the form of the string immediately before it must be ``[Rows]x[Columns]`` .
+* When the trigger character is entered, the form of the string immediately before it must be ``[Rows]x[Columns]``.
 
-  * Examples: ``4x9`` , ``10x20`` , etc.
+  * Examples: ``4x9``, ``10x20``, etc.
 
-* Header lines are not included in ``[Rows]`` .
+* Header lines are not included in ``[Rows]``.
 
   * Selecting the ``(Table with header)`` entry will insert an additional row for the header.
 
 
 | When you select one of the input aid candidates, an empty table will be created.
-| (The top table is ``(Table with header)`` , the bottom table is ``(Table without header)`` . Both are ``2x3`` grids.)
+| (The top table is ``(Table with header)``, the bottom table is ``(Table without header)``. Both are ``2x3`` grids.)
 
 .. figure:: ./../../_images/reST_doc_037.png
    :scale: 75%
@@ -81,7 +81,6 @@ In the editor, typing ``[Rows]x[Columns]`` will give you suggestions for input a
 
 Move/Reformat cell selections
 ********************************
-
 
 | With the cursor in the table, you can move the cell selection by pressing the following key
 | At the same time, it will also reformat (adjust the width of each cell).

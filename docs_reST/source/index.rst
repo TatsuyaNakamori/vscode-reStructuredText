@@ -8,9 +8,8 @@ Welcome to reStructuredText Extention for VSCode's documentation!
 
 Latest update date of the document: [|today|]
 
-This document is available in English and Japanese.Please start from the "Overview" link below.
-
-このドキュメントは英語と日本語が用意されています。下記のリンクの「概要」からスタートしてください。
+| This document is available in English and Japanese.Please start from the "Overview" link below.
+| このドキュメントは英語と日本語が用意されています。下記のリンクの「概要」からスタートしてください。
 
 .. toctree::
    :maxdepth: 2
