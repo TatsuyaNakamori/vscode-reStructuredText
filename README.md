@@ -35,7 +35,7 @@ For more information about each function, please refer to the following web page
 * [Top Page](https://tatsuyanakamori.github.io/vscode-reStructuredText/index.html)
 * [Overview](https://tatsuyanakamori.github.io/vscode-reStructuredText/en/sec01_overview/index.html)
 * [Details of each feature](https://tatsuyanakamori.github.io/vscode-reStructuredText/en/sec02_functions/index.html)
-* [Report a bug](https://tatsuyanakamori.github.io/vscode-reStructuredText/en/sec03_other/issues.html)
+* [Known problems](https://tatsuyanakamori.github.io/vscode-reStructuredText/en/sec03_other/knownIssues.html)
 * [License](https://tatsuyanakamori.github.io/vscode-reStructuredText/en/sec03_other/license.html)
 * [Release Notes](https://tatsuyanakamori.github.io/vscode-reStructuredText/en/sec03_other/releaseNotes.html)
 
@@ -81,7 +81,7 @@ If this tool saves you time, please donate to the development of the tool.
 * [トップページ](https://tatsuyanakamori.github.io/vscode-reStructuredText/index.html)
 * [概要](https://tatsuyanakamori.github.io/vscode-reStructuredText/jp/sec01_overview/index.html)
 * [各機能の詳細](https://tatsuyanakamori.github.io/vscode-reStructuredText/jp/sec02_functions/index.html)
-* [バグの報告](https://tatsuyanakamori.github.io/vscode-reStructuredText/jp/sec03_other/issues.html)
+* [既知の問題](https://tatsuyanakamori.github.io/vscode-reStructuredText/jp/sec03_other/knownIssues.html)
 * [ライセンス](https://tatsuyanakamori.github.io/vscode-reStructuredText/jp/sec03_other/license.html)
 * [更新履歴](https://tatsuyanakamori.github.io/vscode-reStructuredText/jp/sec03_other/releaseNotes.html)
 
