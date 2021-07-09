@@ -43,7 +43,7 @@ For more information about each function, please refer to the following web page
 
 If this tool saves you time, please donate to the development of the tool.
 
-* GitHub Sponsor<br>[![GitHub Sponsor](https://github.com/sponsors/TatsuyaNakamori/button)](https://github.com/sponsors/TatsuyaNakamori)
+* [![GitHub Sponsor](https://github.com/sponsors/TatsuyaNakamori/button)](https://github.com/sponsors/TatsuyaNakamori)
 
 ------------------------------------------------------------------------
 
@@ -89,4 +89,4 @@ If this tool saves you time, please donate to the development of the tool.
 
 このツール開発の支援をお願いします。
 
-* GitHub Sponsor<br>[![GitHub Sponsor](https://github.com/sponsors/TatsuyaNakamori/button)](https://github.com/sponsors/TatsuyaNakamori)
+* [![GitHub Sponsor](https://github.com/sponsors/TatsuyaNakamori/button)](https://github.com/sponsors/TatsuyaNakamori)
