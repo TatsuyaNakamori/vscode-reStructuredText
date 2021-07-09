@@ -7,7 +7,6 @@ Others
 
    publishToGitHubPages
    knownIssues
-   issues
    releaseNotes
    license
 
