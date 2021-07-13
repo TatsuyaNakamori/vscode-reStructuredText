@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>既知の問題と今後の展望 &mdash; reStructuredText Extention for VSCode 2021-07-08 documentation</title>
+  <title>既知の問題と今後の展望 &mdash; reStructuredText Extention for VSCode 2021-07-13 documentation</title>
   
 
   
@@ -42,7 +42,7 @@
     
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="バグの報告" href="issues.html" />
+    <link rel="next" title="更新履歴" href="releaseNotes.html" />
     <link rel="prev" title="GitHub Pages用に制作する" href="publishToGitHubPages.html" /> 
 </head>
 
@@ -105,10 +105,15 @@
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">その他</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="publishToGitHubPages.html">GitHub Pages用に制作する</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">既知の問題と今後の展望</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#table">Table</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#list">List</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#html-preview">HTML Preview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">その他</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#figure-image">“.. figure::”/ “.. image::”</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="issues.html">バグの報告</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="releaseNotes.html">更新履歴</a></li>
 <li class="toctree-l2"><a class="reference internal" href="license.html">ライセンス</a></li>
 </ul>
@@ -184,12 +189,203 @@
             
   <div class="section" id="id1">
 <h1>既知の問題と今後の展望<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="html-preview">
-<span id="htmlpreview"></span><h2>HTML Preview<a class="headerlink" href="#html-preview" title="Permalink to this headline">¶</a></h2>
+<div class="contents local topic" id="id2">
+<p class="topic-title">このページの目次</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#table" id="id4">Table</a></p></li>
+<li><p><a class="reference internal" href="#list" id="id5">List</a></p></li>
+<li><p><a class="reference internal" href="#html-preview" id="id6">HTML Preview</a></p></li>
+<li><p><a class="reference internal" href="#id3" id="id7">その他</a></p>
+<ul>
+<li><p><a class="reference internal" href="#figure-image" id="id8">“.. figure::”/ “.. image::”</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>ここに書かれていないトラブルがあった場合は、 <a class="reference external" href="https://github.com/TatsuyaNakamori/vscode-reStructuredText/issues">Issues</a> から報告してください。
 バグ・トラブルの報告はこのページからのみ受け付けています。</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="table">
+<h2><a class="toc-backref" href="#id4">Table</a><a class="headerlink" href="#table" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 27%" />
+<col style="width: 50%" />
+<col style="width: 23%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>問題点</p></th>
+<th class="head"><p>現状の対応方法</p></th>
+<th class="head"><p>対応状況</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><div class="line-block">
+<div class="line">2バイトの特殊文字の幅が</div>
+<div class="line">ズレてしまう (<code class="docutils literal notranslate"><span class="pre">※</span></code>など)</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">1バイト文字(<code class="docutils literal notranslate"><span class="pre">*</span></code> など) を使うか、手動で</div>
+<div class="line">幅を合わせてください(半角スペースを1つ加える)</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">幅がズレてしまう文字の</div>
+<div class="line">精査中</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><div class="line-block">
+<div class="line">セルの結合に対応していない</div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">編集作業が終わった後で、手動でセルを結合してください</div>
+<div class="line">(セルの中で <code class="docutils literal notranslate"><span class="pre">Enter</span></code> などのボタンを押してしまうと、</div>
+<div class="line">全てのセルが分割されるので気をつけてください)</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">検討中</div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr class="docutils" />
+<div class="section" id="list">
+<h2><a class="toc-backref" href="#id5">List</a><a class="headerlink" href="#list" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 40%" />
+<col style="width: 50%" />
+<col style="width: 10%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>問題点</p></th>
+<th class="head"><p>現状の対応方法</p></th>
+<th class="head"><p>対応状況</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">Shift+Tab</span></code> でアウトデントした時、</div>
+<div class="line">アウトデント前の記号が継承される</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">全ての項目で同じ記号(<code class="docutils literal notranslate"><span class="pre">1.</span></code> など)を使用している場合は</div>
+<div class="line">問題はない。そうでない場合は手動で書き換える。</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">対応予定</div>
+<div class="line"><br /></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><div class="line-block">
+<div class="line">数値の自動ナンバリングが、</div>
+<div class="line">編集作業の中で実行されないタイミングがある</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">手動で書き換えてください</div>
+<div class="line"><br /></div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">対応予定</div>
+<div class="line"><br /></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<hr class="docutils" />
+</div>
+<div class="section" id="html-preview">
+<span id="htmlpreview"></span><h2><a class="toc-backref" href="#id6">HTML Preview</a><a class="headerlink" href="#html-preview" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 45%" />
+<col style="width: 42%" />
+<col style="width: 13%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>問題点</p></th>
+<th class="head"><p>現状の対応方法</p></th>
+<th class="head"><p>対応状況</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><div class="line-block">
+<div class="line">rstファイルで表示中(選択中)の箇所と、</div>
+<div class="line">プレビュー画面が連動しない</div>
+<div class="line">(自動的にスクロールしない)</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">それぞれのビューを手動で調整します</div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">対応予定</div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr class="docutils" />
+<div class="section" id="id3">
+<h2><a class="toc-backref" href="#id7">その他</a><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="figure-image">
+<h3><a class="toc-backref" href="#id8">“.. figure::”/ “.. image::”</a><a class="headerlink" href="#figure-image" title="Permalink to this headline">¶</a></h3>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 29%" />
+<col style="width: 22%" />
+<col style="width: 49%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>問題点</p></th>
+<th class="head"><p>現状の対応方法</p></th>
+<th class="head"><p>対応状況</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><div class="line-block">
+<div class="line">画像のパスを相対パスで</div>
+<div class="line">記述するのが面倒くさい</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">手動で記述します</div>
+<div class="line"><br /></div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">ファイルダイアログを使って画像を選択し、</div>
+<div class="line">自動的に設定されるような機能を検討中</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </div>
@@ -200,7 +396,7 @@
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="issues.html" class="btn btn-neutral float-right" title="バグの報告" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="releaseNotes.html" class="btn btn-neutral float-right" title="更新履歴" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
         <a href="publishToGitHubPages.html" class="btn btn-neutral float-left" title="GitHub Pages用に制作する" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
