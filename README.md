@@ -1,5 +1,9 @@
 # vscode-reStructuredText README
 
+![reST_extension_all.gif](/docs_reST/source/_gifs/reST_extension_all.gif)
+
+----
+
 [日本語は下に記載]
 
 ## English
