@@ -1,8 +1,15 @@
 Release Notes
 #############
 
-0.0.1
-*****
+0.0.2 [2021/07/15]
+******************
+
+Some of the content of the document has been changed
+(added gifs, etc.)
+
+
+0.0.1 [2021/07/15]
+******************
 
 New Release
 
