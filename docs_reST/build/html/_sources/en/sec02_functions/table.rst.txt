@@ -1,5 +1,5 @@
 Table
-###############
+#####
 
 .. contents:: Table of contents for this page
    :depth: 2

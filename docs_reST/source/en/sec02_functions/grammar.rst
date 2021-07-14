@@ -1,4 +1,4 @@
-Grammer (highlighting of text)
+Syntax Highlight
 ##############################
 
 This extension provides syntax highlighting for reStructuredText.
