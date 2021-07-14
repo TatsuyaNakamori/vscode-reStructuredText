@@ -17,6 +17,10 @@ If the character is not selected, only the modifier character will be created.
 
 If the character already has a modifier character, it will be removed.
 
+.. figure:: ./../../_gifs/reST_decoration.gif
+   :scale: 100%
+   :alt: reST_decoration.gif
+
 
 +-----------------+-----------------------------------+---------------------+-------------------+-------------+
 | Command         | Decoration                        | Execution result    | Meaning           | Shortcut    |
@@ -34,6 +38,11 @@ If the character already has a modifier character, it will be removed.
 
 CSV to Table Conversion
 ***********************
+
+Convert comma-separated data into a table.
+
+.. figure:: ./../../_gifs/reST_CSVtoTable.gif
+   :alt: reST_CSVtoTable.gif
 
 +-------------------------+----------------------------------------------+-------------+
 | Command                 | Meaning                                      | Shortcut    |
@@ -80,6 +89,9 @@ Follow the steps below.
 
 Inserting a list symbol
 ***********************
+
+.. figure:: ./../../_gifs/reST_addList.gif
+   :alt: reST_addList.gif
 
 +----------------------------+-----------------------------------------------------------------+--------------+
 | Command                    | Meaning                                                         | Shortcut     |
