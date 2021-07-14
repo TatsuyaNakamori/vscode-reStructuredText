@@ -53,6 +53,9 @@ Pressing the ``Enter`` button after finishing the first line will add a new entr
 
 In the case of the direct numeric input method ( ``1.`` ), the number will be inserted incremented to the next number.
 
+.. figure:: ./../../_gifs/reST_list_insertLine.gif
+   :alt: reST_list_insertLine.gif
+
 -----------------
 
 Nesting lists
@@ -64,6 +67,8 @@ Nesting lists
 
 * Pressing ``Shift + Tab`` on a line of the nested list will un-nest it.
 
+.. figure:: ./../../_gifs/reST_list_nest.gif
+   :alt: reST_list_nest.gif
 
 -----------------
 
@@ -72,6 +77,9 @@ Rebuild the number
 
 * For lists with a direct numbering scheme ( ``1.`` ), the numbers are reconstructed when you add a new list line. (The numbers are sorted in order.)
 * The first number is not rewritten, so it is possible to create a list from numbers other than 1.
+
+.. figure:: ./../../_gifs/reST_list_renum.gif
+   :alt: reST_list_renum.gif
 
 .. note::
    In some formats, the numbers may not be reconstructed properly, so please rewrite them manually in that case.
@@ -85,6 +93,10 @@ End of list
 Pressing the ``Enter`` button on a line where there are only symbols in the list will quit the list.
 
 For example, after editing a line in a list, you can press the ``Enter`` button twice in a row to finish editing the list.
+
+.. figure:: ./../../_gifs/reST_list_newParagraphs.gif
+   :alt: reST_list_newParagraphs.gif
+
 
 -----------------
 
