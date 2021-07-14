@@ -28,16 +28,8 @@ Conversion from CSV
 
 Converts a comma-separated string to a table.
 
-
-.. figure:: ./../../_images/reST_doc_027.png
-   :scale: 100%
-   :alt: reST_doc_027.png
-
-↓
-
-.. figure:: ./../../_images/reST_doc_028.png
-   :scale: 100%
-   :alt: reST_doc_028.png
+.. figure:: ./../../_gifs/reST_table_CSVtoTable.gif
+   :alt: reST_table_CSVtoTable.gif
 
 .. seealso::
    See :ref:`CSV2TableConversion` for detailed usage.
@@ -45,14 +37,13 @@ Converts a comma-separated string to a table.
 
 .. _SpecifyRowsColumns:
 
-Specify [rows] x [columns]
+Specify [Rows]x[Columns]
 ==========================
 
 In the editor, typing ``[Rows]x[Columns]`` will give you suggestions for input assistance.
 
-.. figure:: ./../../_images/reST_doc_035.png
-   :scale: 75%
-   :alt: reST_doc_035.png
+.. figure:: ./../../_gifs/reST_table_createGrid.gif
+   :alt: reST_table_createGrid.gif
 
 +-------------------------------------------------------------+
 | Trigger Character                                           |
@@ -69,12 +60,7 @@ In the editor, typing ``[Rows]x[Columns]`` will give you suggestions for input a
   * Selecting the ``(Table with header)`` entry will insert an additional row for the header.
 
 
-| When you select one of the input aid candidates, an empty table will be created.
-| (The top table is ``(Table with header)``, the bottom table is ``(Table without header)``. Both are ``2x3`` grids.)
-
-.. figure:: ./../../_images/reST_doc_037.png
-   :scale: 75%
-   :alt: reST_doc_037.png
+When you select one of the input aid candidates, an empty table will be created.
 
 
 -----------------
@@ -84,6 +70,9 @@ Move/Reformat cell selections
 
 | With the cursor in the table, you can move the cell selection by pressing the following key
 | At the same time, it will also reformat (adjust the width of each cell).
+
+.. figure:: ./../../_gifs/reST_table_moveCellSelection.gif
+   :alt: reST_table_moveCellSelection.gif
 
 +------------+-------------------+
 | Actions    | Keys              |
@@ -105,13 +94,19 @@ Line break in a cell
 
 To break a line in a cell, press ``Alt+Enter`` while the cell is selected.
 
+.. figure:: ./../../_gifs/reST_table_newLineCell.gif
+   :alt: reST_table_newLineCell.gif
+
 
 -----------------
 
-Add/delete matrices
-*******************
+Add or delete rows and columns
+******************************
 
 Rows and columns can be added or deleted.
+
+.. figure:: ./../../_gifs/reST_table_addDelRowColumn.gif
+   :alt: reST_table_addDelRowColumn.gif
 
 +---------------+----------------------------------------------------------------------------+
 | Actions       | How to use                                                                 |
@@ -132,6 +127,9 @@ Moving Rows and Columns
 ***********************
 
 You can move rows and columns up, down, left, or right.
+
+.. figure:: ./../../_gifs/reST_table_moveRowColumn.gif
+   :alt: reST_table_moveRowColumn.gif
 
 +------------------------------+----------------------------------------------------------+
 | Actions                      | How to use                                               |

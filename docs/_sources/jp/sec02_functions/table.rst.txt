@@ -28,16 +28,8 @@ CSV からの変換
 
 カンマで区切られた文字列をテーブルに変換します。
 
-
-.. figure:: ./../../_images/reST_doc_027.png
-   :scale: 100%
-   :alt: reST_doc_027.png
-
-↓
-
-.. figure:: ./../../_images/reST_doc_028.png
-   :scale: 100%
-   :alt: reST_doc_028.png
+.. figure:: ./../../_gifs/reST_table_CSVtoTable.gif
+   :alt: reST_table_CSVtoTable.gif
 
 .. seealso::
    詳しい使い方は、 :ref:`CSVからテーブルへの変換` を参照してください。
@@ -48,11 +40,10 @@ CSV からの変換
 [行数]x[列数] 指定
 ==================
 
-エディタで、 ``[行数]x[列数]`` という形で入力すると、入力補助の候補が出てきます。
+``[行数]x[列数]`` という形で入力すると、入力補助の候補が出てきます。
 
-.. figure:: ./../../_images/reST_doc_035.png
-   :scale: 75%
-   :alt: reST_doc_035.png
+.. figure:: ./../../_gifs/reST_table_createGrid.gif
+   :alt: reST_table_createGrid.gif
 
 +-------------------------------------------------------------+
 | トリガー 文字                                               |
@@ -69,12 +60,7 @@ CSV からの変換
   * 入力補助の ``(Table with header)`` の項目を選択すると、ヘッダー部分の行を追加で挿入します
 
 
-| 入力補助候補のいずれかを選択すると、空のテーブルが作成されます。
-| ([下図] 上が ``(Table with header)`` ,  下が ``(Table without header)`` のテーブル。いずれも ``2x3`` のグリッド)
-
-.. figure:: ./../../_images/reST_doc_037.png
-   :scale: 75%
-   :alt: reST_doc_037.png
+入力補助候補のいずれかを選択すると、空のテーブルが作成されます。
 
 
 -----------------
@@ -85,6 +71,9 @@ CSV からの変換
 
 | テーブルにカーソルがある状態で、次のキーを押すことで、セルの選択の移動が可能です。
 | また、同時にリフォーマット(各セルの横幅の調整)を行います。
+
+.. figure:: ./../../_gifs/reST_table_moveCellSelection.gif
+   :alt: reST_table_moveCellSelection.gif
 
 +------------+-------------------+
 | アクション | キー              |
@@ -106,6 +95,8 @@ CSV からの変換
 
 セル内で改行するには、セルを選択している状態で ``Alt + Enter`` キーを押します。
 
+.. figure:: ./../../_gifs/reST_table_newLineCell.gif
+   :alt: reST_table_newLineCell.gif
 
 -----------------
 
@@ -113,6 +104,9 @@ CSV からの変換
 ****************
 
 行と列を追加したり、削除することができます。
+
+.. figure:: ./../../_gifs/reST_table_addDelRowColumn.gif
+   :alt: reST_table_addDelRowColumn.gif
 
 +------------+---------------------------------------------------------+
 | アクション | 方法                                                    |
@@ -133,6 +127,9 @@ CSV からの変換
 **********
 
 行と列を上下左右に移動できます。
+
+.. figure:: ./../../_gifs/reST_table_moveRowColumn.gif
+   :alt: reST_table_moveRowColumn.gif
 
 +--------------+---------------------------------------------------------+
 | アクション   | 方法                                                    |

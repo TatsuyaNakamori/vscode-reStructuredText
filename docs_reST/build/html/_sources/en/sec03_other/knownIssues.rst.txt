@@ -65,6 +65,17 @@ HTML Preview
 Other
 ************
 
+Character decoration
+====================
+
++---------------------------------------+----------------------------+----------------------------+
+| Problem                               | Current response methods   | Response Status            |
++=======================================+============================+============================+
+|| When removing a modifier, it removes || Manually reset the blanks || There will be an option   |
+|| all spaces before and after it.      ||                           || to not remove whitespace. |
++---------------------------------------+----------------------------+----------------------------+
+
+
 ".. figure::"/ ".. image::"
 ===================================
 
