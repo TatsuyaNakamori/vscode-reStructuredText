@@ -41,8 +41,8 @@ CSV to Table Conversion
 
 Convert comma-separated data into a table.
 
-.. figure:: ./../../_gifs/reST_CSVtoTable.gif
-   :alt: reST_CSVtoTable.gif
+.. figure:: ./../../_gifs/reST_table_CSVtoTable.gif
+   :alt: reST_table_CSVtoTable.gif
 
 +-------------------------+----------------------------------------------+-------------+
 | Command                 | Meaning                                      | Shortcut    |
@@ -90,8 +90,8 @@ Follow the steps below.
 Inserting a list symbol
 ***********************
 
-.. figure:: ./../../_gifs/reST_addList.gif
-   :alt: reST_addList.gif
+.. figure:: ./../../_gifs/reST_list_addList.gif
+   :alt: reST_list_addList.gif
 
 +----------------------------+-----------------------------------------------------------------+--------------+
 | Command                    | Meaning                                                         | Shortcut     |

@@ -43,8 +43,8 @@ CSVからテーブルへの変換
 
 カンマ区切りのデータをテーブルに変換します。
 
-.. figure:: ./../../_gifs/reST_CSVtoTable.gif
-   :alt: reST_CSVtoTable.gif
+.. figure:: ./../../_gifs/reST_table_CSVtoTable.gif
+   :alt: reST_table_CSVtoTable.gif
 
 +--------------------------+-------------------------------------------------+----------------+
 | コマンド名               | 意味                                            | ショートカット |
@@ -93,8 +93,8 @@ CSVからテーブルへの変換
 リスト記号を挿入する
 ********************
 
-.. figure:: ./../../_gifs/reST_addList.gif
-   :alt: reST_addList.gif
+.. figure:: ./../../_gifs/reST_list_addList.gif
+   :alt: reST_list_addList.gif
 
 +----------------------------+------------------------------------------------+----------------+
 | コマンド名                 | 意味                                           | ショートカット |
