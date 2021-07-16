@@ -26,4 +26,3 @@ Latest update date of the document: [|today|]
    jp/sec01_overview/index
    jp/sec02_functions/index
    jp/sec03_other/index
-

@@ -13,6 +13,7 @@
 
    table
    list
+   relPath
 
    snippet
    intelliSense

@@ -10,7 +10,8 @@
 
 ### Overview
 
-* This extension has features to support editing of reStructuredText.
+This extension has features to support editing of reStructuredText.
+
 * Snippets (auto-completion suggestions)
 * Grammer (text highlighting)
 * Description support
@@ -22,6 +23,7 @@
   * Table [Grid Table].
     * Create a new table
     * Create a table from text in CSV format
+  * Inserting a relative path
 * Tasks
   * [Sphinx] Quick Start
   * [Sphinx] make html
@@ -68,6 +70,7 @@ If this tool saves you time, please donate to the development of the tool.
   * テーブル [グリッドテーブル]
     * 新規テーブルの作成
     * CSV形式のテキストからテーブルの作成
+  * 相対パスの挿入
 * タスク
   * [Sphinx] Quick Start
   * [Sphinx] make html
