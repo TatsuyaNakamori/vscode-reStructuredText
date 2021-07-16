@@ -40,6 +40,7 @@
         "onLanguage:restructuredtext",
         "onCommand:resttext.previewHTMLUserBuild",
         "onCommand:resttext.previewHTMLHelperBuild",
+        "onCommand:resttext.relPath",
         "onCommand:resttext.bold",
         "onCommand:resttext.italic",
         "onCommand:resttext.inlineRaw",
