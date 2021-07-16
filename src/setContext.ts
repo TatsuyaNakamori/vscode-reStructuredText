@@ -8,7 +8,12 @@ import * as util from './util';
 
 export async function setContext() {
     const editor = vscode.window.activeTextEditor;
-    if (!editor) { return }
+    if (editor) {
+        vscode.commands.executeCommand('setContext', 'resttext.editor.opening', true);
+    } else {
+        vscode.commands.executeCommand('setContext', 'resttext.editor.opening', false);
+        return
+    }
 
     const tableIsSelected = util.tableIsSelected(editor);
     const listIsSelected = util.listIsSelected(editor);

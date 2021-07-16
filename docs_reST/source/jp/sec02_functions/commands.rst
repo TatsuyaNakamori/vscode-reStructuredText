@@ -16,7 +16,7 @@
 
 既に修飾文字が付いている場合は、解除します。
 
-.. figure:: ./../../_gifs/reST_decoration.gif
+.. figure:: ../../_gifs/reST_decoration.gif
    :scale: 100%
    :alt: reST_decoration.gif
 

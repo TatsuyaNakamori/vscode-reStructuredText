@@ -21,8 +21,16 @@ export function activate(context: vscode.ExtensionContext) {
 
     // Run it once the first time.
     setContext.setContext();
-
+    vscode.workspace.onDidCloseTextDocument((event) => {
+        // console.log("onDidChangeActiveTextEditor");
+        setContext.setContext();
+    })
+    vscode.window.onDidChangeActiveTextEditor((event) => {
+        // console.log("onDidChangeActiveTextEditor");
+        setContext.setContext();
+    })
     vscode.window.onDidChangeTextEditorSelection((event) => {
+        // console.log("onDidChangeTextEditorSelection");
         setContext.setContext();
     })
 
@@ -45,9 +53,8 @@ export function activate(context: vscode.ExtensionContext) {
 
     // Editor
     context.subscriptions.push(
-        vscode.commands.registerCommand('resttext.test', () => {
-        // test func
-
+        vscode.commands.registerCommand('resttext.insertRelPath', (pathInfo) => {
+            commands.insertRelPath(pathInfo.fsPath);
     }));
     context.subscriptions.push(
         vscode.commands.registerCommand('resttext.bold', () => {

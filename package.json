@@ -40,7 +40,7 @@
         "onLanguage:restructuredtext",
         "onCommand:resttext.previewHTMLUserBuild",
         "onCommand:resttext.previewHTMLHelperBuild",
-        "onCommand:resttext.relPath",
+        "onCommand:resttext.insertRelPath",
         "onCommand:resttext.bold",
         "onCommand:resttext.italic",
         "onCommand:resttext.inlineRaw",
@@ -110,6 +110,12 @@
                 "title": "%resttext.previewHTMLHelperBuild.title%",
                 "icon": "$(preview)",
                 "when": "editorLangId==restructuredtext && isWindows"
+            },
+            {
+                "category": "reStructuredText",
+                "command": "resttext.insertRelPath",
+                "title": "%resttext.insertRelPath.title%",
+                "when": "editorTextFocus && editorLangId==restructuredtext"
             },
             {
                 "category": "reStructuredText",
@@ -259,6 +265,10 @@
                     "when": "editorLangId==restructuredtext && isWindows"
                 },
                 {
+                    "command": "resttext.insertRelPath",
+                    "when": "never"
+                },
+                {
                     "command": "resttext.bold",
                     "when": "editorLangId==restructuredtext"
                 },
@@ -320,6 +330,13 @@
                     "group": "1_modification",
                     "command": "resttext.table.dataToTable",
                     "when": "editorTextFocus && !editorHasMultipleSelections && editorHasSelection && editorLangId==restructuredtext"
+                }
+            ],
+            "explorer/context": [
+                {
+                    "group": "myGroup@1",
+                    "command": "resttext.insertRelPath",
+                    "when": "resttext.editor.opening"
                 }
             ],
             "editor/title/run": [

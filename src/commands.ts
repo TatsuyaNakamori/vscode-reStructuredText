@@ -3,11 +3,27 @@
 // See LICENSE in the project root for license information.
 // ============================================================
 import * as vscode from 'vscode';
+import * as path from 'path';
 import * as util from './util';
 import * as listEditor from './listEditor'
 import * as tableEditor from './tableEditor'
 import * as completionItemProvider from './completionItemProvider'
 
+export async function insertRelPath(pathTo:string) {
+    const editor = vscode.window.activeTextEditor;
+    if (!editor) { return }
+
+    let pathFrom = editor.document.uri.fsPath;
+    pathFrom = path.dirname(pathFrom);
+
+    let relPath = path.relative(pathFrom, pathTo);
+    relPath = relPath.replace(/\\/g, '/');
+    console.log(relPath);
+
+    editor.edit(editBuilder => {
+        editBuilder.replace(editor.selection, relPath);
+    });
+}
 
 export async function bold() {
     const removed:boolean = await _removeDecoChar("bold");
