@@ -8,6 +8,8 @@
     "resttext.previewHTMLHelperBuild.title": "HTML プレビュー[ビルトイン ビルド]",
     "resttext.previewPDFUserBuild.title": "PDF プレビュー[ユーザー環境ビルド]",
     "resttext.previewPDFHelperBuild.title": "PDF プレビュー[ビルトイン ビルド]",
+    "resttext.insertRelPath.title": "エディタに相対パスを挿入する",
+    "resttext.insertRelPathWithoutExt.title": "エディタに相対パスを挿入する (拡張子なし)",
     "resttext.bold.title": "太字",
     "resttext.italic.title": "斜体",
     "resttext.inlineRaw.title": "インラインコード",

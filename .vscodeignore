@@ -4,11 +4,11 @@
 out/test/**
 src/**
 
-sphinx/python/**
-docs_reST/**
+_test/**
 docs/**
-
-_test/
+docs_reST/**
+resources/_README/**
+sphinx/python/**
 
 .gitignore
 .yarnrc

@@ -74,15 +74,3 @@ Character decoration
 || When removing a modifier, it removes || Manually reset the blanks || There will be an option   |
 || all spaces before and after it.      ||                           || to not remove whitespace. |
 +---------------------------------------+----------------------------+----------------------------+
-
-
-".. figure::"/ ".. image::"
-===================================
-
-+-----------------------------------+--------------------------+--------------------------------------------------------+
-| Problem                           | Current response methods | Response Status                                        |
-+===================================+==========================+========================================================+
-|| It's a pain to write image paths || Write it manually       || Looking into the possibility of using the file dialog |
-|| as relative paths.               ||                         || to select an image and have it automatically set.     |
-+-----------------------------------+--------------------------+--------------------------------------------------------+
-

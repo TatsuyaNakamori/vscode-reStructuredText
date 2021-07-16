@@ -14,6 +14,7 @@ Details of each feature
 
    table
    list
+   relPath
 
    snippet
    intelliSense

@@ -20,7 +20,8 @@ Overview
 * Input aids
 
   * Lists
-  * Table [Grid Table].
+  * Table [Grid Table]
+  * Inserting a relative path
 
 * Snippets
 * IntelliSense (and other auto-completion candidates)
@@ -33,7 +34,7 @@ Overview
 * Tasks
 
   * [Sphinx] Quick Start
-  * Launch TeX Installer [Windows only].
+  * Launch TeX Installer [Windows only]
 
 * Tasks (build)
 
