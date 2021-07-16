@@ -2,7 +2,7 @@
     "name": "resttext",
     "displayName": "reStructuredText",
     "description": "%ext.description%",
-    "version": "0.0.2",
+    "version": "0.1.0",
     "publisher": "TatsuyaNakamori",
     "engines": {
         "vscode": "^1.54.1"
@@ -41,6 +41,7 @@
         "onCommand:resttext.previewHTMLUserBuild",
         "onCommand:resttext.previewHTMLHelperBuild",
         "onCommand:resttext.insertRelPath",
+        "onCommand:resttext.insertRelPathWithoutExt",
         "onCommand:resttext.bold",
         "onCommand:resttext.italic",
         "onCommand:resttext.inlineRaw",
@@ -115,6 +116,12 @@
                 "category": "reStructuredText",
                 "command": "resttext.insertRelPath",
                 "title": "%resttext.insertRelPath.title%",
+                "when": "editorTextFocus && editorLangId==restructuredtext"
+            },
+            {
+                "category": "reStructuredText",
+                "command": "resttext.insertRelPathWithoutExt",
+                "title": "%resttext.insertRelPathWithoutExt.title%",
                 "when": "editorTextFocus && editorLangId==restructuredtext"
             },
             {
@@ -269,6 +276,10 @@
                     "when": "never"
                 },
                 {
+                    "command": "resttext.insertRelPathWithoutExt",
+                    "when": "never"
+                },
+                {
                     "command": "resttext.bold",
                     "when": "editorLangId==restructuredtext"
                 },
@@ -336,6 +347,11 @@
                 {
                     "group": "myGroup@1",
                     "command": "resttext.insertRelPath",
+                    "when": "resttext.editor.opening"
+                },
+                {
+                    "group": "myGroup@2",
+                    "command": "resttext.insertRelPathWithoutExt",
                     "when": "resttext.editor.opening"
                 }
             ],

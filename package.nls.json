@@ -9,6 +9,7 @@
     "resttext.previewPDFUserBuild.title": "Preview PDF [User env build]",
     "resttext.previewPDFHelperBuild.title": "Preview PDF [Built-in build]",
     "resttext.insertRelPath.title": "Insert relative paths into the editor",
+    "resttext.insertRelPathWithoutExt.title": "Insert relative paths into the editor (without extension)",
     "resttext.bold.title": "Bold",
     "resttext.italic.title": "Italic",
     "resttext.inlineRaw.title": "Inline Raw(Code)",

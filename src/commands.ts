@@ -9,7 +9,7 @@ import * as listEditor from './listEditor'
 import * as tableEditor from './tableEditor'
 import * as completionItemProvider from './completionItemProvider'
 
-export async function insertRelPath(pathTo:string) {
+export async function insertRelPath(pathTo:string, withExt:boolean) {
     const editor = vscode.window.activeTextEditor;
     if (!editor) { return }
 
@@ -18,11 +18,23 @@ export async function insertRelPath(pathTo:string) {
 
     let relPath = path.relative(pathFrom, pathTo);
     relPath = relPath.replace(/\\/g, '/');
-    console.log(relPath);
 
-    editor.edit(editBuilder => {
+    if (!withExt) {
+        const parse = path.parse(relPath);
+        if (parse.dir) {
+            relPath = `${parse.dir}/${parse.name}`;
+        } else {
+            relPath = parse.name;
+        }
+    }
+
+    await editor.edit(editBuilder => {
         editBuilder.replace(editor.selection, relPath);
     });
+    const selectionEnd = editor.selection.end;
+    editor.selection = new vscode.Selection(selectionEnd, selectionEnd);
+
+    vscode.window.showTextDocument(editor.document);
 }
 
 export async function bold() {
