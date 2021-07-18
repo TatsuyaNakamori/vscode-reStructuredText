@@ -4,6 +4,10 @@
     "description": "%ext.description%",
     "version": "0.1.0",
     "publisher": "TatsuyaNakamori",
+    "author": {
+        "name": "TatsuyaNakamori",
+        "url": "https://github.com/TatsuyaNakamori"
+    },
     "engines": {
         "vscode": "^1.54.1"
     },
