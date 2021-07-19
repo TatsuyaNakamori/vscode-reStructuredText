@@ -150,12 +150,9 @@ async function _generateWebviewHTML(webview: vscode.Webview, textDocument: vscod
         const message = i18n.localize("resttext.html.makefileError");
         return _templateErrorHTML(message)
     }
-    console.log(makefileInfo);
-
 
     let htmlStr:string = "";
     const builtHtmlFolder = path.join(workspaceFolder.fsPath, makefileInfo["BUILDDIR"], "html");
-    console.log(builtHtmlFolder);
     if (!fs.existsSync(builtHtmlFolder)) {
         const message = i18n.localize("resttext.html.htmlFolderError") + `${builtHtmlFolder}`;
         return _templateErrorHTML(message)
