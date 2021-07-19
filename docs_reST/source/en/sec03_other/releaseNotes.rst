@@ -1,22 +1,28 @@
 Release Notes
 #############
 
-0.1.0 [2021/07/17]
-******************
+0.1.1 [July 20, 2021]
+*********************
+
+Fixed an issue that caused an error in displaying HTML Preview.
+
+
+0.1.0 [July 17, 2021]
+*********************
 
 Added the ability to insert relative paths.
 (:doc:`../sec02_functions/relPath` )
 
 
-0.0.2 [2021/07/15]
-******************
+0.0.2 [July 15, 2021]
+*********************
 
 Some of the content of the document has been changed
 (added gifs, etc.)
 
 
-0.0.1 [2021/07/15]
-******************
+0.0.1 [July 15, 2021]
+*********************
 
 New Release
 
