@@ -64,10 +64,7 @@ export class SphinxTaskProvider implements vscode.TaskProvider {
     }
 }
 
-export function _getMakefileInfo(): MakefileInfo | undefined {
-    const workspaceFolder = util.getOpenedWorkfolderUri();
-    if (!workspaceFolder) { return }
-
+export function _getMakefileInfo(workspaceFolder:vscode.Uri): MakefileInfo | undefined {
     const makeFile = path.join(workspaceFolder.fsPath, "Makefile");
     if (!fs.existsSync(makeFile)) { return }
 
@@ -80,7 +77,7 @@ export function _getMakefileInfo(): MakefileInfo | undefined {
     };
     const regSource = /^SOURCEDIR\s+=\s+([\w./]+)$/;
     const regBuild  = /^BUILDDIR\s+=\s+([\w./]+)$/;
-    const contentsLine = contents.split("\n")
+    const contentsLine = contents.split(/\r\n|\r|\n/);
     for (let i = 0; i < contentsLine.length; i++) {
         const line = contentsLine[i];
 
@@ -222,7 +219,8 @@ function _createTask(definition: vscode.TaskDefinition): vscode.Task | undefined
 
     } else if (definition.command.split("_")[0] == "Build") {
         // The work folder must be open in order to build
-        if (!util.getOpenedWorkfolderUri()) {
+        const workspaceFolder = util.getOpenedWorkfolderUri();
+        if (!workspaceFolder) {
             console.log("Sphinx Task::");
             console.log("Could not get workspaceFolder.");
             return
@@ -248,7 +246,7 @@ function _createTask(definition: vscode.TaskDefinition): vscode.Task | undefined
                 return
             }
 
-            const makefileInfo = _getMakefileInfo();
+            const makefileInfo = _getMakefileInfo(workspaceFolder);
             if (!makefileInfo) { return }
             const sourceDir = makefileInfo["SOURCEDIR"];
             const buildDir = makefileInfo["BUILDDIR"];
@@ -263,7 +261,10 @@ function _createTask(definition: vscode.TaskDefinition): vscode.Task | undefined
             );
 
         } else if (regRunAsUserEnv.exec(definition.label)) {
-            const makefileInfo = _getMakefileInfo();
+            const workspaceFolder = util.getOpenedWorkfolderUri();
+            if (!workspaceFolder) { return }
+
+            const makefileInfo = _getMakefileInfo(workspaceFolder);
             if (!makefileInfo) { return }
 
             return new vscode.Task(

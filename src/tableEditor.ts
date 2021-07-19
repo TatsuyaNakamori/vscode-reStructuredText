@@ -71,7 +71,7 @@ export class TableEditor {
         const endPos = new vscode.Position(endLine, endLastChar);
 
         const data = this.editor.document.getText(new vscode.Range(startPos, endPos));
-        const dataLines = data.split("\n");
+        const dataLines = data.split(/\r\n|\r|\n/);
 
         // First, we will parse the selected csv format string.
         let cellContents:string[][] = [];
@@ -113,7 +113,7 @@ export class TableEditor {
                 }
 
                 const content = cellContents[i][j];
-                const rows = content.split("\n");
+                const rows = content.split(/\r\n|\r|\n/);
                 for (let k = 0; k < rows.length; k++) {
                     const row = rows[k];
 
@@ -147,7 +147,7 @@ export class TableEditor {
             const columnContents = cellContents[i];
             for (let columnIndex = 0; columnIndex < columnContents.length; columnIndex++) {
                 const cellText = columnContents[columnIndex];
-                const cellTextSplit = cellText.split("\n");
+                const cellTextSplit = cellText.split(/\r\n|\r|\n/);
 
                 if (columnIndex == 0) {
                     for (let j = 0; j < cellTextSplit.length; j++) {
@@ -630,7 +630,7 @@ export class TableEditor {
             const rowContents = cellContents[i]
             for (let j = 0; j < rowContents.length; j++) {
                 const cellContent = rowContents[j];
-                const lineCount = cellContent.split("\n").length;
+                const lineCount = cellContent.split(/\r\n|\r|\n/).length;
                 newLineCount[i] = Math.max(newLineCount[i], lineCount);
             }
         }

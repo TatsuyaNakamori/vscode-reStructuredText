@@ -145,14 +145,17 @@ async function _generateWebviewHTML(webview: vscode.Webview, textDocument: vscod
         return _templateErrorHTML(message)
     }
 
-    const makefileInfo = sphinxTaskProvider._getMakefileInfo();
+    const makefileInfo = sphinxTaskProvider._getMakefileInfo(workspaceFolder);
     if (!makefileInfo) {
         const message = i18n.localize("resttext.html.makefileError");
         return _templateErrorHTML(message)
     }
+    console.log(makefileInfo);
+
 
     let htmlStr:string = "";
     const builtHtmlFolder = path.join(workspaceFolder.fsPath, makefileInfo["BUILDDIR"], "html");
+    console.log(builtHtmlFolder);
     if (!fs.existsSync(builtHtmlFolder)) {
         const message = i18n.localize("resttext.html.htmlFolderError") + `${builtHtmlFolder}`;
         return _templateErrorHTML(message)
@@ -216,7 +219,7 @@ function _toWebviewFormats(webview: vscode.Webview, contents:string, buildHtmlFi
     const regHeadTag = /<head>/;
 
     let webviewContents = "";
-    const contentsLine = contents.split("\n");
+    const contentsLine = contents.split(/\r\n|\r|\n/);
     for (let i = 0; i < contentsLine.length; i++) {
         let line = contentsLine[i];
 
