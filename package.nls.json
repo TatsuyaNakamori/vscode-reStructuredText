@@ -1,0 +1,47 @@
+{
+    "ext.description": "Language Support for reStructuredText",
+
+    "conf.sphinx.quickstart": "Configure the Quick Start options. [Click here](https://www.sphinx-doc.org/en/1.4/invocation.html#invocation-of-sphinx-quickstart) to see the specifics of each property. [language options is here](https://www.sphinx-doc.org/en/1.4/config.html#confval-language)",
+    "conf.previewHTML.endTask.killTerminal": "Close the terminal when the build task is finished.",
+
+    "resttext.previewHTMLUserBuild.title": "Preview HTML [User env build]",
+    "resttext.previewHTMLHelperBuild.title": "Preview HTML [Built-in build]",
+    "resttext.previewPDFUserBuild.title": "Preview PDF [User env build]",
+    "resttext.previewPDFHelperBuild.title": "Preview PDF [Built-in build]",
+    "resttext.insertRelPath.title": "Insert relative paths into the editor",
+    "resttext.insertRelPathWithoutExt.title": "Insert relative paths into the editor (without extension)",
+    "resttext.bold.title": "Bold",
+    "resttext.italic.title": "Italic",
+    "resttext.inlineRaw.title": "Inline Raw(Code)",
+    "resttext.list.title": "List Numbered/ Unnumbered",
+    "resttext.list.add.title": "Add list modifier character",
+    "resttext.heading.title": "Heading",
+    "resttext.heading.add.title": "Add a line for heading",
+    "resttext.table.createGrid.title": "Create a grid of tables",
+    "resttext.table.dataToTable.title": "Convert data to a table",
+    "resttext.key.enter.title": "key.enter",
+    "resttext.key.shift.enter.title": "key.shift.enter",
+    "resttext.key.alt.enter.title": "key.alt.enter",
+    "resttext.key.tab.title": "key.tab",
+    "resttext.key.shift.tab.title": "key.shift.tab",
+
+    "resttext.completion.heading.detail": "Add a line for heading:",
+    "resttext.completion.list.detail": "Inserts a list modifier:",
+    "resttext.completion.table.detail": "Create a grid for the table:",
+
+    "resttext.sphinxtask.command.desc": "[Sphinx command] The command name is separated from \"source\" and \"name\" by an underscore. For example, \"Sphinx_QuickStart\".",
+    "resttext.sphinxtask.quickstart.source": "Sphinx",
+    "resttext.sphinxtask.quickstart.name": "Quick Start",
+    "resttext.sphinxtask.build.source": "Build",
+    "resttext.sphinxtask.texInstall.source": "TeX",
+    "resttext.sphinxtask.texInstall.name": "Launch the installer.(It will take some time to install. Please reboot your PC after installation.)",
+    "resttext.sphinx.getconfig.error": "[reStructuredText Sphinx] Unable to retrieve configuration information.",
+    "resttext.sphinx.workspaceFolders.error": "[reStructuredText Sphinx] The work folder has not been opened.",
+
+    "resttext.html.workFolderError": "Could not get information about the work folder.",
+    "resttext.html.makefileError": "Make sure that \"Makefile\" exists in the work folder.",
+    "resttext.html.htmlFolderError": "The following folder was not found.<br>Please check if the build/html folder exists.<br><br>Not found...<br>",
+    "resttext.html.htmlFileError": "The html file corresponding to the .rst document could not be found.<br>Save the file and try to run the build.<br><br>Not found...<br>",
+    "resttext.html.readFileError": "Could not get the contents of the built HTML file.<br><br>",
+    "resttext.html.extensionContextError": "Unable to get information on extensions and access resources such as CSS."
+}

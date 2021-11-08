@@ -1,0 +1,714 @@
+{
+    "information_for_contributors": [
+        "This file is partly based on the code in the following repository.",
+        "Each is MIT licensed.",
+        "https://github.com/microsoft/vscode/tree/master/extensions/python/syntaxes",
+        "https://github.com/MagicStack/MagicPython/blob/master/grammars/MagicPython.tmLanguage"
+    ],
+    "version": "0.0.1",
+    "name": "reStructuredText",
+    "scopeName": "text.restructuredtext",
+    "patterns": [
+        {"include": "#code-blocks"},
+        {"include": "#markup"},
+        {"include": "#keywords"},
+        {"include": "#css-color"},
+        {"include": "#numbers"},
+        {"include": "#constant-language"},
+        {"include": "#strings"},
+        {"include": "#http-mail"},
+        {"include": "#comments"}
+    ],
+    "repository": {
+        "comments": {
+            "name": "comment.block.restructuredtext",
+            "description": "end: [^(スペース から始まらない)]",
+            "begin": "(\\.\\. ).*(?<!::)$",
+            "end": "^(?!\\s)",
+            "patterns": [
+                {"include": "#keyword-special"},
+                {"include": "#markup-link"},
+                {"include": "#http-mail"}
+            ]
+        },
+        "keywords": {
+            "name": "keyword.restructuredtext",
+            "patterns": [
+                {"include": "#keyword-block"},
+                {"include": "#keyword-insert"},
+                {"include": "#keyword-special"},
+                {"include": "#keyword-language"},
+                {"include": "#keyword-software"}
+            ]
+        },
+        "keyword-block": {
+            "patterns": [
+                {
+                    "name": "keyword.code.block.restructuredtext",
+                    "match": "\\.\\. code-block::"
+                },
+                {
+                    "name": "keyword.iteralinclude.block.restructuredtext",
+                    "match": "\\.\\. iteralinclude::"
+                },
+                {
+                    "name": "keyword.csvtable.block.restructuredtext",
+                    "match": "\\.\\. csv-table::"
+                },
+                {
+                    "name": "keyword.listtable.block.restructuredtext",
+                    "match": "\\.\\. list-table::"
+                },
+                {
+                    "name": "keyword.image.block.restructuredtext",
+                    "match": "\\.\\. image::"
+                },
+                {
+                    "name": "keyword.figure.block.restructuredtext",
+                    "match": "\\.\\. figure::"
+                },
+                {
+                    "name": "keyword.attention.block.restructuredtext",
+                    "match": "\\.\\. attention::"
+                },
+                {
+                    "name": "keyword.note.block.restructuredtext",
+                    "match": "\\.\\. note::"
+                },
+                {
+                    "name": "keyword.warning.block.restructuredtext",
+                    "match": "\\.\\. warning::"
+                },
+                {
+                    "name": "keyword.error.block.restructuredtext",
+                    "match": "\\.\\. error::"
+                },
+                {
+                    "name": "keyword.hint.block.restructuredtext",
+                    "match": "\\.\\. hint::"
+                },
+                {
+                    "name": "keyword.important.block.restructuredtext",
+                    "match": "\\.\\. important::"
+                },
+                {
+                    "name": "keyword.caution.block.restructuredtext",
+                    "match": "\\.\\. caution::"
+                },
+                {
+                    "name": "keyword.danger.block.restructuredtext",
+                    "match": "\\.\\. danger::"
+                },
+                {
+                    "name": "keyword.tip.block.restructuredtext",
+                    "match": "\\.\\. tip::"
+                },
+                {
+                    "name": "keyword.admonition.block.restructuredtext",
+                    "match": "\\.\\. admonition::"
+                },
+                {
+                    "name": "keyword.rubric.block.restructuredtext",
+                    "match": "\\.\\. rubric::"
+                },
+                {
+                    "name": "keyword.seealso.block.restructuredtext",
+                    "match": "\\.\\. seealso::"
+                },
+                {
+                    "name": "keyword.literalinclude.block.restructuredtext",
+                    "match": "\\.\\. literalinclude::"
+                },
+                {
+                    "name": "keyword.toctree.block.restructuredtext",
+                    "match": "\\.\\. toctree::"
+                },
+                {
+                    "name": "keyword.contents.block.restructuredtext",
+                    "match": "\\.\\. contents::"
+                },
+                {
+                    "name": "keyword.literalcode.block.restructuredtext",
+                    "match": "(.*?)::$"
+                }
+            ]
+        },
+        "keyword-insert": {
+            "patterns": [
+                {
+                    "name": "keyword.insert.link.restructuredtext",
+                    "match": "\\.\\. _[\\w\\s]+:"
+                }
+            ]
+        },
+        "keyword-special": {
+            "name": "keyword.special.restructuredtext",
+            "match": "(TODO|NOTE|WARNING|INFO|FIXME|HACK|XXX|Arg(s)?|Class|Func(tion)?|Method)(:)?"
+        },
+        "keyword-language": {
+            "name": "keyword.language.restructuredtext",
+            "match": "(?i)(Python|PHP|JavaScript|Java|C\\+\\+)"
+        },
+        "keyword-software": {
+            "name": "keyword.software.restructuredtext",
+            "match": "(?i)(Maya|Nuke|After ?Effects|Houdini|VSCode|reStructuredText)"
+        },
+        "numbers": {
+            "patterns": [
+                {"include": "#number-hex"},
+                {"include": "#number"},
+                {"include": "#number-deco"}
+            ]
+        },
+        "number": {
+            "name": "constant.numeric.num.restructuredtext",
+            "match": "(-?\\d*\\.?\\d+)"
+        },
+        "number-hex": {
+            "name": "constant.numeric.hex.restructuredtext",
+            "match": "(?<!\\d)0x[0-9a-fA-F]+"
+        },
+        "number-deco": {
+            "name": "storage.type.imaginary.number.restructuredtext",
+            "match": "(?<=(\\d+))\\.?[jJeEiLfFuU]"
+        },
+        "constant-language": {
+            "name": "constant.language.restructuredtext",
+            "match": "(?i)(true|false|undefined|null|none)"
+        },
+        "strings": {
+            "patterns": [
+                {"include": "#string-quoted-single"},
+                {"include": "#string-quoted-double"},
+                {"include": "#string-jp"}
+            ]
+        },
+        "string-quoted-single": {
+            "name": "string.quoted.single.restructuredtext",
+            "match": "(['](?!'{2,})).+?(['](?!'{2,}))"
+        },
+        "string-quoted-double": {
+            "name": "string.quoted.double.restructuredtext",
+            "begin": "([\"](?!\"{2,}))",
+            "end": "(\\1)"
+        },
+        "string-jp": {
+            "name": "string.quoted.jp.restructuredtext",
+            "begin": "([【「『])",
+            "end": "([】」』])"
+        },
+        "css-color": {
+            "name": "constant.numeric.css.color.restructuredtext",
+            "match": "(\\# ?[0-9a-fA-F]{1,6})"
+        },
+        "markup": {
+            "name": "markup.restructuredtext",
+            "patterns": [
+                {"include": "#markup-bold"},
+                {"include": "#markup-italic"},
+                {"include": "#markup-inline-raw"},
+                {"include": "#markup-table"},
+                {"include": "#markup-list"},
+                {"include": "#markup-roles"},
+                {"include": "#markup-options"},
+                {"include": "#markup-link"},
+                {"include": "#markup-heading"}
+            ]
+        },
+        "markup-bold": {
+            "patterns": [
+                {
+                    "name": "markup.bold.restructuredtext",
+                    "match": "(^|(?<=[:(\\s]+))\\*\\*(?=\\S)(?!\\*{2,}).*?(?<=\\S)(?<!\\*{2,})\\*\\*(?=[,.?!)、。\\s]+)"
+                }
+            ]
+        },
+        "markup-italic": {
+            "patterns": [
+                {
+                    "name": "markup.italic.restructuredtext",
+                    "match": "(^|(?<=[:(\\s]+))\\*(?=\\S)(?!\\*{1,}).*?(?<=\\S)(?<!\\*{1,})\\*(?=[,.?!)、。\\s]+)"
+                }
+            ]
+        },
+        "markup-inline-raw": {
+            "patterns": [
+                {
+                    "name": "markup.inline.raw.restructuredtext",
+                    "match": "(^|(?<=[:(\\s]+))``(?=\\S)(?!`{2,}).*?(?<=\\S)(?<!`{2,})``(?=[,.?!)、。\\s]+)"
+                }
+            ]
+        },
+        "markup-table": {
+            "patterns": [
+                {
+                    "name": "support.class.markup.table.grid.restructuredtext",
+                    "description": "end: [^(スペース,+,| から始まらない)]",
+                    "begin": "\\+-[-+]+-\\+",
+                    "end": "^(?!(\\+|\\||-))\\s*",
+                    "patterns": [
+                        {
+                            "name": "support.class.markup.table.grid.header.restructuredtext",
+                            "match": "\\+=[=+]+=\\+"
+                        },
+                        {
+                            "name": "string.regexp.markup.table.content.restructuredtext",
+                            "begin": "(?<=\\|(\\+|-|<|>)*) ",
+                            "end": " (?=(\\+|-|<|>)*\\|)"
+                        }
+                    ]
+                },
+                {
+                    "name": "support.class.markup.field.list.restructuredtext",
+                    "description": "end: [^(: から始まらない)]",
+                    "begin": "^\\:.*?\\: ",
+                    "end": "^(?!\\s)",
+                    "patterns": [
+                        {
+                            "name": "string.regexp.markup.table.content.restructuredtext",
+                            "match": "(?<=\\:\\s).*"
+                        }
+                    ]
+                }
+            ]
+        },
+        "markup-list": {
+            "patterns": [
+                {"include": "#markup-list-numbered"},
+                {"include": "#markup-list-unnumbered"}
+            ]
+        },
+        "markup-list-numbered": {
+            "name": "markup.list.numbered.restructuredtext",
+            "match": "^\\s*((\\(?([a-zA-Z0-9]{1,2}|#)(\\.|\\))) )(?=[^\\s]+)",
+            "captures": {
+                "2": {
+                    "name": "punctuation.definition.list.begin.markdown"
+                }
+            },
+            "patterns": [
+                {"include": "#keywords"}
+            ]
+        },
+        "markup-list-unnumbered": {
+            "name": "markup.list.unnumbered.restructuredtext",
+            "description": "[<スペース0個以上>* (?=<文字列(スペース以外の文字)>)]",
+            "match": "^\\s*([-+*] )(?=[^\\s]+)",
+            "captures": {
+                "1": {
+                    "name": "punctuation.definition.list.begin.markdown"
+                }
+            },
+            "patterns": [
+                {"include": "#keywords"}
+            ]
+        },
+        "markup-heading": {
+            "patterns": [
+                {
+                    "name": "markup.heading.restructuredtext",
+                    "match": "^([-=`:.~^_*+#'\"/|<>])\\1+\\s*$"
+                }
+            ]
+        },
+        "markup-options": {
+            "patterns": [
+                {
+                    "name": "support.function.markup.options.restructuredtext",
+                    "match": "\\s+\\:\\w+\\:(\\s|$)"
+                }
+            ]
+        },
+        "markup-roles": {
+            "patterns": [
+                {
+                    "name": "support.function.markup.roles.restructuredtext",
+                    "match": "\\:\\w+\\:(?=`)"
+                }
+            ]
+        },
+        "markup-link": {
+                "name": "markup.inline.raw.link.restructuredtext",
+                "begin": "`(?!`|$)",
+                "end": "`(_)?",
+                "patterns": [
+                    {"include": "#http-mail"}
+                ]
+        },
+        "http-mail": {
+            "patterns": [
+                {
+                    "name": "markup.underline.link.http.restructuredtext",
+                    "match": "(http(s)?://([-.%#/a-zA-Z0-9]*?))(?![-.%#/a-zA-Z0-9])"
+                },
+                {
+                    "name": "markup.underline.link.mail.restructuredtext",
+                    "match": "([-.a-zA-Z0-9]+)@([-.a-zA-Z0-9]+)(?![-.a-zA-Z0-9])"
+                }
+            ]
+        },
+        "code-blocks": {
+            "name": "meta.embedded.block.restructuredtext",
+            "patterns": [
+                {
+                    "name": "meta.embedded.block.python",
+                    "begin": "(?<=\\.\\. code-block::) python",
+                    "end": "^(?!\\s)(?<!\\w+)",
+                    "patterns": [{"include": "source.python"}]
+                },
+                {
+                    "name": "meta.embedded.block.javascriptreact",
+                    "begin": "(?<=\\.\\. code-block::) javascriptreact",
+                    "end": "^(?!\\s)(?<!\\w+)",
+                    "patterns": [{"include": "source.js.jsx"}]
+                },
+                {
+                    "name": "meta.embedded.block.jsx",
+                    "begin": "(?<=\\.\\. code-block::) jsx",
+                    "end": "^(?!\\s)(?<!\\w+)",
+                    "patterns": [{"include": "source.js.jsx"}]
+                },
+                {
+                    "name": "meta.embedded.block.javascript",
+                    "begin": "(?<=\\.\\. code-block::) javascript",
+                    "end": "^(?!\\s)(?<!\\w+)",
+                    "patterns": [{"include": "source.js"}]
+                },
+                {
+                    "name": "meta.embedded.block.sql",
+                    "begin": "(?<=\\.\\. code-block::) sql",
+                    "end": "^(?!\\s)(?<!\\w+)",
+                    "patterns": [{"include": "source.sql"}]
+                },
+                {
+                    "name": "meta.embedded.block.abap",
+                    "begin": "(?<=\\.\\. code-block::) abap",
+                    "end": "^(?!\\s)(?<!\\w+)",
+                    "patterns": [{"include": "source.abap"}]
+                },
+                {
+                    "name": "meta.embedded.block.bat",
+                    "begin": "(?<=\\.\\. code-block::) bat",
+                    "end": "^(?!\\s)(?<!\\w+)",
+                    "patterns": [{"include": "source.batchfile"}]
+                },
+                {
+                    "name": "meta.embedded.block.bib",
+                    "begin": "(?<=\\.\\. code-block::) bib",
+                    "end": "^(?!\\s)(?<!\\w+)",
+                    "patterns": [{"include": "source.bib"}]
+                },
+                {
+                    "name": "meta.embedded.block.c",
+                    "begin": "(?<=\\.\\. code-block::) c",
+                    "end": "^(?!\\s)(?<!\\w+)",
+                    "patterns": [{"include": "source.c"}]
+                },
+                {
+                    "name": "meta.embedded.block.clojure",
+                    "begin": "(?<=\\.\\. code-block::) clojure",
+                    "end": "^(?!\\s)(?<!\\w+)",
+                    "patterns": [{"include": "source.clojure"}]
+                },
+                {
+                    "name": "meta.embedded.block.coffee",
+                    "begin": "(?<=\\.\\. code-block::) coffee",
+                    "end": "^(?!\\s)(?<!\\w+)",
+                    "patterns": [{"include": "source.coffee"}]
+                },
+                {
+                    "name": "meta.embedded.block.cpp",
+                    "begin": "(?<=\\.\\. code-block::) cpp",
+                    "end": "^(?!\\s)(?<!\\w+)",
+                    "patterns": [{"include": "source.cpp"}]
+                },
+                {
+                    "name": "meta.embedded.block.csharp",
+                    "begin": "(?<=\\.\\. code-block::) csharp",
+                    "end": "^(?!\\s)(?<!\\w+)",
+                    "patterns": [{"include": "source.csharp"}]
+                },
+                {
+                    "name": "meta.embedded.block.css",
+                    "begin": "(?<=\\.\\. code-block::) css",
+                    "end": "^(?!\\s)(?<!\\w+)",
+                    "patterns": [{"include": "source.css"}]
+                },
+                {
+                    "name": "meta.embedded.block.diff",
+                    "begin": "(?<=\\.\\. code-block::) diff",
+                    "end": "^(?!\\s)(?<!\\w+)",
+                    "patterns": [{"include": "source.diff"}]
+                },
+                {
+                    "name": "meta.embedded.block.docker",
+                    "begin": "(?<=\\.\\. code-block::) docker",
+                    "end": "^(?!\\s)(?<!\\w+)",
+                    "patterns": [{"include": "source.dockerfile"}]
+                },
+                {
+                    "name": "meta.embedded.block.fsharp",
+                    "begin": "(?<=\\.\\. code-block::) fsharp",
+                    "end": "^(?!\\s)(?<!\\w+)",
+                    "patterns": [{"include": "source.fsharp"}]
+                },
+                {
+                    "name": "meta.embedded.block.go",
+                    "begin": "(?<=\\.\\. code-block::) go",
+                    "end": "^(?!\\s)(?<!\\w+)",
+                    "patterns": [{"include": "source.go"}]
+                },
+                {
+                    "name": "meta.embedded.block.groovy",
+                    "begin": "(?<=\\.\\. code-block::) groovy",
+                    "end": "^(?!\\s)(?<!\\w+)",
+                    "patterns": [{"include": "source.groovy"}]
+                },
+                {
+                    "name": "meta.embedded.block.handlebars",
+                    "begin": "(?<=\\.\\. code-block::) handlebars",
+                    "end": "^(?!\\s)(?<!\\w+)",
+                    "patterns": [{"include": "text.html.handlebars"}]
+                },
+                {
+                    "name": "meta.embedded.block.haml",
+                    "begin": "(?<=\\.\\. code-block::) haml",
+                    "end": "^(?!\\s)(?<!\\w+)",
+                    "patterns": [{"include": "text.html.derivative"}]
+                },
+                {
+                    "name": "meta.embedded.block.html",
+                    "begin": "(?<=\\.\\. code-block::) html",
+                    "end": "^(?!\\s)(?<!\\w+)",
+                    "patterns": [{"include": "text.html.derivative"}]
+                },
+                {
+                    "name": "meta.embedded.block.ini",
+                    "begin": "(?<=\\.\\. code-block::) ini",
+                    "end": "^(?!\\s)(?<!\\w+)",
+                    "patterns": [{"include": "source.ini"}]
+                },
+                {
+                    "name": "meta.embedded.block.java",
+                    "begin": "(?<=\\.\\. code-block::) java",
+                    "end": "^(?!\\s)(?<!\\w+)",
+                    "patterns": [{"include": "source.java"}]
+                },
+                {
+                    "name": "meta.embedded.block.json",
+                    "begin": "(?<=\\.\\. code-block::) json",
+                    "end": "^(?!\\s)(?<!\\w+)",
+                    "patterns": [{"include": "source.json"}]
+                },
+                {
+                    "name": "meta.embedded.block.jsonc",
+                    "begin": "(?<=\\.\\. code-block::) jsonc",
+                    "end": "^(?!\\s)(?<!\\w+)",
+                    "patterns": [{"include": "source.jsonc"}]
+                },
+                {
+                    "name": "meta.embedded.block.latex",
+                    "begin": "(?<=\\.\\. code-block::) latex",
+                    "end": "^(?!\\s)(?<!\\w+)",
+                    "patterns": [{"include": "source.latex"}]
+                },
+                {
+                    "name": "meta.embedded.block.less",
+                    "begin": "(?<=\\.\\. code-block::) less",
+                    "end": "^(?!\\s)(?<!\\w+)",
+                    "patterns": [{"include": "source.css.less"}]
+                },
+                {
+                    "name": "meta.embedded.block.lua",
+                    "begin": "(?<=\\.\\. code-block::) lua",
+                    "end": "^(?!\\s)(?<!\\w+)",
+                    "patterns": [{"include": "source.lua"}]
+                },
+                {
+                    "name": "meta.embedded.block.makefile",
+                    "begin": "(?<=\\.\\. code-block::) makefile",
+                    "end": "^(?!\\s)(?<!\\w+)",
+                    "patterns": [{"include": "source.makefile"}]
+                },
+                {
+                    "name": "meta.embedded.block.markdown",
+                    "begin": "(?<=\\.\\. code-block::) markdown",
+                    "end": "^(?!\\s)(?<!\\w+)",
+                    "patterns": [{"include": "text.html.markdown"}]
+                },
+                {
+                    "name": "meta.embedded.block.objectivec",
+                    "begin": "(?<=\\.\\. code-block::) objective-c",
+                    "end": "^(?!\\s)(?<!\\w+)",
+                    "patterns": [{"include": "source.objc"}]
+                },
+                {
+                    "name": "meta.embedded.block.objectivecpp",
+                    "begin": "(?<=\\.\\. code-block::) objective-cpp",
+                    "end": "^(?!\\s)(?<!\\w+)",
+                    "patterns": [{"include": "source.objcpp"}]
+                },
+                {
+                    "name": "meta.embedded.block.perl",
+                    "begin": "(?<=\\.\\. code-block::) perl",
+                    "end": "^(?!\\s)(?<!\\w+)",
+                    "patterns": [{"include": "source.perl"}]
+                },
+                {
+                    "name": "meta.embedded.block.perl6",
+                    "begin": "(?<=\\.\\. code-block::) perl6",
+                    "end": "^(?!\\s)(?<!\\w+)",
+                    "patterns": [{"include": "source.perl6"}]
+                },
+                {
+                    "name": "meta.embedded.block.php",
+                    "begin": "(?<=\\.\\. code-block::) php",
+                    "end": "^(?!\\s)(?<!\\w+)",
+                    "patterns": [{"include": "source.php"}]
+                },
+                {
+                    "name": "meta.embedded.block.powershell",
+                    "begin": "(?<=\\.\\. code-block::) powershell",
+                    "end": "^(?!\\s)(?<!\\w+)",
+                    "patterns": [{"include": "source.powershell"}]
+                },
+                {
+                    "name": "meta.embedded.block.jade",
+                    "begin": "(?<=\\.\\. code-block::) jade",
+                    "end": "^(?!\\s)(?<!\\w+)",
+                    "patterns": [{"include": "text.pug"}]
+                },
+                {
+                    "name": "meta.embedded.block.pug",
+                    "begin": "(?<=\\.\\. code-block::) pug",
+                    "end": "^(?!\\s)(?<!\\w+)",
+                    "patterns": [{"include": "text.pug"}]
+                },
+                {
+                    "name": "meta.embedded.block.r",
+                    "begin": "(?<=\\.\\. code-block::) r",
+                    "end": "^(?!\\s)(?<!\\w+)",
+                    "patterns": [{"include": "source.r"}]
+                },
+                {
+                    "name": "meta.embedded.block.razor",
+                    "begin": "(?<=\\.\\. code-block::) razor",
+                    "end": "^(?!\\s)(?<!\\w+)",
+                    "patterns": [{"include": "source.razor"}]
+                },
+                {
+                    "name": "meta.embedded.block.ruby",
+                    "begin": "(?<=\\.\\. code-block::) ruby",
+                    "end": "^(?!\\s)(?<!\\w+)",
+                    "patterns": [{"include": "source.ruby"}]
+                },
+                {
+                    "name": "meta.embedded.block.rust",
+                    "begin": "(?<=\\.\\. code-block::) rust",
+                    "end": "^(?!\\s)(?<!\\w+)",
+                    "patterns": [{"include": "source.rust"}]
+                },
+                {
+                    "name": "meta.embedded.block.scss",
+                    "begin": "(?<=\\.\\. code-block::) scss",
+                    "end": "^(?!\\s)(?<!\\w+)",
+                    "patterns": [{"include": "source.css.scss"}]
+                },
+                {
+                    "name": "meta.embedded.block.sass",
+                    "begin": "(?<=\\.\\. code-block::) sass",
+                    "end": "^(?!\\s)(?<!\\w+)",
+                    "patterns": [{"include": "source.css.sass"}]
+                },
+                {
+                    "name": "meta.embedded.block.shaderlab",
+                    "begin": "(?<=\\.\\. code-block::) shaderlab",
+                    "end": "^(?!\\s)(?<!\\w+)",
+                    "patterns": [{"include": "source.shaderlab"}]
+                },
+                {
+                    "name": "meta.embedded.block.shell",
+                    "begin": "(?<=\\.\\. code-block::) shell",
+                    "end": "^(?!\\s)(?<!\\w+)",
+                    "patterns": [{"include": "source.shell"}]
+                },
+                {
+                    "name": "meta.embedded.block.slim",
+                    "begin": "(?<=\\.\\. code-block::) slim",
+                    "end": "^(?!\\s)(?<!\\w+)",
+                    "patterns": [{"include": "source.slim"}]
+                },
+                {
+                    "name": "meta.embedded.block.stylus",
+                    "begin": "(?<=\\.\\. code-block::) stylus",
+                    "end": "^(?!\\s)(?<!\\w+)",
+                    "patterns": [
+                        {"include": "source.css.stylus"},
+                        {"include": "source.css.sass"},
+                        {"include": "source.css.scss"}
+                    ]
+                },
+                {
+                    "name": "meta.embedded.block.swift",
+                    "begin": "(?<=\\.\\. code-block::) swift",
+                    "end": "^(?!\\s)(?<!\\w+)",
+                    "patterns": [{"include": "source.swift"}]
+                },
+                {
+                    "name": "meta.embedded.block.typescriptreact",
+                    "begin": "(?<=\\.\\. code-block::) typescriptreact",
+                    "end": "^(?!\\s)(?<!\\w+)",
+                    "patterns": [{"include": "source.tsx"}]
+                },
+                {
+                    "name": "meta.embedded.block.tsx",
+                    "begin": "(?<=\\.\\. code-block::) tsx",
+                    "end": "^(?!\\s)(?<!\\w+)",
+                    "patterns": [{"include": "source.tsx"}]
+                },
+                {
+                    "name": "meta.embedded.block.typescript",
+                    "begin": "(?<=\\.\\. code-block::) typescript",
+                    "end": "^(?!\\s)(?<!\\w+)",
+                    "patterns": [{"include": "source.ts"}]
+                },
+                {
+                    "name": "meta.embedded.block.ts",
+                    "begin": "(?<=\\.\\. code-block::) ts",
+                    "end": "^(?!\\s)(?<!\\w+)",
+                    "patterns": [{"include": "source.ts"}]
+                },
+                {
+                    "name": "meta.embedded.block.tex",
+                    "begin": "(?<=\\.\\. code-block::) tex",
+                    "end": "^(?!\\s)(?<!\\w+)",
+                    "patterns": [{"include": "source.tex"}]
+                },
+                {
+                    "name": "meta.embedded.block.vb",
+                    "begin": "(?<=\\.\\. code-block::) vb",
+                    "end": "^(?!\\s)(?<!\\w+)",
+                    "patterns": [{"include": "source.asp.vb.net"}]
+                },
+                {
+                    "name": "meta.embedded.block.xml",
+                    "begin": "(?<=\\.\\. code-block::) xml",
+                    "end": "^(?!\\s)(?<!\\w+)",
+                    "patterns": [{"include": "text.xml"}]
+                },
+                {
+                    "name": "meta.embedded.block.xsl",
+                    "begin": "(?<=\\.\\. code-block::) xsl",
+                    "end": "^(?!\\s)(?<!\\w+)",
+                    "patterns": [{"include": "text.xml.xsl"}]
+                },
+                {
+                    "name": "meta.embedded.block.yaml",
+                    "begin": "(?<=\\.\\. code-block::) yaml",
+                    "end": "^(?!\\s)(?<!\\w+)",
+                    "patterns": [{"include": "source.yaml"}]
+                }
+            ]
+        }
+    }
+}

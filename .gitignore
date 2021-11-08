@@ -1,0 +1,12 @@
+out
+dist
+node_modules
+.vscode-test/
+*.vsix
+
+docs_reST/build
+
+sphinx/python/pyinstaller_work/build
+sphinx/python/src/__pycache__
+# sphinx/python/_get_sphinx_modules.py
+# sphinx/win32

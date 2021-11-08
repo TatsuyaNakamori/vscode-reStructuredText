@@ -1,0 +1,356 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <base href="https://tatsuyanakamori.github.io/vscode-reStructuredText/en/sec02_functions/intelliSense.html" charset="utf-8"/>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Other input assistance &mdash; reStructuredText Extention for VSCode 2021-07-20 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Syntax Highlight" href="grammar.html" />
+    <link rel="prev" title="Snippet" href="snippet.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> reStructuredText Extention for VSCode
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents (English):</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../sec01_overview/index.html">Overview</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Details of each feature</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="commands.html">Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html">Settings (Config)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="buildTasks.html">Build</a></li>
+<li class="toctree-l2"><a class="reference internal" href="table.html">Table</a></li>
+<li class="toctree-l2"><a class="reference internal" href="list.html">List</a></li>
+<li class="toctree-l2"><a class="reference internal" href="relPath.html">Inserting a relative path</a></li>
+<li class="toctree-l2"><a class="reference internal" href="snippet.html">Snippet</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Other input assistance</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#header">header</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#table">Table</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#list">List</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="grammar.html">Syntax Highlight</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shortcuts.html">Keyboard shortcuts/input aids (summary)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../sec03_other/index.html">Others</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contents (Japanese):</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../jp/sec01_overview/index.html">概要</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../jp/sec02_functions/index.html">各機能の詳細</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../jp/sec03_other/index.html">その他</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">reStructuredText Extention for VSCode</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html">Details of each feature</a> &raquo;</li>
+        
+      <li>Other input assistance</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/en/sec02_functions/intelliSense.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="other-input-assistance">
+<h1>Other input assistance<a class="headerlink" href="#other-input-assistance" title="Permalink to this headline">¶</a></h1>
+<div class="contents local topic" id="table-of-contents-for-this-page">
+<p class="topic-title">Table of contents for this page</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#header" id="id1">header</a></p></li>
+<li><p><a class="reference internal" href="#table" id="id2">Table</a></p></li>
+<li><p><a class="reference internal" href="#list" id="id3">List</a></p></li>
+</ul>
+</div>
+<p>Introduce input aids other than <a class="reference internal" href="snippet.html"><span class="doc">Snippet</span></a>.</p>
+<p>Input assistance for tables and lists is also described.</p>
+<hr class="docutils" />
+<div class="section" id="header">
+<h2><a class="toc-backref" href="#id1">header</a><a class="headerlink" href="#header" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Trigger Character</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">h</span></code> <code class="docutils literal notranslate"><span class="pre">h1</span></code> <code class="docutils literal notranslate"><span class="pre">h2</span></code> <code class="docutils literal notranslate"><span class="pre">h3</span></code> <code class="docutils literal notranslate"><span class="pre">h4</span></code> <code class="docutils literal notranslate"><span class="pre">h5</span></code> <code class="docutils literal notranslate"><span class="pre">h6</span></code> <code class="docutils literal notranslate"><span class="pre">#</span></code> <code class="docutils literal notranslate"><span class="pre">*</span></code> <code class="docutils literal notranslate"><span class="pre">=</span></code> <code class="docutils literal notranslate"><span class="pre">-</span></code> <code class="docutils literal notranslate"><span class="pre">^</span></code> <code class="docutils literal notranslate"><span class="pre">&quot;</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p>When you enter the trigger character, you will get a list of possible lines to use in the header.</p>
+<div class="figure align-default">
+<a class="reference internal image-reference" href="../../_images/reST_doc_039.png"><img alt="reST_doc_039.png" src="../../_images/reST_doc_039.png" style="width: 709.0px; height: 161.0px;" /></a>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In the case of reStructuredText, there is no restriction on the order of symbols used in the header lines, but in this extension, the order in which the <a class="reference external" href="https://devguide.python.org/documenting/#sections">Python Developer’s Guide</a> recommends.</p>
+</div>
+<p>When you select an auto-completion candidate, a line will be created to match the width of the string one line above it.
+(At least 5 characters will be inserted, even if the header is short.)</p>
+<div class="figure align-default">
+<a class="reference internal image-reference" href="../../_images/reST_doc_040.png"><img alt="reST_doc_040.png" src="../../_images/reST_doc_040.png" style="width: 125.0px; height: 78.0px;" /></a>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="table">
+<h2><a class="toc-backref" href="#id2">Table</a><a class="headerlink" href="#table" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Trigger Character</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">1</span></code> <code class="docutils literal notranslate"><span class="pre">2</span></code> <code class="docutils literal notranslate"><span class="pre">3</span></code> <code class="docutils literal notranslate"><span class="pre">4</span></code> <code class="docutils literal notranslate"><span class="pre">5</span></code> <code class="docutils literal notranslate"><span class="pre">6</span></code> <code class="docutils literal notranslate"><span class="pre">7</span></code> <code class="docutils literal notranslate"><span class="pre">8</span></code> <code class="docutils literal notranslate"><span class="pre">9</span></code> <code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p>Create an empty table.</p>
+<ul class="simple">
+<li><p>When the trigger character is entered, the form of the string immediately before it must be <code class="docutils literal notranslate"><span class="pre">[Rows]x[Columns]</span></code> .</p>
+<ul>
+<li><p>Examples: <code class="docutils literal notranslate"><span class="pre">4x9</span></code> , <code class="docutils literal notranslate"><span class="pre">10x20</span></code> , etc.</p></li>
+</ul>
+</li>
+<li><p>Header lines are not included in <code class="docutils literal notranslate"><span class="pre">[number</span> <span class="pre">of</span> <span class="pre">rows]</span></code> .</p>
+<ul>
+<li><p>Selecting the <code class="docutils literal notranslate"><span class="pre">(Table</span> <span class="pre">with</span> <span class="pre">header)</span></code> item in the input help will insert an additional row for the header.</p></li>
+</ul>
+</li>
+</ul>
+<div class="figure align-default">
+<a class="reference internal image-reference" href="../../_images/reST_doc_035.png"><img alt="reST_doc_035.png" src="../../_images/reST_doc_035.png" style="width: 608.25px; height: 105.75px;" /></a>
+</div>
+<div class="figure align-default">
+<a class="reference internal image-reference" href="../../_images/reST_doc_037.png"><img alt="reST_doc_037.png" src="../../_images/reST_doc_037.png" style="width: 153.75px; height: 258.75px;" /></a>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>For more information, see <a class="reference internal" href="table.html#specifyrowscolumns"><span class="std std-ref">Specify [Rows]x[Columns]</span></a>.</p>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="list">
+<h2><a class="toc-backref" href="#id3">List</a><a class="headerlink" href="#list" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Trigger Character</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">1</span></code> <code class="docutils literal notranslate"><span class="pre">#</span></code> <code class="docutils literal notranslate"><span class="pre">*</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p>When you enter a trigger character in the editor, suggestions for input assistance will appear.
+When you select an item, a symbol will be inserted at the beginning.</p>
+<div class="figure align-default">
+<a class="reference internal image-reference" href="../../_images/reST_doc_038.png"><img alt="reST_doc_038.png" src="../../_images/reST_doc_038.png" style="width: 784.0px; height: 96.0px;" /></a>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>See <a class="reference internal" href="list.html#creatinglist"><span class="std std-ref">Creating a list</span></a> for a detailed description</p>
+</div>
+<hr class="docutils" />
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Please report bugs and other issues via <a class="reference external" href="https://github.com/TatsuyaNakamori/vscode-reStructuredText/issues">Issues</a>.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="grammar.html" class="btn btn-neutral float-right" title="Syntax Highlight" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="snippet.html" class="btn btn-neutral float-left" title="Snippet" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Tatsuya Nakamori.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
