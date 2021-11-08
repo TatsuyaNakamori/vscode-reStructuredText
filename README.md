@@ -48,6 +48,7 @@ For more information about each function, please refer to the following web page
 ### Donations
 
 If this tool saves you time, please donate to the development of the tool.
+Please support me for one cup of coffee.
 
 * [GitHub Sponsor](https://github.com/sponsors/TatsuyaNakamori)
 
@@ -95,5 +96,6 @@ If this tool saves you time, please donate to the development of the tool.
 ### 寄付
 
 このツール開発の支援をお願いします。
+コーヒー1杯分の支援をお願いします。
 
 * [GitHub Sponsor](https://github.com/sponsors/TatsuyaNakamori)
