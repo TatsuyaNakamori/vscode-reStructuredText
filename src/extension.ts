@@ -131,6 +131,7 @@ export function activate(context: vscode.ExtensionContext) {
             'restructuredtext',
             {
                 provideCompletionItems(document, position, token, context) {
+                    completionItemProvider.setHeadingCompletionTrigger(true);
                     const headingCompletionItems =
                         completionItemProvider.heading(document, position, context);
                     completionItemProvider.setHeadingCompletionTrigger(false);
@@ -146,6 +147,7 @@ export function activate(context: vscode.ExtensionContext) {
             'restructuredtext',
             {
                 provideCompletionItems(document, position, token, context) {
+                    completionItemProvider.setListCompletionTrigger(true);
                     const listCompletionItems =
                         completionItemProvider.list(document, position, context);
                     completionItemProvider.setListCompletionTrigger(false);
@@ -161,6 +163,7 @@ export function activate(context: vscode.ExtensionContext) {
             'restructuredtext',
             {
                 provideCompletionItems(document, position, token, context) {
+                    completionItemProvider.setTableCompletionTrigger(true);
                     const tableCompletionItems =
                         completionItemProvider.table(document, position, context);
                     completionItemProvider.setTableCompletionTrigger(false);

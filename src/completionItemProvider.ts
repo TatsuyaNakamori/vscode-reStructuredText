@@ -100,7 +100,7 @@ export function list(
 
     const triggeredChar = context.triggerCharacter;
     const tableIsSelected = util.tableIsSelected();
-    if (!(listCompletionTrigger || triggeredChar) || tableIsSelected) {
+    if (!(triggeredChar || listCompletionTrigger) || tableIsSelected) {
         return
     }
 
@@ -147,7 +147,7 @@ export function table(
     context: vscode.CompletionContext):(vscode.CompletionItem[]|undefined) {
 
     const triggeredChar = context.triggerCharacter;
-    if (!(tableCompletionTrigger || triggeredChar)) {
+    if (!(triggeredChar || tableCompletionTrigger)) {
         return
     }
 

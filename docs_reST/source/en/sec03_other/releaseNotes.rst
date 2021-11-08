@@ -1,6 +1,19 @@
 Release Notes
 #############
 
+
+0.1.2 [Nov. 08, 2021]
+******************
+
+* Fixed a bug where input suggestions were not displayed when creating a new table.
+
+  * When entering grid numbers, such as ``2x4``, the input suggestions are now displayed.
+
+* Fixed a bug where entering trigger characters related to headers did not show input suggestions.
+
+  * When entering a trigger character like ``h`` or ``h2``, the input suggestions are now displayed.
+
+
 0.1.1 [July 20, 2021]
 *********************
 
