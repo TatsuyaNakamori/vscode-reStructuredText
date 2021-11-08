@@ -1,6 +1,0 @@
-{
-    "ConvertHtmlForGithubPages.settings": {
-        "To": "./../docs",
-        "URL for GitHub Pages": "https://tatsuyanakamori.github.io/vscode-reStructuredText/"
-    }
-}
