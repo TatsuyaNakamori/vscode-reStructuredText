@@ -103,7 +103,7 @@ export class TableEditor {
         this.editor.selection = new vscode.Selection(newPos, newPos);
     }
 
-    private _generateTableString(cellContents:string[][], header:boolean):string {
+    private _generateTableString(cellContents:string[][], header:boolean, indent:string = ""):string {
         // Record the maximum number of characters in each column in an array (At least three.)
         let cellStrLengthList:number[] = [];
         for (let i = 0; i < cellContents.length; i++) {
@@ -127,8 +127,8 @@ export class TableEditor {
         }
 
         // GenerateGrid
-        let gridRow:string = "";
-        let headerRow:string = "";
+        let gridRow:string = indent;
+        let headerRow:string = indent;
         for (let i = 0; i < cellStrLengthList.length; i++) {
             const width = cellStrLengthList[i] + 2;
             gridRow   += `+${"-".repeat(width)}`;  // +-----
@@ -162,7 +162,7 @@ export class TableEditor {
             }
 
             for (let lineIndex = 0; lineIndex < multiLineCell.length; lineIndex++) {
-                let cellRow:string = "";
+                let cellRow:string = indent;
                 const lineTextList = multiLineCell[lineIndex];
 
                 for (let columnIndex = 0; columnIndex < cellStrLengthList.length; columnIndex++) {
