@@ -70,7 +70,7 @@ export function tableIsSelected(editor?:vscode.TextEditor):(number[]|undefined) 
     }
     const curLine = editor.selection.start.line;
 
-    const regTableBegin = /^(\+-[-+]+-\+)$/;
+    const regTableBegin = /^[ \t]*(+-[-+]+-+)$/;
     const regTableEnd = /^(?!(\s|\+|\||-))(?<!\w+)/;
 
     const allText = editor.document.getText();
