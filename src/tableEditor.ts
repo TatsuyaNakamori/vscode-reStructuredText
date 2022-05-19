@@ -30,7 +30,7 @@ export class TableEditor {
         this.tableLineNumbers = util.tableIsSelected(this.editor);
         indent = "";
         if (this.tableLineNumbers)
-            match = this.tableLineNumbers[0].match(/^( \r)+.*/);
+            match = this.editor.document.lineAt(this.tableLineNumbers[0]).text.match(/^( \r)+.*/);
             if (match)
                 indent = match[1];
 
