@@ -28,9 +28,9 @@ export class TableEditor {
 
     public async reformat() {
         this.tableLineNumbers = util.tableIsSelected(this.editor);
-        indent = "";
+        indent: string = "";
         if (this.tableLineNumbers)
-            match = this.editor.document.lineAt(this.tableLineNumbers[0]).text.match(/^( \r)+.*/);
+            let match = this.editor.document.lineAt(this.tableLineNumbers[0]).text.match(/^( \r)+.*/);
             if (match)
                 indent = match[1];
 
