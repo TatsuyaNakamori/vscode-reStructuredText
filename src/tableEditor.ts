@@ -28,10 +28,15 @@ export class TableEditor {
 
     public async reformat() {
         this.tableLineNumbers = util.tableIsSelected(this.editor);
+        indent = "";
+        if (this.tableLineNumbers)
+            match = this.tableLineNumbers[0].match(/^( \r)+.*/);
+            if (match)
+                indent = match[1];
 
         const cellContents:string[][] = this._getCellContents();
         const hasHeader:boolean = this._hasHeader();
-        const insertText = this._generateTableString(cellContents, hasHeader);
+        const insertText = this._generateTableString(cellContents, hasHeader, indent);
 
         const editOptions = {undoStopBefore: false, undoStopAfter: false}
         await this.editor.edit((editBuilder) => {
