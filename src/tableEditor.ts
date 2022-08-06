@@ -28,12 +28,19 @@ export class TableEditor {
 
     public async reformat() {
         this.tableLineNumbers = util.tableIsSelected(this.editor);
+        let indent = "";
+        if (this.tableLineNumbers) {
+            let match = this.editor.document.lineAt(this.tableLineNumbers[0]).text.match(/^([ \t]+)\+.*/);
+            if (match) {
+                indent = match[1];
+            }
+        }
 
         const cellContents:string[][] = this._getCellContents();
         const hasHeader:boolean = this._hasHeader();
-        const insertText = this._generateTableString(cellContents, hasHeader);
+        const insertText = this._generateTableString(cellContents, hasHeader, indent);
 
-        const editOptions = {undoStopBefore: false, undoStopAfter: false}
+        const editOptions = {undoStopBefore: false, undoStopAfter: false};
         await this.editor.edit((editBuilder) => {
             const tableRange = this._tableRange();
             editBuilder.replace(tableRange, insertText);
@@ -52,7 +59,7 @@ export class TableEditor {
         const curLine = this.editor.selection.start.line;
         const curLineRange = this.editor.document.lineAt(curLine).range;
 
-        const editOptions = {undoStopBefore: false, undoStopAfter: false}
+        const editOptions = {undoStopBefore: false, undoStopAfter: false};
         await this.editor.edit((editBuilder) => {
             editBuilder.replace(curLineRange, insertText);
         }, editOptions);
@@ -62,7 +69,7 @@ export class TableEditor {
     }
 
     public async dataToTable() {
-        if (this.editor.selection.isEmpty) { return }
+        if (this.editor.selection.isEmpty) { return; }
 
         const selection = this.editor.selection;
         const startPos = new vscode.Position(selection.start.line, 0);
@@ -88,13 +95,13 @@ export class TableEditor {
             }
         }
 
-        const inputResult = await vscode.window.showQuickPick(["With Header", "Without Header"])
-        if (!inputResult) { return }
-        const header = (inputResult == "With Header");
+        const inputResult = await vscode.window.showQuickPick(["With Header", "Without Header"]);
+        if (!inputResult) { return;}
+        const header = (inputResult === "With Header");
 
         const insertText = this._generateTableString(cellContents, header);
 
-        const editOptions = {undoStopBefore: false, undoStopAfter: false}
+        const editOptions = {undoStopBefore: false, undoStopAfter: false};
         await this.editor.edit((editBuilder) => {
             editBuilder.replace(new vscode.Range(startPos, endPos), insertText);
         }, editOptions);
@@ -103,13 +110,13 @@ export class TableEditor {
         this.editor.selection = new vscode.Selection(newPos, newPos);
     }
 
-    private _generateTableString(cellContents:string[][], header:boolean):string {
+    private _generateTableString(cellContents:string[][], header:boolean, indent:string = ""):string {
         // Record the maximum number of characters in each column in an array (At least three.)
         let cellStrLengthList:number[] = [];
         for (let i = 0; i < cellContents.length; i++) {
             for (let j = 0; j < cellContents[i].length; j++) {
                 if (j > cellStrLengthList.length-1) {
-                    cellStrLengthList.push(3)
+                    cellStrLengthList.push(3);
                 }
 
                 const content = cellContents[i][j];
@@ -127,8 +134,8 @@ export class TableEditor {
         }
 
         // GenerateGrid
-        let gridRow:string = "";
-        let headerRow:string = "";
+        let gridRow:string = indent;
+        let headerRow:string = indent;
         for (let i = 0; i < cellStrLengthList.length; i++) {
             const width = cellStrLengthList[i] + 2;
             gridRow   += `+${"-".repeat(width)}`;  // +-----
@@ -139,7 +146,7 @@ export class TableEditor {
 
         let insertTextLines:string[] = [];
         for (let i = 0; i < cellContents.length; i++) {
-            if (i == 0) {
+            if (i === 0) {
                 insertTextLines.push(gridRow);  // +-----+----+---+  // roof
             }
 
@@ -149,7 +156,7 @@ export class TableEditor {
                 const cellText = columnContents[columnIndex];
                 const cellTextSplit = cellText.split(/\r\n|\r|\n/);
 
-                if (columnIndex == 0) {
+                if (columnIndex === 0) {
                     for (let j = 0; j < cellTextSplit.length; j++) {
                         multiLineCell.push([]);  // []-filled array:[[], [].....]
                     }
@@ -157,12 +164,12 @@ export class TableEditor {
 
                 for (let lineIndex = 0; lineIndex < cellTextSplit.length; lineIndex++) {
                     const contentLine = cellTextSplit[lineIndex];
-                    multiLineCell[lineIndex].push(contentLine)
+                    multiLineCell[lineIndex].push(contentLine);
                 }
             }
 
             for (let lineIndex = 0; lineIndex < multiLineCell.length; lineIndex++) {
-                let cellRow:string = "";
+                let cellRow:string = indent;
                 const lineTextList = multiLineCell[lineIndex];
 
                 for (let columnIndex = 0; columnIndex < cellStrLengthList.length; columnIndex++) {
@@ -186,7 +193,7 @@ export class TableEditor {
                 insertTextLines.push(cellRow);  // | ABC | DE | F |
             }
 
-            if (i == 0 && header) {
+            if (i === 0 && header) {
                 insertTextLines.push(headerRow);  // +=====+====+===+
             } else {
                 insertTextLines.push(gridRow);    // +-----+----+---+
@@ -198,7 +205,7 @@ export class TableEditor {
 
     private _hasHeader(): boolean {
         if (!this.tableLineNumbers) {
-            return false
+            return false;
         }
 
         // Various regular expressions
@@ -212,16 +219,16 @@ export class TableEditor {
 
             const gridHeaderLineMatch = regGridHeaderLine.exec(lineText);
             if (gridHeaderLineMatch) {
-                return true
+                return true;
             }
         }
 
-        return false
+        return false;
     }
 
     private _getCellContents(): string[][] {
         if (!this.tableLineNumbers) {
-            return []
+            return [];
         }
 
         // Various regular expressions
@@ -239,23 +246,23 @@ export class TableEditor {
             const contentsLine = regContentsLine.exec(lineText);
             if (!contentsLine) {
                 curLineKind = undefined;
-                continue
+                continue;
             }
 
-            if (curLineKind != "contents") {
+            if (curLineKind !== "contents") {
                 cellContents.push([]);
             }
 
             let columnIndex = 0;
             var match;
             while (match = regCellContents.exec(lineText)) {
-                if (!match?.groups) { continue }
+                if (!match?.groups) { continue; }
 
                 let content = match.groups["content"];
                 content = content.trim();
                 content = content.replace(/(\s)\s*/g, "$1");
 
-                if (curLineKind != "contents") {
+                if (curLineKind !== "contents") {
                     cellContents[cellContents.length-1].push(content);
                 } else {
                     let prevContent = cellContents[cellContents.length-1][columnIndex];
@@ -272,7 +279,7 @@ export class TableEditor {
             curLineKind = "contents";
         }
 
-        return cellContents
+        return cellContents;
     }
 
     private _tableRange(): vscode.Range {
@@ -295,7 +302,7 @@ export class TableEditor {
         const tableRange = this._tableRange();
         const tableStartLine = tableRange.start.line;
 
-        return (curLine == tableStartLine)
+        return (curLine === tableStartLine);
     }
 
     public isSelectedLastGrid(): boolean {
@@ -304,7 +311,7 @@ export class TableEditor {
         const tableRange = this._tableRange();
         const tableLastLine = tableRange.end.line;
 
-        return (curLine == tableLastLine)
+        return (curLine === tableLastLine);
     }
 
     public selectedCellColumn():CellPosition {
@@ -322,14 +329,14 @@ export class TableEditor {
                 line: curLine,
                 column: column,
                 row: row
-            }
-            return selectedCell
+            };
+            return selectedCell;
         }
 
         // Column Index
         let match;
         while (match = regCellContents.exec(lineText)) {
-            if (!match?.groups) { continue }
+            if (!match?.groups) { continue; }
             column += 1;
 
             const matchIndex = match.index;
@@ -337,7 +344,7 @@ export class TableEditor {
             const lastIndex = matchIndex + cellText.length;
 
             if (curChar <= lastIndex) {
-                break
+                break;
             }
         }
 
@@ -349,7 +356,7 @@ export class TableEditor {
 
             if (!regContentsLine.exec(lineText)) {
                 curLineKind = undefined;
-                continue
+                continue;
             }
 
             if (!curLineKind) {
@@ -358,7 +365,7 @@ export class TableEditor {
             }
 
             if (lineNumber >= curLine) {
-                break
+                break;
             }
         }
 
@@ -366,34 +373,34 @@ export class TableEditor {
             line: curLine,
             column: column,
             row: row
-        }
+        };
 
-        return selectedCell
+        return selectedCell;
     }
 
     public selectCellContent(cellPosition:CellPosition, offset?:("top"|"buttom"|"left"|"right"), offsetType?:("cellIndex"|"lineNumber")) {
-        if (!this.tableLineNumbers) { return }
+        if (!this.tableLineNumbers) { return; }
 
         let lineNumber = cellPosition.line;
         let rowIndex = cellPosition.row;
         let columnIndex = cellPosition.column;
-        if (rowIndex == -1) {
+        if (rowIndex === -1) {
             rowIndex = 0;
         }
-        if (columnIndex == -1) {
+        if (columnIndex === -1) {
             columnIndex = 0;
         }
 
         let curLine = lineNumber;
-        if (offset == "top") {
+        if (offset === "top") {
             curLine -= 1;
             rowIndex -= 1;
-        } else if (offset == "buttom") {
+        } else if (offset === "buttom") {
             curLine += 1;
             rowIndex += 1;
-        } else if (offset == "right") {
+        } else if (offset === "right") {
             columnIndex += 1;
-        } else if (offset == "left") {
+        } else if (offset === "left") {
             columnIndex -= 1;
         }
 
@@ -401,7 +408,7 @@ export class TableEditor {
         let lineText = "";
         const regContentsLine = /^\|.+\|$/;
 
-        if (offsetType == "cellIndex") {
+        if (offsetType === "cellIndex") {
             let curRowIndex = -1;
             let curLineKind:("contents"|undefined);
             for (let i = 0; i < this.tableLineNumbers.length; i++) {
@@ -410,7 +417,7 @@ export class TableEditor {
 
                 if (!regContentsLine.exec(lineText)) {
                     curLineKind = undefined;
-                    continue
+                    continue;
                 }
 
                 if (!curLineKind) {
@@ -420,26 +427,26 @@ export class TableEditor {
 
                 if (curRowIndex >= rowIndex) {
                     lineNumber = curLineNumber;
-                    break
+                    break;
                 }
             }
             lineText = this.editor.document.lineAt(lineNumber).text;
         } else {
             let matchedContentsLine = false;
-            if (offset == "top" || offset == "buttom") {
+            if (offset === "top" || offset === "buttom") {
                 while (this.tableLineNumbers.includes(curLine)) {
                     lineText = this.editor.document.lineAt(curLine).text;
 
                     if (!regContentsLine.exec(lineText)) {
-                        if (offset == "top") {
+                        if (offset === "top") {
                             curLine -= 1;
-                        } else if (offset == "buttom") {
+                        } else if (offset === "buttom") {
                             curLine += 1;
                         }
                     } else {
                         matchedContentsLine = true;
                         lineNumber = curLine;
-                        break
+                        break;
                     }
                 }
             }
@@ -456,12 +463,12 @@ export class TableEditor {
         let match;
         while (match = regCellContents.exec(lineText)) {
             if (curColumn >= columnIndex) {
-                break
+                break;
             }
             curColumn += 1;
         }
 
-        if (!match?.groups) { return }
+        if (!match?.groups) { return; }
         const matchIndex = match.index;
         const cellText = match.groups["cell"];
 
@@ -486,7 +493,7 @@ export class TableEditor {
         // Range
         const newPosStart = new vscode.Position(lineNumber, wordFirstIndex);
         const newPosEnd   = new vscode.Position(lineNumber, wordLastIndex);
-        this.editor.selection = new vscode.Selection(newPosStart, newPosEnd)
+        this.editor.selection = new vscode.Selection(newPosStart, newPosEnd);
     }
 
     public async selectionChange(moveTo:("top"|"buttom"|"right"|"left")) {
@@ -504,7 +511,7 @@ export class TableEditor {
         const emptyRow = lineText.replace(regCellContents, "   ");
         const insertText = `\n${emptyRow}`;
 
-        const editOptions = {undoStopBefore: false, undoStopAfter: false}
+        const editOptions = {undoStopBefore: false, undoStopAfter: false};
         await this.editor.edit((editBuilder) => {
             editBuilder.replace(lineEndPosition, insertText);
         }, editOptions);
@@ -515,13 +522,13 @@ export class TableEditor {
     }
 
     public async addRow() {
-        if (!this.tableLineNumbers) { return }
+        if (!this.tableLineNumbers) { return; }
 
         const curLine = this.editor.selection.start.line;
         let startIndex = this.tableLineNumbers.indexOf(curLine);
-        if (startIndex == -1) {
-            return
-        } else if (startIndex == 0) {
+        if (startIndex === -1) {
+            return;
+        } else if (startIndex === 0) {
             startIndex += 1;
         }
 
@@ -534,7 +541,7 @@ export class TableEditor {
             const gridLineMatch = regGridLine.exec(lineText);
             if (gridLineMatch) {
                 insertRowLineNumber = this.tableLineNumbers[i];
-                break
+                break;
             }
         }
 
@@ -546,7 +553,7 @@ export class TableEditor {
         cellContents.splice(insertRowIndex, 0, [""]);
 
         // Updating a table
-        const editOptions = {undoStopBefore: false, undoStopAfter: false}
+        const editOptions = {undoStopBefore: false, undoStopAfter: false};
         await this.editor.edit((editBuilder) => {
             const insertText = this._generateTableString(cellContents, hasHeader);
             const tableRange = this._tableRange();
@@ -566,7 +573,7 @@ export class TableEditor {
     }
 
     public async moveRow(moveTo:("top"|"bottom")) {
-        if (!this.tableLineNumbers) { return }
+        if (!this.tableLineNumbers) { return; }
 
         const numOfTimesToMove = this._getNumberOfTimesToMove(moveTo);
 
@@ -575,20 +582,20 @@ export class TableEditor {
         const hasHeader:boolean = this._hasHeader();
 
         // Rowの入れ替え
-        const row_from = this.selectedCellPosition.row;
-        let row_to = row_from + numOfTimesToMove;
-        if (row_to < 0) {
-            row_to = 0;
-        } else if (row_to > cellContents.length-1) {
-            row_to = cellContents.length - 1;
+        const rowFrom = this.selectedCellPosition.row;
+        let rowTo = rowFrom + numOfTimesToMove;
+        if (rowTo < 0) {
+            rowTo = 0;
+        } else if (rowTo > cellContents.length-1) {
+            rowTo = cellContents.length - 1;
         }
 
-        const moveRowContents = cellContents[row_from];
-        cellContents.splice(row_from, 1); // 要素(行)を削除
-        cellContents.splice(row_to, 0, moveRowContents); // 要素(行)を追加
+        const moveRowContents = cellContents[rowFrom];
+        cellContents.splice(rowFrom, 1); // 要素(行)を削除
+        cellContents.splice(rowTo, 0, moveRowContents); // 要素(行)を追加
 
         // Updating a table
-        const editOptions = {undoStopBefore: false, undoStopAfter: false}
+        const editOptions = {undoStopBefore: false, undoStopAfter: false};
         await this.editor.edit((editBuilder) => {
             const insertText = this._generateTableString(cellContents, hasHeader);
             const tableRange = this._tableRange();
@@ -596,12 +603,12 @@ export class TableEditor {
         }, editOptions);
 
         // Select a cell
-        this.selectedCellPosition.row = row_to;
+        this.selectedCellPosition.row = rowTo;
         this.selectCellContent(this.selectedCellPosition);
     }
 
     public async addColumn() {
-        if (!this.tableLineNumbers) { return }
+        if (!this.tableLineNumbers) { return; }
 
         // Locate the operator.
         let addLastColumn = util.isSelectingLastChara();
@@ -614,7 +621,7 @@ export class TableEditor {
         while (match = regContents.exec(curLineText)) {
             if (match[3]) {
                 afterOperator = match[3];
-                break
+                break;
             }
         }
 
@@ -627,7 +634,7 @@ export class TableEditor {
         for (var i = 0; i < cellContents.length; i++) {
             newLineCount.push(0);
 
-            const rowContents = cellContents[i]
+            const rowContents = cellContents[i];
             for (let j = 0; j < rowContents.length; j++) {
                 const cellContent = rowContents[j];
                 const lineCount = cellContent.split(/\r\n|\r|\n/).length;
@@ -650,7 +657,7 @@ export class TableEditor {
         }
 
         // Updating a table
-        const editOptions = {undoStopBefore: false, undoStopAfter: false}
+        const editOptions = {undoStopBefore: false, undoStopAfter: false};
         await this.editor.edit((editBuilder) => {
             const insertText = this._generateTableString(cellContents, hasHeader);
             const tableRange = this._tableRange();
@@ -668,7 +675,7 @@ export class TableEditor {
     }
 
     public async removeColumn() {
-        if (!this.tableLineNumbers) { return }
+        if (!this.tableLineNumbers) { return; }
 
         // Get information about the content
         const cellContents:string[][] = this._getCellContents();
@@ -676,12 +683,12 @@ export class TableEditor {
 
         const delColumnIndex = this.selectedCellPosition.column;
         for (var i = 0; i < cellContents.length; i++) {
-            const rowContents = cellContents[i]
+            const rowContents = cellContents[i];
             rowContents.splice(delColumnIndex, 1); // 要素を削除
         }
 
         // Updating a table
-        const editOptions = {undoStopBefore: false, undoStopAfter: false}
+        const editOptions = {undoStopBefore: false, undoStopAfter: false};
         await this.editor.edit((editBuilder) => {
             const insertText = this._generateTableString(cellContents, hasHeader);
             const tableRange = this._tableRange();
@@ -690,7 +697,7 @@ export class TableEditor {
         }, editOptions);
 
         // Select a cell
-        const curColumn = this.selectedCellPosition.column
+        const curColumn = this.selectedCellPosition.column;
         if (curColumn > 0) {
             this.selectedCellPosition.column -= 1;
         } else {
@@ -700,7 +707,7 @@ export class TableEditor {
     }
 
     public async moveColumn(moveTo:("right"|"left")) {
-        if (!this.tableLineNumbers) { return }
+        if (!this.tableLineNumbers) { return; }
 
         const numOfTimesToMove = this._getNumberOfTimesToMove(moveTo);
 
@@ -709,23 +716,23 @@ export class TableEditor {
         const hasHeader:boolean = this._hasHeader();
 
         // Columnの入れ替え
-        const column_from = this.selectedCellPosition.column;
-        let column_to = column_from + numOfTimesToMove;
-        if (column_to < 0) {
-            column_to = 0;
-        } else if (column_to > cellContents[0].length-1) {
-            column_to = cellContents[0].length - 1;
+        const columnFrom = this.selectedCellPosition.column;
+        let columnTo = columnFrom + numOfTimesToMove;
+        if (columnTo < 0) {
+            columnTo = 0;
+        } else if (columnTo > cellContents[0].length-1) {
+            columnTo = cellContents[0].length - 1;
         }
 
         for (var i = 0; i < cellContents.length; i++) {
             const rowContents = cellContents[i];
-            const moveColumnContent = rowContents[column_from];
-            rowContents.splice(column_from, 1); // 要素を削除
-            rowContents.splice(column_to, 0, moveColumnContent); // 要素を追加
+            const moveColumnContent = rowContents[columnFrom];
+            rowContents.splice(columnFrom, 1); // 要素を削除
+            rowContents.splice(columnTo, 0, moveColumnContent); // 要素を追加
         }
 
         // Updating a table
-        const editOptions = {undoStopBefore: false, undoStopAfter: false}
+        const editOptions = {undoStopBefore: false, undoStopAfter: false};
         await this.editor.edit((editBuilder) => {
             const insertText = this._generateTableString(cellContents, hasHeader);
             const tableRange = this._tableRange();
@@ -733,19 +740,19 @@ export class TableEditor {
         }, editOptions);
 
         // Select a cell
-        this.selectedCellPosition.column = column_to;
+        this.selectedCellPosition.column = columnTo;
         this.selectCellContent(this.selectedCellPosition);
     }
 
     private _getNumberOfTimesToMove(moveTo:("top"|"bottom"|"right"|"left")):number {
         let checkChar = "";
-        if (moveTo == "top") {
+        if (moveTo === "top") {
             checkChar = "^";
-        } else if (moveTo == "bottom") {
+        } else if (moveTo === "bottom") {
             checkChar = "v";
-        } else if (moveTo == "right") {
+        } else if (moveTo === "right") {
             checkChar = ">";
-        } else if (moveTo == "left") {
+        } else if (moveTo === "left") {
             checkChar = "<";
         }
 
@@ -755,17 +762,17 @@ export class TableEditor {
         let curChar = this.editor.selection.start.character - 1;
         let numOfTimesToMove = 0;
         while (curChar >= 0) {
-            if (checkChar != curLineCharList[curChar]) {
-                break
+            if (checkChar !== curLineCharList[curChar]) {
+                break;
             }
             numOfTimesToMove += 1;
             curChar -= 1;
         }
 
-        if (moveTo == "right" || moveTo == "bottom") {
-            return numOfTimesToMove
+        if (moveTo === "right" || moveTo === "bottom") {
+            return numOfTimesToMove;
         } else {
-            return -numOfTimesToMove
+            return -numOfTimesToMove;
         }
     }
 }
