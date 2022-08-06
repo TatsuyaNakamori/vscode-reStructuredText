@@ -151,7 +151,7 @@
         },
         "keyword-software": {
             "name": "keyword.software.restructuredtext",
-            "match": "(?i)(Maya|Nuke|After ?Effects|Houdini|VSCode|reStructuredText)"
+            "match": "(?i)(Maya|Nuke|After ?Effects|Photoshop|Houdini|VSCode|reStructuredText|GitHub|git)"
         },
         "numbers": {
             "patterns": [
